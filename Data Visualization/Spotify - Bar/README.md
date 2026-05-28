@@ -7,6 +7,7 @@ Análisis exploratorio y visual del dataset global de Spotify, con foco en géne
 Este análisis responde esas preguntas a través de visualizaciones interactivas construidas con **Plotly**.
 
 ## Estructura del proyecto
+
 Spotify - Bar/
 ├── Spotify.ipynb              # Notebook principal con el análisis completo
 ├── spotify_data clean.csv     # Dataset utilizado
