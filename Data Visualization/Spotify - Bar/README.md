@@ -8,10 +8,12 @@ Este análisis responde esas preguntas a través de visualizaciones interactivas
 
 ## Estructura del proyecto
 
+```
 Spotify - Bar/
 ├── Spotify.ipynb              # Notebook principal con el análisis completo
 ├── spotify_data clean.csv     # Dataset utilizado
 └── README.md                  # Este archivo
+```
 
 ## Dataset
 - **Fuente:** [Spotify Global Music Dataset 2009–2025 — Kaggle](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025)
