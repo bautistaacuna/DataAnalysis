@@ -2,7 +2,6 @@
 
 Análisis exploratorio y visual del dataset global de Spotify, con foco en géneros musicales, tendencias temporales y los artistas más populares de la plataforma.
 
----
 
 ## Contexto del problema
 
@@ -10,18 +9,13 @@ Análisis exploratorio y visual del dataset global de Spotify, con foco en géne
 
 Este análisis responde esas preguntas a través de visualizaciones interactivas construidas con **Plotly**.
 
----
 
 ## Estructura del proyecto
 
-```
 Spotify - Bar/
 ├── Spotify.ipynb              # Notebook principal con el análisis completo
 ├── spotify_data clean.csv     # Dataset utilizado
 └── README.md                  # Este archivo
-```
-
----
 
 ## Dataset
 
@@ -29,16 +23,12 @@ Spotify - Bar/
 - **Registros:** Dataset global con canciones, artistas, géneros, popularidad y seguidores
 - **Variables clave:** `artist_name`, `artist_genres`, `artist_popularity`, `artist_followers`, `track_name`, `track_popularity`, `explicit`, `album_release_date`
 
----
-
 ## Tecnologías utilizadas
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Wrangling-lightblue?logo=pandas)
 ![Plotly](https://img.shields.io/badge/Plotly-Visualización-purple?logo=plotly)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
-
----
 
 ## Metodología
 
@@ -49,8 +39,6 @@ Spotify - Bar/
    - Eliminación de duplicados
    - Creación de columna `main_genre` a partir del primer género del artista
 3. **Visualizaciones** — 5 gráficos interactivos con Plotly
-
----
 
 ## Análisis y hallazgos
 
@@ -73,16 +61,12 @@ Scatter plot multidimensional donde:
 - **Tamaño de burbuja:** Cantidad de canciones en el dataset
 - **Color:** Género musical principal
 
----
-
 ## Conclusiones principales
 
 - El **pop** y sus subgéneros dominan ampliamente la plataforma en cantidad de canciones
 - El contenido explícito ha crecido de forma constante desde 2015, especialmente en géneros como **rap** y **hip-hop**
 - No existe una correlación lineal perfecta entre seguidores y popularidad: artistas con menos seguidores pueden tener alta popularidad por reproducciones recientes
 - La producción musical registrada en Spotify muestra un pico pronunciado entre 2020 y 2023
-
----
 
 ## Cómo ejecutar el proyecto
 
@@ -98,8 +82,6 @@ jupyter notebook Spotify.ipynb
 ```
 
 > El dataset `spotify_data clean.csv` debe estar en la misma carpeta que el notebook.
-
----
 
 ## Autor
 
