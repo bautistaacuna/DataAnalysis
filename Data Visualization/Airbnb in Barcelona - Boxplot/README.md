@@ -1,17 +1,14 @@
 # Airbnb Barcelona — Análisis de Precios en Días de Semana
-
 Análisis exploratorio del mercado de alojamientos de Airbnb en Barcelona durante días de semana, con foco en la relación entre precio, tipo de alojamiento, ubicación y calidad del servicio.
 
 
 ## Contexto del problema
-
 ¿Qué factores determinan el precio de un alojamiento en Airbnb Barcelona? ¿Ser Superhost implica cobrar más? ¿Los alojamientos más céntricos son siempre los más caros?
 
 Este análisis responde esas preguntas a través de boxplots y scatter plots construidos con **Plotly**.
 
 
 ## Estructura del proyecto
-
 ```
 Airbnb in Barcelona - Boxplot/
 ├── Airbnb_Barcelona.ipynb         # Notebook principal con el análisis completo
@@ -29,17 +26,13 @@ Airbnb in Barcelona - Boxplot/
 └── README.md
 ```
 
----
-
 ## Dataset
-
 - **Fuente:** [Airbnb Prices in European Cities — Kaggle](https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities)
 - **Archivo utilizado:** `barcelona_weekdays.csv`
 - **Variables clave:** `realSum`, `room_type`, `host_is_superhost`, `cleanliness_rating`, `guest_satisfaction_overall`, `dist`, `metro_dist`, `biz`
 
 
 ## Tecnologías utilizadas
-
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Wrangling-lightblue?logo=pandas)
 ![Plotly](https://img.shields.io/badge/Plotly-Visualización-purple?logo=plotly)
@@ -47,17 +40,13 @@ Airbnb in Barcelona - Boxplot/
 
 
 ## Metodología
-
 1. **Carga y exploración inicial** — tipos de datos, dimensiones, primeras filas
 2. **Limpieza de datos** — revisión de nulos, duplicados y transformación de variables categóricas
 3. **Análisis descriptivo** — estadísticas agrupadas por tipo de alojamiento
 4. **Visualizaciones** — 10 gráficos interactivos con Plotly (boxplots y scatter plots)
 
-
 ## Análisis y hallazgos
-
 ### Boxplots
-
 | Gráfico | Variable analizada |
 |---|---|
 | 3.1 | Precio según tipo de alojamiento |
@@ -67,7 +56,6 @@ Airbnb in Barcelona - Boxplot/
 | 3.5 | Distancia al metro según tipo de alojamiento |
 
 ### Scatter Plots
-
 | Gráfico | Variables |
 |---|---|
 | 3.6 | Distancia vs Precio — color: tipo, tamaño: satisfacción |
@@ -78,7 +66,6 @@ Airbnb in Barcelona - Boxplot/
 
 
 ## Conclusiones principales
-
 - Los **alojamientos completos son los más caros y céntricos**, con alta variabilidad de precios y presencia de outliers extremos (hasta 6.943 €)
 - Ser **Superhost no determina un precio mayor**, pero sí refleja consistencia en la experiencia del huésped
 - Las **habitaciones compartidas son las más económicas y alejadas del centro**, orientadas a turismo de bajo presupuesto
@@ -87,7 +74,6 @@ Airbnb in Barcelona - Boxplot/
 
 
 ## Cómo ejecutar el proyecto
-
 ```bash
 # 1. Clonar el repositorio
 git clone https://github.com/bautistaacuna/DataAnalysis.git
@@ -107,7 +93,6 @@ jupyter notebook Airbnb_Barcelona.ipynb
 
 
 ## Autor
-
 **Juan Bautista Acuña**
 Data Analyst | SQL · Python · Power BI
 [GitHub](https://github.com/bautistaacuna) · [Email](mailto:bautistaacuna@gmail.com)
