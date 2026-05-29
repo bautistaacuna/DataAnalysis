@@ -2,25 +2,30 @@
 
 Análisis exploratorio de los incidentes delictivos reportados en la Ciudad de Chicago durante el año 2026, a través de visualizaciones geolocalizadas e interactivas construidas con Plotly Express.
 
+---
+
 ## Contexto del problema
 
 ¿En qué zonas de Chicago se concentran los delitos? ¿Cuáles son los tipos de crimen más frecuentes? ¿Existen diferencias espaciales entre incidentes con y sin arresto? ¿Los delitos nocturnos se ubican en zonas distintas a los diurnos?
 
 Este análisis responde esas preguntas a través de 4 mapas interactivos geolocalizados.
 
+---
 
 ## Estructura del proyecto
 
 ```
 Chicago Crimes - Maps/
 ├── README.md
-├── Visualización_de_datos_geolocalizados_Chicago_crimes_2026.ipynb
+├── Chicago_Crimes_2026.ipynb
 ├── Crimes_Chicago_2026.csv
 ├── mapa_todos_los_crimenes.html
 ├── mapa_top5_crimenes.html
 ├── mapa_arrestos.html
 └── mapa_dia_noche.html
 ```
+
+---
 
 ## Dataset
 
@@ -29,6 +34,7 @@ Chicago Crimes - Maps/
 - **Período:** Año 2026 (hasta el 20 de enero)
 - **Variables clave:** `Primary Type`, `Latitude`, `Longitude`, `Arrest`, `Domestic`, `Date`, `Location Description`
 
+---
 
 ## Tecnologías utilizadas
 
@@ -37,6 +43,7 @@ Chicago Crimes - Maps/
 ![Plotly](https://img.shields.io/badge/Plotly-Visualización-purple?logo=plotly)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
 
+---
 
 ## Metodología
 
@@ -48,10 +55,11 @@ Chicago Crimes - Maps/
 3. **Creación de variable `time_of_day`** — clasificación de incidentes en diurnos (06:00–18:00) y nocturnos (18:00–06:00)
 4. **Visualizaciones** — 4 mapas interactivos con Plotly Express
 
+---
 
-## Mapas interactivos
+## Ver los mapas interactivos
 
-> Los mapas están exportados como HTML. Descargalos y abrilos en tu navegador para verlos con toda la interactividad.
+> GitHub no puede renderizar mapas interactivos geolocalizados. Para verlos descargá los archivos HTML y abrilos en tu navegador.
 
 | Mapa | Descripción | Archivo |
 |---|---|---|
@@ -60,6 +68,7 @@ Chicago Crimes - Maps/
 | 4.3 | Incidentes con y sin arresto | `mapa_arrestos.html` |
 | 4.4 | Incidentes diurnos vs nocturnos | `mapa_dia_noche.html` |
 
+---
 
 ## Conclusiones principales
 
@@ -69,6 +78,7 @@ Chicago Crimes - Maps/
 - Los **delitos nocturnos se concentran con mayor intensidad** en determinados sectores, mientras que los diurnos muestran una distribución más homogénea
 - La visualización geolocalizada demuestra el valor de las herramientas interactivas para el análisis exploratorio del crimen urbano
 
+---
 
 ## Cómo ejecutar el proyecto
 
@@ -84,11 +94,12 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
 # 4. Abrir el notebook
-jupyter notebook "Visualización_de_datos_geolocalizados_Chicago_crimes_2026.ipynb"
+jupyter notebook Chicago_Crimes_2026.ipynb
 ```
 
 > El archivo `Crimes_Chicago_2026.csv` debe estar en la misma carpeta que el notebook.
 
+---
 
 ## Autor
 
