@@ -7796,32 +7796,32 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1627c900">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15e3bd81">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="An%C3%A1lisis-de-Spotify-Global-Music-Dataset-(2009%E2%80%932025)">Análisis de Spotify Global Music Dataset (2009–2025)<a class="anchor-link" href="#An%C3%A1lisis-de-Spotify-Global-Music-Dataset-(2009%E2%80%932025)">¶</a></h1><h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>Este análisis explora el dataset global de Spotify con canciones y artistas
-de los últimos 16 años. El objetivo es responder las siguientes preguntas:</p>
+<h1 id="Spotify-Global-Music-Dataset-Analysis-(2009%E2%80%932025)">Spotify Global Music Dataset Analysis (2009–2025)<a class="anchor-link" href="#Spotify-Global-Music-Dataset-Analysis-(2009%E2%80%932025)">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>This analysis explores Spotify's global dataset of songs and artists
+over the last 16 years. The goal is to answer the following questions:</p>
 <ul>
-<li>¿Qué géneros musicales dominan la plataforma?</li>
-<li>¿Cómo evolucionó el contenido explícito a lo largo del tiempo?</li>
-<li>¿Existe relación entre la popularidad de un artista y sus seguidores?</li>
+<li>Which music genres dominate the platform?</li>
+<li>How has explicit content evolved over time?</li>
+<li>Is there a relationship between an artist's popularity and their followers?</li>
 </ul>
-<p><strong>Herramientas utilizadas:</strong> Python · Pandas · Plotly<br/>
+<p><strong>Tools used:</strong> Python · Pandas · Plotly<br/>
 <strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025">Spotify Global Music Dataset — Kaggle</a></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=65667948">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3584a675">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Importaci%C3%B3n-de-librer%C3%ADas">1. Importación de librerías<a class="anchor-link" href="#1.-Importaci%C3%B3n-de-librer%C3%ADas">¶</a></h2>
+<h2 id="1.-Library-Imports">1. Library Imports<a class="anchor-link" href="#1.-Library-Imports">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7851,8 +7851,8 @@ de los últimos 16 años. El objetivo es responder las siguientes preguntas:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Carga-del-dataset">2. Carga del dataset<a class="anchor-link" href="#2.-Carga-del-dataset">¶</a></h2><p>Se utiliza el archivo <code>spotify_data clean.csv</code> descargado desde Kaggle.
-A continuación se visualizan las primeras filas para entender su estructura.</p>
+<h2 id="2.-Dataset-Loading">2. Dataset Loading<a class="anchor-link" href="#2.-Dataset-Loading">¶</a></h2><p>The file <code>spotify_data clean.csv</code> downloaded from Kaggle is used.
+The first rows are displayed below to understand its structure.</p>
 </div>
 </div>
 </div>
@@ -8039,7 +8039,7 @@ A continuación se visualizan las primeras filas para entender su estructura.</p
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Tipos-de-datos-por-columna">Tipos de datos por columna<a class="anchor-link" href="#Tipos-de-datos-por-columna">¶</a></h3>
+<h3 id="Data-Types-by-Column">Data Types by Column<a class="anchor-link" href="#Data-Types-by-Column">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8092,7 +8092,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Dimensiones-del-dataset">Dimensiones del dataset<a class="anchor-link" href="#Dimensiones-del-dataset">¶</a></h3>
+<h3 id="Dataset-Dimensions">Dataset Dimensions<a class="anchor-link" href="#Dataset-Dimensions">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8130,12 +8130,12 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Limpieza-de-datos">3. Limpieza de datos<a class="anchor-link" href="#3.-Limpieza-de-datos">¶</a></h2><p>Se realizan los siguientes pasos:</p>
+<h2 id="3.-Data-Cleaning">3. Data Cleaning<a class="anchor-link" href="#3.-Data-Cleaning">¶</a></h2><p>The following steps are performed:</p>
 <ul>
-<li>Conversión de <code>album_release_date</code> a formato datetime y extracción del año</li>
-<li>Revisión y tratamiento de valores nulos</li>
-<li>Creación de columna <code>main_genre</code> tomando el primer género del artista</li>
-<li>Eliminación de registros duplicados</li>
+<li>Converting <code>album_release_date</code> to datetime format and extracting the year</li>
+<li>Reviewing and handling null values</li>
+<li>Creating <code>main_genre</code> column from the first genre of each artist</li>
+<li>Removing duplicate records</li>
 </ul>
 </div>
 </div>
@@ -8242,8 +8242,8 @@ dtype: int64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p>Luego de la limpieza, los valores nulos fueron tratados correctamente.
-La columna <code>main_genre</code> fue creada exitosamente a partir de <code>artist_genres</code>.</p>
+<p>After cleaning, null values were handled correctly.
+The <code>main_genre</code> column was successfully created from <code>artist_genres</code>.</p>
 </blockquote>
 </div>
 </div>
@@ -8270,8 +8270,8 @@ La columna <code>main_genre</code> fue creada exitosamente a partir de <code>art
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Visualizaciones">4. Visualizaciones<a class="anchor-link" href="#4.-Visualizaciones">¶</a></h2><h3 id="4.1-%C2%BFQu%C3%A9-g%C3%A9neros-musicales-tienen-m%C3%A1s-canciones-en-Spotify?">4.1 ¿Qué géneros musicales tienen más canciones en Spotify?<a class="anchor-link" href="#4.1-%C2%BFQu%C3%A9-g%C3%A9neros-musicales-tienen-m%C3%A1s-canciones-en-Spotify?">¶</a></h3><p>Se agrupa el dataset por <code>main_genre</code> y se cuentan las canciones por género.
-Se muestran los <strong>30 géneros con mayor presencia</strong>, excluyendo entradas sin clasificar.</p>
+<h2 id="4.-Visualizations">4. Visualizations<a class="anchor-link" href="#4.-Visualizations">¶</a></h2><h3 id="4.1-Which-music-genres-have-the-most-songs-on-Spotify?">4.1 Which music genres have the most songs on Spotify?<a class="anchor-link" href="#4.1-Which-music-genres-have-the-most-songs-on-Spotify?">¶</a></h3><p>The dataset is grouped by <code>main_genre</code> and songs are counted per genre.
+The <strong>30 genres with the highest presence</strong> are shown, excluding unclassified entries.</p>
 </div>
 </div>
 </div>
@@ -8329,8 +8329,8 @@ Se muestran los <strong>30 géneros con mayor presencia</strong>, excluyendo ent
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p><strong>Hallazgo:</strong> El pop y sus subgéneros concentran la mayor cantidad de canciones,
-seguidos por el hip-hop y el r&amp;b.</p>
+<p><strong>Finding:</strong> Pop and its subgenres concentrate the highest number of songs,
+followed by hip-hop and r&amp;b.</p>
 </blockquote>
 </div>
 </div>
@@ -8393,8 +8393,8 @@ seguidos por el hip-hop y el r&amp;b.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.2-%C2%BFQu%C3%A9-g%C3%A9neros-tienen-m%C3%A1s-contenido-expl%C3%ADcito?">4.2 ¿Qué géneros tienen más contenido explícito?<a class="anchor-link" href="#4.2-%C2%BFQu%C3%A9-g%C3%A9neros-tienen-m%C3%A1s-contenido-expl%C3%ADcito?">¶</a></h3><p>Se analiza la proporción de canciones explícitas vs no explícitas
-dentro de los 30 géneros más representados.</p>
+<h3 id="4.2-Which-genres-have-the-most-explicit-content?">4.2 Which genres have the most explicit content?<a class="anchor-link" href="#4.2-Which-genres-have-the-most-explicit-content?">¶</a></h3><p>The proportion of explicit vs non-explicit songs is analyzed
+within the 30 most represented genres.</p>
 </div>
 </div>
 </div>
@@ -8475,8 +8475,8 @@ dentro de los 30 géneros más representados.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p><strong>Hallazgo:</strong> Géneros como el rap y el hip-hop presentan la mayor proporción
-de contenido explícito, mientras que el pop y el indie muestran niveles más bajos.</p>
+<p><strong>Finding:</strong> Genres such as rap and hip-hop show the highest proportion
+of explicit content, while pop and indie show lower levels.</p>
 </blockquote>
 </div>
 </div>
@@ -8488,7 +8488,7 @@ de contenido explícito, mientras que el pop y el indie muestran niveles más ba
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.3-%C2%BFC%C3%B3mo-evolucion%C3%B3-la-producci%C3%B3n-musical-en-Spotify-a-lo-largo-del-tiempo?">4.3 ¿Cómo evolucionó la producción musical en Spotify a lo largo del tiempo?<a class="anchor-link" href="#4.3-%C2%BFC%C3%B3mo-evolucion%C3%B3-la-producci%C3%B3n-musical-en-Spotify-a-lo-largo-del-tiempo?">¶</a></h3><p>Se analiza la cantidad de canciones lanzadas por año desde 2009 hasta 2025.</p>
+<h3 id="4.3-How-has-music-production-on-Spotify-evolved-over-time?">4.3 How has music production on Spotify evolved over time?<a class="anchor-link" href="#4.3-How-has-music-production-on-Spotify-evolved-over-time?">¶</a></h3><p>The number of songs released per year from 2009 to 2025 is analyzed.</p>
 </div>
 </div>
 </div>
@@ -8552,7 +8552,7 @@ de contenido explícito, mientras que el pop y el indie muestran niveles más ba
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.4-%C2%BFCreci%C3%B3-el-contenido-expl%C3%ADcito-con-los-a%C3%B1os?">4.4 ¿Creció el contenido explícito con los años?<a class="anchor-link" href="#4.4-%C2%BFCreci%C3%B3-el-contenido-expl%C3%ADcito-con-los-a%C3%B1os?">¶</a></h3><p>Se desagrega la evolución temporal separando canciones explícitas de no explícitas.</p>
+<h3 id="4.4-Has-explicit-content-grown-over-the-years?">4.4 Has explicit content grown over the years?<a class="anchor-link" href="#4.4-Has-explicit-content-grown-over-the-years?">¶</a></h3><p>The temporal evolution is broken down separating explicit from non-explicit songs.</p>
 </div>
 </div>
 </div>
@@ -8614,7 +8614,7 @@ de contenido explícito, mientras que el pop y el indie muestran niveles más ba
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Top 5 géneros" src="explicito_por_ano.png"/></p>
+<p><img alt="Explicit content over time" src="explicito_por_ano.png"/></p>
 </div>
 </div>
 </div>
@@ -8626,8 +8626,8 @@ de contenido explícito, mientras que el pop y el indie muestran niveles más ba
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p><strong>Hallazgo:</strong> El contenido explícito creció sostenidamente desde 2015,
-reflejando un cambio cultural en los géneros dominantes de la plataforma.</p>
+<p><strong>Finding:</strong> Explicit content grew steadily since 2015,
+reflecting a cultural shift in the platform's dominant genres.</p>
 </blockquote>
 </div>
 </div>
@@ -8699,7 +8699,9 @@ reflejando un cambio cultural en los géneros dominantes de la plataforma.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Top 5 géneros" src="generos_top5.png"/></p>
+<h3 id="4.5-How-did-the-top-genres-evolve-over-time?">4.5 How did the top genres evolve over time?<a class="anchor-link" href="#4.5-How-did-the-top-genres-evolve-over-time?">¶</a></h3><p>The dataset is filtered for the <strong>5 genres with the most songs</strong> and their
+evolution is analyzed year by year.</p>
+<p><img alt="Top 5 genres" src="generos_top5.png"/></p>
 </div>
 </div>
 </div>
@@ -8749,7 +8751,7 @@ reflejando un cambio cultural en los géneros dominantes de la plataforma.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Top 5 géneros facet" src="generos_top_5_facet.png"/></p>
+<p><img alt="Top 5 genres facet" src="generos_top_5_facet.png"/></p>
 </div>
 </div>
 </div>
@@ -8760,30 +8762,30 @@ reflejando un cambio cultural en los géneros dominantes de la plataforma.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.6-%C2%BFTienen-m%C3%A1s-seguidores-los-artistas-m%C3%A1s-populares?">4.6 ¿Tienen más seguidores los artistas más populares?<a class="anchor-link" href="#4.6-%C2%BFTienen-m%C3%A1s-seguidores-los-artistas-m%C3%A1s-populares?">¶</a></h3><p>Análisis multidimensional de los <strong>20 artistas más populares</strong> de Spotify:</p>
+<h3 id="4.6-Do-more-popular-artists-have-more-followers?">4.6 Do more popular artists have more followers?<a class="anchor-link" href="#4.6-Do-more-popular-artists-have-more-followers?">¶</a></h3><p>Multidimensional analysis of Spotify's <strong>Top 20 most popular artists</strong>:</p>
 <table>
 <thead>
 <tr>
-<th>Dimensión</th>
+<th>Dimension</th>
 <th>Variable</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Eje X</td>
-<td>Cantidad de seguidores (escala logarítmica)</td>
+<td>X Axis</td>
+<td>Number of followers (logarithmic scale)</td>
 </tr>
 <tr>
-<td>Eje Y</td>
-<td>Popularidad del artista (0–100)</td>
+<td>Y Axis</td>
+<td>Artist popularity (0–100)</td>
 </tr>
 <tr>
-<td>Tamaño</td>
-<td>Cantidad de canciones en el dataset</td>
+<td>Size</td>
+<td>Number of songs in the dataset</td>
 </tr>
 <tr>
 <td>Color</td>
-<td>Género musical principal</td>
+<td>Main music genre</td>
 </tr>
 </tbody>
 </table>
@@ -8887,7 +8889,7 @@ reflejando un cambio cultural en los géneros dominantes de la plataforma.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72f94042">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0cd0b2bf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8898,21 +8900,20 @@ reflejando un cambio cultural en los géneros dominantes de la plataforma.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f203df57">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1e8588b4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Conclusiones">5. Conclusiones<a class="anchor-link" href="#5.-Conclusiones">¶</a></h2><ul>
-<li>El <strong>pop</strong> domina ampliamente Spotify en volumen de canciones</li>
-<li>El contenido <strong>explícito creció sostenidamente desde 2015</strong>, liderado por rap y hip-hop</li>
-<li><strong>No existe una correlación lineal perfecta</strong> entre seguidores y popularidad:
-artistas con menos seguidores pueden tener alta popularidad por reproducciones recientes</li>
-<li>La producción musical registrada en Spotify muestra un <strong>pico entre 2020 y 2023</strong></li>
+<h2 id="5.-Conclusions">5. Conclusions<a class="anchor-link" href="#5.-Conclusions">¶</a></h2><ul>
+<li><strong>Pop</strong> dominates Spotify by far in terms of song volume</li>
+<li><strong>Explicit content grew steadily since 2015</strong>, led by rap and hip-hop</li>
+<li><strong>There is no perfect linear correlation</strong> between followers and popularity: artists with fewer followers can have high popularity due to recent streams</li>
+<li>Music production recorded on Spotify shows a <strong>peak between 2020 and 2023</strong></li>
 </ul>
 <hr/>
-<p><em>Análisis realizado por Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
+<p><em>Analysis by Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
 </div>
 </div>
 </div>

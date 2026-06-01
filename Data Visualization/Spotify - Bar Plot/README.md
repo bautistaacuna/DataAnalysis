@@ -1,82 +1,124 @@
 # Spotify Global Music Analysis (2009–2025)
-Análisis exploratorio y visual del dataset global de Spotify, con foco en géneros musicales, tendencias temporales y los artistas más populares de la plataforma.
 
-## Contexto del problema
-¿Qué géneros musicales dominan Spotify? ¿Cómo evolucionó el contenido explícito a lo largo de los años? ¿Existe relación entre la popularidad de un artista y la cantidad de seguidores que tiene?
+Exploratory and visual analysis of Spotify's global dataset, focusing on music genres, temporal trends and the platform's most popular artists.
 
-Este análisis responde esas preguntas a través de visualizaciones interactivas construidas con **Plotly**.
+---
 
-## Estructura del proyecto
+## Problem Context
+
+Which music genres dominate Spotify? How has explicit content evolved over the years? Is there a relationship between an artist's popularity and their follower count?
+
+This analysis answers these questions through interactive visualizations built with **Plotly**.
+
+---
+
+## Project Structure
 
 ```
-Spotify - Bar/
-├── Spotify.ipynb              # Notebook principal con el análisis completo
-├── spotify_data clean.csv     # Dataset utilizado
-└── README.md                  # Este archivo
+Spotify - Bar Plot/
+├── README.md
+├── Spotify.ipynb
+├── spotify_data clean.csv
+├── generos_todos.png
+├── generos_top30.png
+├── generos_explicito.png
+├── canciones_por_ano.png
+├── explicito_por_ano.png
+├── generos_top5.png
+├── generos_top_5_facet.png
+└── artistas_top20.png
 ```
+
+---
 
 ## Dataset
-- **Fuente:** [Spotify Global Music Dataset 2009–2025 — Kaggle](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025)
-- **Registros:** Dataset global con canciones, artistas, géneros, popularidad y seguidores
-- **Variables clave:** `artist_name`, `artist_genres`, `artist_popularity`, `artist_followers`, `track_name`, `track_popularity`, `explicit`, `album_release_date`
 
-## Tecnologías utilizadas
+- **Source:** [Spotify Global Music Dataset 2009–2025 — Kaggle](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025)
+- **Description:** Global dataset with songs, artists, genres, popularity and followers
+- **Key variables:** `artist_name`, `artist_genres`, `artist_popularity`, `artist_followers`, `track_name`, `track_popularity`, `explicit`, `album_release_date`
+
+---
+
+## Technologies Used
+
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Wrangling-lightblue?logo=pandas)
-![Plotly](https://img.shields.io/badge/Plotly-Visualización-purple?logo=plotly)
+![Plotly](https://img.shields.io/badge/Plotly-Visualization-purple?logo=plotly)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
 
-## Metodología
-1. **Carga y exploración inicial** — shape, dtypes, primeras filas
-2. **Limpieza de datos:**
-   - Conversión de `album_release_date` a datetime y extracción del año
-   - Identificación y tratamiento de valores nulos
-   - Eliminación de duplicados
-   - Creación de columna `main_genre` a partir del primer género del artista
-3. **Visualizaciones** — 5 gráficos interactivos con Plotly
+---
 
-## Análisis y hallazgos
-### 1. Top 30 géneros musicales por cantidad de canciones
-Gráfico de barras con los géneros más representados en el dataset, excluyendo entradas sin género clasificado.
+## Methodology
 
-### 2. Contenido explícito por género
-Comparación del volumen de canciones explícitas vs no explícitas para los 30 géneros principales. Permite identificar qué géneros tienen mayor proporción de contenido explícito.
+1. **Initial load and exploration** — shape, dtypes, first rows
+2. **Data cleaning:**
+   - Converting `album_release_date` to datetime and extracting the year
+   - Identifying and handling null values
+   - Removing duplicates
+   - Creating `main_genre` column from the artist's first genre
+3. **Visualizations** — 8 interactive charts with Plotly
 
-### 3. Evolución de lanzamientos por año
-Serie temporal que muestra el crecimiento en la producción musical registrada en Spotify desde 2009 hasta 2025.
+---
 
-### 4. Lanzamientos explícitos vs no explícitos a lo largo del tiempo
-Análisis de cómo fue variando la presencia de contenido explícito año a año, revelando una tendencia de crecimiento sostenido.
+## Analysis and Findings
 
-### 5. Top 20 artistas: seguidores vs popularidad (Bubble Chart)
-Scatter plot multidimensional donde:
-- **Eje X:** Cantidad de seguidores (escala logarítmica)
-- **Eje Y:** Popularidad del artista (0–100)
-- **Tamaño de burbuja:** Cantidad de canciones en el dataset
-- **Color:** Género musical principal
+### 1. Top 30 music genres by song count
+Bar chart with the most represented genres in the dataset, excluding entries without a classified genre.
 
-## Conclusiones principales
-- El **pop** y sus subgéneros dominan ampliamente la plataforma en cantidad de canciones
-- El contenido explícito ha crecido de forma constante desde 2015, especialmente en géneros como **rap** y **hip-hop**
-- No existe una correlación lineal perfecta entre seguidores y popularidad: artistas con menos seguidores pueden tener alta popularidad por reproducciones recientes
-- La producción musical registrada en Spotify muestra un pico pronunciado entre 2020 y 2023
+### 2. Explicit content by genre
+Comparison of explicit vs non-explicit song volume for the top 30 genres. Identifies which genres have the highest proportion of explicit content.
 
-## Cómo ejecutar el proyecto
+### 3. Song releases evolution over time
+Time series showing the growth in music production recorded on Spotify from 2009 to 2025.
+
+### 4. Explicit vs non-explicit releases over time
+Analysis of how explicit content presence varied year by year, revealing a sustained growth trend.
+
+### 5. Top 5 genres evolution over time
+Filtered view of the 5 most popular genres and their evolution year by year.
+
+### 6. Top 20 artists: followers vs popularity (Bubble Chart)
+Multidimensional scatter plot where:
+- **X Axis:** Number of followers (logarithmic scale)
+- **Y Axis:** Artist popularity (0–100)
+- **Bubble size:** Number of songs in the dataset
+- **Color:** Main music genre
+
+---
+
+## Main Conclusions
+
+- **Pop** and its subgenres dominate the platform by far in terms of song count
+- Explicit content has grown steadily since 2015, especially in **rap** and **hip-hop** genres
+- There is no perfect linear correlation between followers and popularity: artists with fewer followers can have high popularity due to recent streams
+- Music production recorded on Spotify shows a pronounced peak between 2020 and 2023
+
+---
+
+## How to Run the Project
+
 ```bash
-# 1. Clonar el repositorio
+# 1. Clone the repository
 git clone https://github.com/bautistaacuna/DataAnalysis.git
 
-# 2. Instalar dependencias
-pip install pandas plotly
+# 2. Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Mac/Linux
 
-# 3. Abrir el notebook
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Open the notebook
 jupyter notebook Spotify.ipynb
 ```
 
-> El dataset `spotify_data clean.csv` debe estar en la misma carpeta que el notebook.
+> The `spotify_data clean.csv` file must be in the same folder as the notebook.
 
-## Autor
+---
+
+## Author
 
 **Juan Bautista Acuña**
-Data Analyst | SQL • Python • Power BI
+Data Analyst | SQL · Python · Power BI
 [GitHub](https://github.com/bautistaacuna) · [Email](mailto:bautistaacuna@gmail.com)
