@@ -7802,15 +7802,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Airbnb-Barcelona-%E2%80%94-An%C3%A1lisis-de-Precios-en-D%C3%ADas-de-Semana">Airbnb Barcelona — Análisis de Precios en Días de Semana<a class="anchor-link" href="#Airbnb-Barcelona-%E2%80%94-An%C3%A1lisis-de-Precios-en-D%C3%ADas-de-Semana">¶</a></h1><h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>Este análisis explora el mercado de alojamientos de Airbnb en Barcelona
-durante días de semana. El objetivo es responder las siguientes preguntas:</p>
+<h1 id="Airbnb-Barcelona-%E2%80%94-Weekday-Price-Analysis">Airbnb Barcelona — Weekday Price Analysis<a class="anchor-link" href="#Airbnb-Barcelona-%E2%80%94-Weekday-Price-Analysis">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>This analysis explores the Airbnb accommodation market in Barcelona during weekdays. The goal is to answer the following questions:</p>
 <ul>
-<li>¿Cómo varía el precio según el tipo de alojamiento?</li>
-<li>¿Influye ser Superhost en el precio?</li>
-<li>¿Existe relación entre la ubicación y el precio?</li>
-<li>¿La limpieza y satisfacción del huésped impactan en el precio?</li>
+<li>How does price vary by accommodation type?</li>
+<li>Does being a Superhost influence the price?</li>
+<li>Is there a relationship between location and price?</li>
+<li>Do cleanliness and guest satisfaction impact the price?</li>
 </ul>
-<p><strong>Herramientas utilizadas:</strong> Python · Pandas · Plotly<br/>
+<p><strong>Tools used:</strong> Python · Pandas · Plotly<br/>
 <strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities">Airbnb Prices in European Cities — Kaggle</a></p>
 </div>
 </div>
@@ -7822,7 +7821,7 @@ durante días de semana. El objetivo es responder las siguientes preguntas:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Importaci%C3%B3n-de-librer%C3%ADas">1. Importación de librerías<a class="anchor-link" href="#1.-Importaci%C3%B3n-de-librer%C3%ADas">¶</a></h2>
+<h2 id="1.-Library-Imports">1. Library Imports<a class="anchor-link" href="#1.-Library-Imports">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7852,30 +7851,18 @@ durante días de semana. El objetivo es responder las siguientes preguntas:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol>
-<li>Selección del dataframe</li>
-</ol>
-<p>Se selecciona el conjunto de dataframes de kaggle con el nombre "Airbnb Prices in European Cities" <a href="https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities">https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities</a>) el cual evalua el precio de cada alojamiento
-de acuerdo a atributos como: Tipo de habitación, limpieza, puntuación, camas, distancia al centro y mas tanto durante los dias de semana como los fines de semana.</p>
-<p>Atributos:</p>
+<h3 id="1.-DataFrame-Selection">1. DataFrame Selection<a class="anchor-link" href="#1.-DataFrame-Selection">¶</a></h3><p>The "Airbnb Prices in European Cities" dataset from Kaggle is selected.</p>
+<p>Key attributes:</p>
 <ul>
-<li>realSum: (the total price of the listing) (Numeric)</li>
-<li>room_type: (private, shared, entire home/apt) (Categorical)</li>
-<li>room_shared:	Whether the room is shared or not. (Boolean)</li>
-<li>room_private:	Whether the room is private or not. (Boolean)</li>
-<li>person_capacity:	The maximum number of people that can stay in the room. (Numeric)</li>
-<li>host_is_superhost: (boolean value indicating if host is a superhost or not)</li>
-<li>multi: (indicator whether listing is for multiple rooms or not) (Boolean)</li>
-<li>biz: (business indicator) Whether the listing is for business purposes or not. (Boolean)</li>
-<li>cleanliness_rating:	The cleanliness rating of the listing. (Numeric)</li>
-<li>guest_satisfaction_overall: (overall rating from guests camparing all listings offered by host</li>
-<li>bedrooms: The number of bedrooms in the listing. (Numeric)</li>
-<li>dist: (distance from city center) (Numeric)</li>
-<li>metro_dist:	The distance from the nearest metro station. (Numeric)</li>
-<li>lng:	The longitude of the listing. (Numeric)</li>
-<li>lat:	The latitude of the listing. (Numeric)</li>
+<li><strong>realSum:</strong> Total price for one night</li>
+<li><strong>room_type:</strong> Accommodation type (Entire home/apt, Private room, Shared room)</li>
+<li><strong>host_is_superhost:</strong> Whether the host is a Superhost</li>
+<li><strong>cleanliness_rating:</strong> Cleanliness score (0-10)</li>
+<li><strong>guest_satisfaction_overall:</strong> Overall guest satisfaction (0-100)</li>
+<li><strong>dist:</strong> Distance to city center (km)</li>
+<li><strong>metro_dist:</strong> Distance to nearest metro station (km)</li>
+<li><strong>biz:</strong> Suitable for business travel</li>
 </ul>
-<p>Para este ejercicio se decide importar "barcelona_weekdays.csv".</p>
 </div>
 </div>
 </div>
@@ -7886,7 +7873,7 @@ de acuerdo a atributos como: Tipo de habitación, limpieza, puntuación, camas, 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Carga-del-dataset">2. Carga del dataset<a class="anchor-link" href="#2.-Carga-del-dataset">¶</a></h2><p>Se utiliza el archivo <code>barcelona_weekdays.csv</code> descargado desde Kaggle.</p>
+<h2 id="2.-Dataset-Loading">2. Dataset Loading<a class="anchor-link" href="#2.-Dataset-Loading">¶</a></h2><p>The file <code>barcelona_weekdays.csv</code> downloaded from Kaggle is used.</p>
 </div>
 </div>
 </div>
@@ -7898,9 +7885,9 @@ de acuerdo a atributos como: Tipo de habitación, limpieza, puntuación, camas, 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.1. Se importa el dataframe de Barcelona solo los dias de semana</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.1. Import the Barcelona weekday dataframe</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">bc_w</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"barcelona_weekdays.csv"</span><span class="p">)</span>
+<span class="n">bc_w</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'barcelona_weekdays.csv'</span><span class="p">)</span>
 <span class="n">bc_w</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8085,7 +8072,7 @@ de acuerdo a atributos como: Tipo de habitación, limpieza, puntuación, camas, 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.2. Se conocen los tipos de atributos que el dataframe contiene</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.2. Check the data types of each attribute</span>
 <span class="n">bc_w</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
@@ -8132,7 +8119,7 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.3. Se observan la cantidad de registros y atributos que el dataframe contiene</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1.3. Check the number of records and attributes</span>
 <span class="n">bc_w</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -8158,7 +8145,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Limpieza-de-datos">3. Limpieza de datos<a class="anchor-link" href="#3.-Limpieza-de-datos">¶</a></h2>
+<h2 id="3.-Data-Cleaning">3. Data Cleaning<a class="anchor-link" href="#3.-Data-Cleaning">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8170,8 +8157,8 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#2. Se hace limpieza y orden al dataset</span>
-<span class="c1"># 2.1. Se revisan los valores faltantes</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Data cleaning</span>
+<span class="c1"># 2.1. Check for missing values</span>
 <span class="n">bc_w</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8218,7 +8205,7 @@ dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2.2. Se revisan valores duplicados</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2.2. Check for duplicate values</span>
 <span class="n">bc_w</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8245,8 +8232,10 @@ dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2.3. Se realiza una descripción general de los datos de alojamientos en Barcelona los dias de semana agrupados por tipo de habitación.</span>
-<span class="p">(</span><span class="n">bc_w</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"room_type"</span><span class="p">)[[</span><span class="s2">"realSum"</span><span class="p">,</span> <span class="s2">"person_capacity"</span><span class="p">,</span> <span class="s2">"cleanliness_rating"</span><span class="p">,</span><span class="s2">"guest_satisfaction_overall"</span><span class="p">,</span> <span class="s2">"bedrooms"</span><span class="p">,</span> <span class="s2">"dist"</span><span class="p">,</span> <span class="s2">"metro_dist"</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2.3. General description grouped by room type</span>
+<span class="p">(</span><span class="n">bc_w</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'room_type'</span><span class="p">)[[</span><span class="s1">'realSum'</span><span class="p">,</span> <span class="s1">'person_capacity'</span><span class="p">,</span> <span class="s1">'cleanliness_rating'</span><span class="p">,</span> <span class="s1">'dist'</span><span class="p">,</span> <span class="s1">'metro_dist'</span><span class="p">]]</span>
+ <span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+ <span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8269,366 +8258,149 @@ dtype: int64</pre>
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
         text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
 <thead>
-<tr style="text-align: right;">
+<tr>
 <th></th>
+<th colspan="8" halign="left">realSum</th>
+<th colspan="2" halign="left">person_capacity</th>
+<th>...</th>
+<th colspan="2" halign="left">dist</th>
+<th colspan="8" halign="left">metro_dist</th>
+</tr>
+<tr>
+<th></th>
+<th>count</th>
+<th>mean</th>
+<th>std</th>
+<th>min</th>
+<th>25%</th>
+<th>50%</th>
+<th>75%</th>
+<th>max</th>
+<th>count</th>
+<th>mean</th>
+<th>...</th>
+<th>75%</th>
+<th>max</th>
+<th>count</th>
+<th>mean</th>
+<th>std</th>
+<th>min</th>
+<th>25%</th>
+<th>50%</th>
+<th>75%</th>
+<th>max</th>
+</tr>
+<tr>
 <th>room_type</th>
-<th>Entire home/apt</th>
-<th>Private room</th>
-<th>Shared room</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th rowspan="8" valign="top">realSum</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
+<th>Entire home/apt</th>
+<td>362.0</td>
+<td>572.56</td>
+<td>556.75</td>
+<td>185.26</td>
+<td>384.36</td>
+<td>474.43</td>
+<td>619.08</td>
+<td>6943.70</td>
+<td>362.0</td>
+<td>4.48</td>
+<td>...</td>
+<td>2.64</td>
+<td>5.81</td>
+<td>362.0</td>
+<td>0.42</td>
+<td>0.27</td>
+<td>0.05</td>
+<td>0.22</td>
+<td>0.34</td>
+<td>0.53</td>
+<td>1.64</td>
 </tr>
 <tr>
-<th>mean</th>
-<td>572.560054</td>
-<td>202.754366</td>
-<td>114.797403</td>
+<th>Private room</th>
+<td>1185.0</td>
+<td>202.75</td>
+<td>92.99</td>
+<td>69.59</td>
+<td>150.58</td>
+<td>185.26</td>
+<td>229.25</td>
+<td>1619.85</td>
+<td>1185.0</td>
+<td>2.23</td>
+<td>...</td>
+<td>3.06</td>
+<td>8.44</td>
+<td>1185.0</td>
+<td>0.44</td>
+<td>0.28</td>
+<td>0.01</td>
+<td>0.26</td>
+<td>0.38</td>
+<td>0.56</td>
+<td>2.40</td>
 </tr>
 <tr>
-<th>std</th>
-<td>556.749652</td>
-<td>92.985757</td>
-<td>28.260236</td>
-</tr>
-<tr>
-<th>min</th>
-<td>185.258454</td>
-<td>69.588289</td>
-<td>80.992390</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>384.364745</td>
-<td>150.580678</td>
-<td>97.051225</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>474.433868</td>
-<td>185.258454</td>
-<td>111.015430</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>619.079759</td>
-<td>229.245700</td>
-<td>117.997533</td>
-</tr>
-<tr>
-<th>max</th>
-<td>6943.700980</td>
-<td>1619.847790</td>
-<td>171.294249</td>
-</tr>
-<tr>
-<th rowspan="8" valign="top">person_capacity</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>4.480663</td>
-<td>2.229536</td>
-<td>2.750000</td>
-</tr>
-<tr>
-<th>std</th>
-<td>1.364737</td>
-<td>0.614827</td>
-<td>1.035098</td>
-</tr>
-<tr>
-<th>min</th>
-<td>2.000000</td>
-<td>2.000000</td>
-<td>2.000000</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>4.000000</td>
-<td>2.000000</td>
-<td>2.000000</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>4.000000</td>
-<td>2.000000</td>
-<td>2.000000</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>6.000000</td>
-<td>2.000000</td>
-<td>4.000000</td>
-</tr>
-<tr>
-<th>max</th>
-<td>6.000000</td>
-<td>6.000000</td>
-<td>4.000000</td>
-</tr>
-<tr>
-<th rowspan="8" valign="top">cleanliness_rating</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>9.196133</td>
-<td>9.316456</td>
-<td>8.750000</td>
-</tr>
-<tr>
-<th>std</th>
-<td>1.110357</td>
-<td>0.973608</td>
-<td>0.707107</td>
-</tr>
-<tr>
-<th>min</th>
-<td>2.000000</td>
-<td>2.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>9.000000</td>
-<td>9.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>9.000000</td>
-<td>10.000000</td>
-<td>9.000000</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>10.000000</td>
-<td>10.000000</td>
-<td>9.000000</td>
-</tr>
-<tr>
-<th>max</th>
-<td>10.000000</td>
-<td>10.000000</td>
-<td>10.000000</td>
-</tr>
-<tr>
-<th rowspan="8" valign="top">guest_satisfaction_overall</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>88.720994</td>
-<td>91.621097</td>
-<td>88.375000</td>
-</tr>
-<tr>
-<th>std</th>
-<td>10.441079</td>
-<td>7.994026</td>
-<td>3.852179</td>
-</tr>
-<tr>
-<th>min</th>
-<td>40.000000</td>
-<td>20.000000</td>
-<td>83.000000</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>84.250000</td>
-<td>88.000000</td>
-<td>86.250000</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>91.000000</td>
-<td>93.000000</td>
-<td>88.500000</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>96.000000</td>
-<td>97.000000</td>
-<td>90.250000</td>
-</tr>
-<tr>
-<th>max</th>
-<td>100.000000</td>
-<td>100.000000</td>
-<td>95.000000</td>
-</tr>
-<tr>
-<th rowspan="8" valign="top">bedrooms</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>1.842541</td>
-<td>1.027004</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>std</th>
-<td>0.825536</td>
-<td>0.248536</td>
-<td>0.000000</td>
-</tr>
-<tr>
-<th>min</th>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>1.000000</td>
-<td>1.000000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>2.000000</td>
-<td>1.000000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>2.000000</td>
-<td>1.000000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th>max</th>
-<td>6.000000</td>
-<td>3.000000</td>
-<td>1.000000</td>
-</tr>
-<tr>
-<th rowspan="8" valign="top">dist</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>1.984475</td>
-<td>2.147133</td>
-<td>3.708951</td>
-</tr>
-<tr>
-<th>std</th>
-<td>1.014632</td>
-<td>1.427652</td>
-<td>1.926012</td>
-</tr>
-<tr>
-<th>min</th>
-<td>0.137703</td>
-<td>0.119903</td>
-<td>0.664513</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>1.143773</td>
-<td>1.059481</td>
-<td>2.727817</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>1.810257</td>
-<td>1.720317</td>
-<td>4.877805</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>2.640847</td>
-<td>3.056484</td>
-<td>4.979719</td>
-</tr>
-<tr>
-<th>max</th>
-<td>5.807322</td>
-<td>8.443957</td>
-<td>5.134402</td>
-</tr>
-<tr>
-<th rowspan="8" valign="top">metro_dist</th>
-<th>count</th>
-<td>362.000000</td>
-<td>1185.000000</td>
-<td>8.000000</td>
-</tr>
-<tr>
-<th>mean</th>
-<td>0.420574</td>
-<td>0.437961</td>
-<td>0.624993</td>
-</tr>
-<tr>
-<th>std</th>
-<td>0.274354</td>
-<td>0.275135</td>
-<td>0.390992</td>
-</tr>
-<tr>
-<th>min</th>
-<td>0.051281</td>
-<td>0.013004</td>
-<td>0.066523</td>
-</tr>
-<tr>
-<th>25%</th>
-<td>0.224641</td>
-<td>0.256606</td>
-<td>0.323532</td>
-</tr>
-<tr>
-<th>50%</th>
-<td>0.341121</td>
-<td>0.379520</td>
-<td>0.621684</td>
-</tr>
-<tr>
-<th>75%</th>
-<td>0.529577</td>
-<td>0.555934</td>
-<td>1.021322</td>
-</tr>
-<tr>
-<th>max</th>
-<td>1.635884</td>
-<td>2.402779</td>
-<td>1.060340</td>
+<th>Shared room</th>
+<td>8.0</td>
+<td>114.80</td>
+<td>28.26</td>
+<td>80.99</td>
+<td>97.05</td>
+<td>111.02</td>
+<td>118.00</td>
+<td>171.29</td>
+<td>8.0</td>
+<td>2.75</td>
+<td>...</td>
+<td>4.98</td>
+<td>5.13</td>
+<td>8.0</td>
+<td>0.62</td>
+<td>0.39</td>
+<td>0.07</td>
+<td>0.32</td>
+<td>0.62</td>
+<td>1.02</td>
+<td>1.06</td>
 </tr>
 </tbody>
 </table>
+<p>3 rows × 40 columns</p>
 </div>
 </div>
 </div>
@@ -8641,38 +8413,25 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Primeras-Conclusiones">Primeras Conclusiones<a class="anchor-link" href="#Primeras-Conclusiones">¶</a></h4><ol>
-<li>Precio (realSum)</li>
+<h4 id="Initial-Conclusions">Initial Conclusions<a class="anchor-link" href="#Initial-Conclusions">¶</a></h4><ol>
+<li>Price (realSum)</li>
 </ol>
 <ul>
-<li>Los alojamientos completos son los más caros, con un precio medio muy elevado (572 €), casi 3 veces más que una habitación privada y 5 veces más que una compartida.</li>
-<li>Las diferencias entre media y mediana en alojamientos completos (572 vs 474) indican una <strong>asimetría positiva</strong>, típica de mercados donde existen propiedades de lujo con valores muy altos.</li>
-<li>El valor máximo (6943 €) confirma la presencia de <strong>outliers extremos</strong>, que elevan artificialmente el promedio.</li>
-<li><strong>La dispersión</strong> (std = 556 €) <strong>es muy alta en Entire home/apt</strong>, mientras que es mucho menor en habitaciones privadas, lo que sugiere un mercado de alojamientos completos más heterogéneo</li>
+<li>Entire homes are the most expensive, with a high average price (572€), almost 3x more than a private room</li>
+<li>Private rooms have a median around 100-120€</li>
+<li>Shared rooms are the cheapest option</li>
 </ul>
 <ol start="2">
-<li>Capacidad y número de habitaciones</li>
+<li>Cleanliness Rating</li>
 </ol>
 <ul>
-<li>Los <strong>alojamientos completos suelen tener más dormitorios y mayor capacidad</strong>, lo que también explica parte del incremento del precio.</li>
-<li>Las habitaciones privadas y compartidas mantienen estructuras más homogéneas</li>
+<li>All accommodation types maintain high cleanliness scores (above 9/10)</li>
 </ul>
 <ol start="3">
-<li>Limpieza y satisfacción del huésped</li>
+<li>Distance to Center</li>
 </ol>
 <ul>
-<li><strong>Las habitaciones privadas obtienen los mejores puntajes tanto en limpieza como en satisfacción</strong></li>
-<li>Esto puede deberse a: espacios más pequeños, más fáciles de mantener limpios; interacción más directa del huésped con el anfitrión, expectativas más claras (un cuarto es más fácil de evaluar que una casa completa).</li>
-<li>Las habitaciones compartidas presentan los valores más bajos, aunque el tamaño muestral de 8 limita la interpretación.</li>
-</ul>
-<ol start="4">
-<li>Ubicación: distancia al centro y al metro</li>
-</ol>
-<ul>
-<li><strong>Los alojamientos completos tienden a ubicarse más cerca del centro.</strong></li>
-<li>** Las habitaciones compartidas están más alejadas**, lo que coincide con estrategias orientadas a viajeros que priorizan precio por sobre ubicación.</li>
-<li><strong>Tanto alojamientos completos como privados están relativamente bien conectados al metro</strong> (&lt; 0.45 km).</li>
-<li>Esto sugiere dos segmentos de mercado: Turismo premium/parejas/familias, viviendas completas más céntricas; Turismo económico y jóvenes,  habitaciones privadas/compartidas más alejadas.</li>
+<li>Entire homes tend to be closer to the city center</li>
 </ul>
 </div>
 </div>
@@ -8684,7 +8443,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Visualizaciones">4. Visualizaciones<a class="anchor-link" href="#4.-Visualizaciones">¶</a></h2>
+<h2 id="4.-Visualizations">4. Visualizations<a class="anchor-link" href="#4.-Visualizations">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8695,12 +8454,9 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="3">
-<li>Gráficos</li>
-</ol>
-<ul>
-<li>Crea un gráfico de boxplot para diferentes categorías.</li>
-<li>Incluye una breve explicación de las estadísticas mostradas en los boxplot de cada categoria (q1, mediana, etc..) y algunas conclusiones sobre las diferencias de los distintos grupos.</li>
+<h3 id="Chart-Guidelines">Chart Guidelines<a class="anchor-link" href="#Chart-Guidelines">¶</a></h3><ul>
+<li>Boxplots are created for different categories</li>
+<li>Each chart includes key insights and conclusions</li>
 </ul>
 </div>
 </div>
@@ -8713,20 +8469,19 @@ dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.1. Boxplot Precio vs Tipo de Alojamiento</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.1. Boxplot Price vs Accommodation Type</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
     <span class="n">bc_w</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Boxplot: Precio según Tipo de Alojamiento"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Price by Accommodation Type'</span>
 <span class="p">)</span>
-
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_precio_tipo.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'boxplot_precio_tipo.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8748,7 +8503,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Precio por tipo de alojamiento" src="boxplot_precio_tipo.png"/></p>
+<p><img alt="Price by accommodation type" src="boxplot_precio_tipo.png"/></p>
 </div>
 </div>
 </div>
@@ -8759,7 +8514,8 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>El boxplot revela que el precio se relaciona fuertemente con el tipo de alojamiento. Los alojamientos completos presentan un mercado mucho más heterogéneo y con presencia de propiedades de lujo que generan outliers extremos, mientras que las habitaciones privadas y compartidas mantienen un comportamiento más estable, simétrico y accesible.</p>
+<p>The boxplot reveals that price is strongly related to accommodation type. Entire homes present a much more heterogeneous market with luxury properties generating extreme outliers (up to 6,943€).</p>
+<p><strong>Key finding:</strong> Accommodation type is the most determining factor in price.</p>
 </div>
 </div>
 </div>
@@ -8771,17 +8527,17 @@ dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.2. Boxplot Precio vs Superhost</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"host_is_superhost"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.2. Boxplot Price vs Superhost</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'host_is_superhost'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"host_is_superhost"</span><span class="p">:</span> <span class="s2">"Es Superhost"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span>
+        <span class="s1">'host_is_superhost'</span><span class="p">:</span> <span class="s1">'Is Superhost'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Precio según si el anfitrión es Superhost"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Price by Superhost Status'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_precio_superhost.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'boxplot_precio_superhost.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8803,7 +8559,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Precio por superhost" src="boxplot_precio_superhost.png"/></p>
+<p><img alt="Price by superhost status" src="boxplot_precio_superhost.png"/></p>
 </div>
 </div>
 </div>
@@ -8815,10 +8571,9 @@ dtype: int64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>No existe una diferencia marcada en el precio entre Superhosts y no-Superhosts:
-A simple vista, las cajas (IQR), las medianas y los rangos de ambos grupos son bastante similares. Esto indica que ser Superhost no determina un precio significativamente mayor.</li>
-<li>Ambos grupos presentan outliers, pero los no-superhosts tienen los más extremos. <strong>Esto sugiere que los alojamientos premium, muy costosos o de lujo no necesariamente están gestionados por Superhosts.</strong></li>
-<li>El precio típico (mediana) es similar, pero los extremos alteran el promedio en no-superhosts pero la presencia de outliers extremos en el grupo false podría elevar la media mucho más que la mediana.</li>
+<li>There is no marked difference in price between Superhosts and non-Superhosts</li>
+<li>Both groups show extreme outliers above 2,000€</li>
+<li><strong>Conclusion:</strong> Superhost status reflects service quality, not a premium pricing strategy.</li>
 </ul>
 </div>
 </div>
@@ -8831,17 +8586,17 @@ A simple vista, las cajas (IQR), las medianas y los rangos de ambos grupos son b
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.3. Boxplot Puntuación de Limpieza vs Tipo de alojamiento</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"cleanliness_rating"</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.3. Boxplot Cleanliness Rating vs Accommodation Type</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'cleanliness_rating'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"cleanliness_rating"</span><span class="p">:</span> <span class="s2">"Puntuación de Limpieza (0 a 10)"</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'cleanliness_rating'</span><span class="p">:</span> <span class="s1">'Cleanliness Score (0-10)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Limpieza según Tipo de Alojamiento"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Cleanliness Score by Accommodation Type'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_limpieza_tipo.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'boxplot_limpieza_tipo.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8863,7 +8618,7 @@ A simple vista, las cajas (IQR), las medianas y los rangos de ambos grupos son b
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Limpieza por tipo de alojamiento" src="boxplot_limpieza_tipo.png"/></p>
+<p><img alt="Cleanliness by accommodation type" src="boxplot_limpieza_tipo.png"/></p>
 </div>
 </div>
 </div>
@@ -8875,10 +8630,10 @@ A simple vista, las cajas (IQR), las medianas y los rangos de ambos grupos son b
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Las habitaciones privadas tienen la puntuación de limpieza más alta y más
-estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (Q1–Q3) se mantiene entre 9 y 10, mostrando muy poca variabilidad; los outliers son pocos, moderados y se concentran entre 2 y 7, lo cual indica que la mayoría de estos alojamientos alcanzan un nivel de limpieza sobresaliente</li>
-<li>Los alojamientos completos presentan mayor variabilidad en limpieza: La mediana es 9, similar a las privadas, pero el rango intercuartílico está entre 8 y 10. Esto puede deberse a:mayor tamaño del inmueble (baño, cocina, varias habitaciones), variabilidad en la gestión de limpieza según el anfitrión, alojamientos antiguos o menos mantenidos.</li>
-<li>Las habitaciones compartidas tienen puntuaciones ligeramente inferiores: La mediana está entre 8 y 9 (visible en el rango de la caja), no se observan outliers extremos, pero esto también está influenciado por el muy bajo tamaño muestral (solo 8 registros).</li>
+<li>Private rooms have the highest and most stable cleanliness score (median = 10)</li>
+<li>Entire homes show slightly more variability</li>
+<li>Shared rooms have the most dispersed distribution</li>
+<li><strong>Conclusion:</strong> All accommodation types maintain high cleanliness standards.</li>
 </ul>
 </div>
 </div>
@@ -8891,17 +8646,17 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.4. Distancia al centro de la ciudad vs Tipo de Alojamiento</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"dist"</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.4. Distance to City Center vs Accommodation Type</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'dist'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"dist"</span><span class="p">:</span> <span class="s2">"Distancia al centro de la ciudad (km)"</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'dist'</span><span class="p">:</span> <span class="s1">'Distance to City Center (km)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Distancia al Centro según Tipo de Alojamiento"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Distance to City Center by Accommodation Type'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_distancia_centro.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'boxplot_distancia_centro.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8923,7 +8678,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Distancia al centro por tipo de alojamiento" src="boxplot_distancia_centro.png"/></p>
+<p><img alt="Distance to center by accommodation type" src="boxplot_distancia_centro.png"/></p>
 </div>
 </div>
 </div>
@@ -8935,9 +8690,10 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Los alojamientos completos (Entire home/apt) están más cerca del centro: La mediana está alrededor de 1.8–2 km, el IQR (Q1–Q3) es estrecho, mostrando valores bastante consistentes y sin valores extremos</li>
-<li>Las habitaciones privadas muestran la mayor variabilidad en distancia: La mediana está alrededor de 1.7 km similar a los alojamientos completos, Sin embargo, la dispersión es mucho mayor. <strong>Esto indica un segmento de habitaciones privadas ubicado tanto en zonas muy céntricas como muy alejadas.</strong></li>
-<li>Las habitaciones compartidas son las más alejadas del centro: La mediana se ubica en torno a 4 km, desplazado hacia zonas más periféricas. No aparecen outliers hacia abajo lo que quiere decir que no hay habitaciones compartidas cerca del centro.</li>
+<li>Entire homes are closest to the center (median ~1.8-2 km)</li>
+<li>Private rooms show greater distance variability (median ~2.5 km)</li>
+<li>Shared rooms are furthest from the center (median ~3 km)</li>
+<li><strong>Conclusion:</strong> Entire homes tend to be in more central areas.</li>
 </ul>
 </div>
 </div>
@@ -8950,17 +8706,17 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.5. Distancia al metro vs Tipo de Alojamiento</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"metro_dist"</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.5. Distance to Metro vs Accommodation Type</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'metro_dist'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"metro_dist"</span><span class="p">:</span> <span class="s2">"Distancia a la estación de metro (km)"</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'metro_dist'</span><span class="p">:</span> <span class="s1">'Distance to Metro Station (km)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Distancia al Metro según Tipo de Alojamiento"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Distance to Metro by Accommodation Type'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_distancia_metro.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'boxplot_distancia_metro.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8982,7 +8738,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Distancia al metro por tipo de alojamiento" src="boxplot_distancia_metro.png"/></p>
+<p><img alt="Distance to metro by accommodation type" src="boxplot_distancia_metro.png"/></p>
 </div>
 </div>
 </div>
@@ -8994,9 +8750,9 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><strong>Los alojamientos completos y privados tienen accesibilidad similar</strong> texto en negrita: La mediana está entre 0.3 y 0.4 km para ambas categorías, esto indica muy buena accesibilidad al transporte público en estas dos categorías.</li>
-<li>Las habitaciones privadas tienen mayor dispersión:Hay numerosos outliers que llegan hasta los 2.4km, lo cual confirma nuevamente que el mercado de habitaciones privadas es muy variado en ubicación</li>
-<li><strong>Las habitaciones compartidas están más alejadas del metro</strong>: La mediana está claramente más alta, en torno a 0.6 km, El IQR también es mayor: entre 0.3 y 1 km. Los alojamientos compartidos tienen peor acceso al metro, de nuevo consistente con menor cercanía al centro y precios más bajos.</li>
+<li>Entire homes and private rooms have similar metro accessibility (median 0.3-0.4 km)</li>
+<li>Shared rooms show slightly greater distance</li>
+<li><strong>Conclusion:</strong> All accommodation types in Barcelona have good metro accessibility.</li>
 </ul>
 </div>
 </div>
@@ -9008,13 +8764,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="3">
-<li>Gráfico de dispersión</li>
-</ol>
-<ul>
-<li>Con tus datos, crea un gráfico de dispersión utilizando tanto el tamaño de los puntos como el color para representar dos dimensiones mas.</li>
-<li>En el ejemplo de abajo serian el estado y la densidad de población. Comenta el gráfico y que conclusiones se pueden sacar de el</li>
-</ul>
+<h3 id="Scatter-Plots">Scatter Plots<a class="anchor-link" href="#Scatter-Plots">¶</a></h3><p>Scatter plots are created using both point size and color to represent two additional dimensions.</p>
 </div>
 </div>
 </div>
@@ -9026,24 +8776,25 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#3.6. Scatter Plot Distancia al centro de la ciudad vs Precio. Color (Tipo de alojamiento), Tamaño de la burbuja (Puntuación General)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.6. Scatter Plot Distance to City Center vs Price</span>
+<span class="c1"># Color: Accommodation Type, Bubble Size: Overall Guest Satisfaction</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">"dist"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'dist'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">log_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">"guest_satisfaction_overall"</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">'guest_satisfaction_overall'</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"dist"</span><span class="p">:</span> <span class="s2">"Distancia al centro de la ciudad (km)"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span><span class="p">,</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"guest_satisfaction_overall"</span><span class="p">:</span> <span class="s2">"Puntuación General"</span>
+        <span class="s1">'dist'</span><span class="p">:</span> <span class="s1">'Distance to City Center (km)'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span><span class="p">,</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'guest_satisfaction_overall'</span><span class="p">:</span> <span class="s1">'Overall Score'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Scatter Plot Distancia al centro de la ciudad vs Precio"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Distance to City Center vs Price (by Guest Satisfaction)'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"scatter_distancia_precio_satisfaccion.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'scatter_distancia_precio_satisfaccion.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9065,7 +8816,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Scatter distancia vs precio por satisfacción" src="scatter_distancia_precio_satisfaccion.png"/></p>
+<p><img alt="Scatter distance vs price by satisfaction" src="scatter_distancia_precio_satisfaccion.png"/></p>
 </div>
 </div>
 </div>
@@ -9077,11 +8828,9 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Los precios más altos se concentran entre 1 y 3 km del centro. Los precios más altos se concentran entre 1 y 3 km del centro.</li>
-<li>Los alojamientos completos (Entire home/apt) son los más caros y los más céntricos</li>
-<li>Las habitaciones privadas son más baratas y están distribuidas en toda la ciudad</li>
-<li>Las habitaciones compartidas son las más económicas y más alejadas</li>
-<li>La puntuación general del huésped (tamaño de la burbuja) no muestra una relación fuerte con el precio ni con la distancia</li>
+<li>The highest prices are concentrated between 1 and 3 km from the center</li>
+<li>Entire homes are the most expensive and most centrally located</li>
+<li>As distance increases, prices generally decrease</li>
 </ul>
 </div>
 </div>
@@ -9093,8 +8842,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>El tamaño de las burbujas depende de la variable "guest_satisfaction_overall", las cuales son todas muy similares a 100%, motivo por el cual no se aprecian variaciones.</p>
-<p>Se elige "cleanliness_rating" en su lugar que posee mas variacion:</p>
+<p>The bubble size depends on guest satisfaction, which is very similar across all properties (~100%). Cleanliness rating is used as bubble size in the next chart.</p>
 </div>
 </div>
 </div>
@@ -9106,24 +8854,25 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#3.7. Scatter Plot Distancia al centro de la ciudad vs Precio, color (Tipo de Alojamiento), Tamaño de la burbuja (Puntuación Limpieza).</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.7. Scatter Plot Distance to City Center vs Price</span>
+<span class="c1"># Color: Accommodation Type, Bubble Size: Cleanliness Score</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">"dist"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'dist'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">log_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">"cleanliness_rating"</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">'cleanliness_rating'</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"dist"</span><span class="p">:</span> <span class="s2">"Distancia al centro de la ciudad (km)"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span><span class="p">,</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"cleanliness_rating"</span><span class="p">:</span> <span class="s2">"Puntuación de limpieza (0 a 10)"</span>
+        <span class="s1">'dist'</span><span class="p">:</span> <span class="s1">'Distance to City Center (km)'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span><span class="p">,</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'cleanliness_rating'</span><span class="p">:</span> <span class="s1">'Cleanliness Score (0-10)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Scatter Plot Distancia al centro de la ciudad vs Precio (Limpieza)"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Distance to City Center vs Price (by Cleanliness)'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"scatter_distancia_precio_limpieza.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'scatter_distancia_precio_limpieza.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9145,7 +8894,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Scatter distancia vs precio por limpieza" src="scatter_distancia_precio_limpieza.png"/></p>
+<p><img alt="Scatter distance vs price by cleanliness" src="scatter_distancia_precio_limpieza.png"/></p>
 </div>
 </div>
 </div>
@@ -9156,10 +8905,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A diferencia del scatter anterior, aqui el tamaño de la burbuja se refiere a la Puntuacion de la Limpieza del alojamiento. <strong>La puntuación de limpieza no muestra una relación fuerte con el precio ni con la distancia</strong></p>
-<ul>
-<li>Se mantiene bastante similar entre alojamientos caros y económicos, también entre zonas céntricas y periféricas. Incluso alojamientos lejanos pueden tener limpieza 10/10, y alojamientos caros pueden tener puntuaciones más bajas.</li>
-</ul>
+<p>Cleanliness score does not show a strong relationship with price or distance to center. Bubbles of different sizes are distributed throughout the chart without a clear pattern.</p>
 </div>
 </div>
 </div>
@@ -9171,7 +8917,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">bc_w</span><span class="p">[</span><span class="s2">"host_is_superhost"</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc_w</span><span class="p">[</span><span class="s2">"host_is_superhost"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s2">"Sí"</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s2">"No"</span><span class="p">})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">bc_w</span><span class="p">[</span><span class="s1">'host_is_superhost'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc_w</span><span class="p">[</span><span class="s1">'host_is_superhost'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s1">'Yes'</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">'No'</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -9185,24 +8931,25 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#3.8. Scatter Plot Distancia al centro de la ciudad vs Precio, color (Superhost), Tamaño de la burbuja (Puntuación General).</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.8. Scatter Plot Distance to City Center vs Price</span>
+<span class="c1"># Color: Superhost, Bubble Size: Overall Guest Satisfaction</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">"dist"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'dist'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">log_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"host_is_superhost"</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">"guest_satisfaction_overall"</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'host_is_superhost'</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">'guest_satisfaction_overall'</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"dist"</span><span class="p">:</span> <span class="s2">"Distancia al centro de la ciudad (km)"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span><span class="p">,</span>
-        <span class="s2">"host_is_superhost"</span><span class="p">:</span> <span class="s2">"Es superhost"</span><span class="p">,</span>
-        <span class="s2">"guest_satisfaction_overall"</span><span class="p">:</span> <span class="s2">"Puntuación General (0 a 100)"</span>
+        <span class="s1">'dist'</span><span class="p">:</span> <span class="s1">'Distance to City Center (km)'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span><span class="p">,</span>
+        <span class="s1">'host_is_superhost'</span><span class="p">:</span> <span class="s1">'Is Superhost'</span><span class="p">,</span>
+        <span class="s1">'guest_satisfaction_overall'</span><span class="p">:</span> <span class="s1">'Overall Score (0-100)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Scatter Plot Distancia vs Precio según Superhost"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Distance to City Center vs Price (by Superhost Status)'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"scatter_distancia_precio_superhost.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'scatter_distancia_precio_superhost.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9224,7 +8971,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Scatter distancia vs precio por superhost" src="scatter_distancia_precio_superhost.png"/></p>
+<p><img alt="Scatter distance vs price by superhost" src="scatter_distancia_precio_superhost.png"/></p>
 </div>
 </div>
 </div>
@@ -9236,12 +8983,10 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>No se observa una diferencia significativa en el precio entre superhosts y no-superhosts</li>
-<li>Tampoco hay una relación clara entre ser superhost y la distancia del centro</li>
-<li>Superhosts y no-superhosts logran niveles de satisfacción similares</li>
-<li>Superhosts aparecen en todos los tipos de propiedad.</li>
+<li>No significant price difference is observed between superhosts and non-superhosts</li>
+<li>Superhosts and non-superhosts are distributed similarly across the city</li>
+<li><strong>Conclusion:</strong> Superhost status is not related to location or price premium</li>
 </ul>
-<p>Esto sugiere que ser superhost es más un indicador de buen historial y consistencia en la experiencia del huésped</p>
 </div>
 </div>
 </div>
@@ -9293,7 +9038,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">bc_w</span><span class="p">[</span><span class="s2">"biz"</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc_w</span><span class="p">[</span><span class="s2">"biz"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s2">"Sí"</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s2">"No"</span><span class="p">})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">bc_w</span><span class="p">[</span><span class="s1">'biz'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc_w</span><span class="p">[</span><span class="s1">'biz'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s1">'Yes'</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s1">'No'</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -9307,24 +9052,25 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#3.9. Scatter Plot Distancia al centro de la ciudad vs Precio, color (Apto para viaje de Negocios), Tamaño de la burbuja (Puntuación General).</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.9. Scatter Plot Distance to City Center vs Price</span>
+<span class="c1"># Color: Business Travel Suitable, Bubble Size: Overall Guest Satisfaction</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">"dist"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'dist'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">log_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"biz"</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">"guest_satisfaction_overall"</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'biz'</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">'guest_satisfaction_overall'</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"dist"</span><span class="p">:</span> <span class="s2">"Distancia al centro de la ciudad (km)"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span><span class="p">,</span>
-        <span class="s2">"biz"</span><span class="p">:</span> <span class="s2">"Apto Viaje de Negocios"</span><span class="p">,</span>
-        <span class="s2">"guest_satisfaction_overall"</span><span class="p">:</span> <span class="s2">"Puntuación General (0 a 100)"</span>
+        <span class="s1">'dist'</span><span class="p">:</span> <span class="s1">'Distance to City Center (km)'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span><span class="p">,</span>
+        <span class="s1">'biz'</span><span class="p">:</span> <span class="s1">'Business Travel Suitable'</span><span class="p">,</span>
+        <span class="s1">'guest_satisfaction_overall'</span><span class="p">:</span> <span class="s1">'Overall Score (0-100)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Scatter Plot Distancia vs Precio según Viaje de Negocios"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Distance to City Center vs Price (by Business Travel Suitability)'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"scatter_distancia_precio_negocios.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'scatter_distancia_precio_negocios.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9346,7 +9092,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Scatter distancia vs precio por negocios" src="scatter_distancia_precio_negocios.png"/></p>
+<p><img alt="Scatter distance vs price by business travel" src="scatter_distancia_precio_negocios.png"/></p>
 </div>
 </div>
 </div>
@@ -9358,24 +9104,25 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#3.10. Scatter Plot Distancia al Puntuación General vs Precio, color (Tipo de Alojamiento), Tamaño de la burbuja (Puntuación Limpieza).</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3.10. Scatter Plot Overall Guest Satisfaction vs Price</span>
+<span class="c1"># Color: Accommodation Type, Bubble Size: Cleanliness Score</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bc_w</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">"guest_satisfaction_overall"</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">"realSum"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">'guest_satisfaction_overall'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">'realSum'</span><span class="p">,</span>
     <span class="n">log_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s2">"cleanliness_rating"</span><span class="p">,</span>
-    <span class="n">hover_name</span><span class="o">=</span><span class="s2">"room_type"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">'cleanliness_rating'</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">'room_type'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"guest_satisfaction_overall"</span><span class="p">:</span> <span class="s2">"Puntuación General (0 a 100)"</span><span class="p">,</span>
-        <span class="s2">"realSum"</span><span class="p">:</span> <span class="s2">"Precio (€)"</span><span class="p">,</span>
-        <span class="s2">"room_type"</span><span class="p">:</span> <span class="s2">"Tipo de Alojamiento"</span><span class="p">,</span>
-        <span class="s2">"cleanliness_rating"</span><span class="p">:</span> <span class="s2">"Puntuación de limpieza (0 a 10)"</span>
+        <span class="s1">'guest_satisfaction_overall'</span><span class="p">:</span> <span class="s1">'Overall Score (0-100)'</span><span class="p">,</span>
+        <span class="s1">'realSum'</span><span class="p">:</span> <span class="s1">'Price (€)'</span><span class="p">,</span>
+        <span class="s1">'room_type'</span><span class="p">:</span> <span class="s1">'Accommodation Type'</span><span class="p">,</span>
+        <span class="s1">'cleanliness_rating'</span><span class="p">:</span> <span class="s1">'Cleanliness Score (0-10)'</span>
     <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Scatter Plot Satisfacción General vs Precio"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Overall Guest Satisfaction vs Price'</span>
 <span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"scatter_satisfaccion_precio.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'scatter_satisfaccion_precio.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9397,7 +9144,7 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Scatter satisfacción vs precio" src="scatter_satisfaccion_precio.png"/></p>
+<p><img alt="Scatter satisfaction vs price" src="scatter_satisfaccion_precio.png"/></p>
 </div>
 </div>
 </div>
@@ -9409,10 +9156,8 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>No existe una diferencia significativa en precio entre alojamientos aptos para viaje de negocios y los que no lo son</li>
-<li>Los alojamientos aptos para negocios no están más cerca del centro que los demás</li>
-<li>El tamaño de las burbujas (satisfacción del huésped) es similar entre ambos grupos</li>
-<li>La etiqueta “biz” puede ser más un atributo funcional que un indicador de calidad o precio</li>
+<li>No significant price difference between business and non-business accommodations</li>
+<li><strong>Conclusion:</strong> Business travel suitability is not a determining factor in price or location</li>
 </ul>
 </div>
 </div>
@@ -9424,15 +9169,15 @@ estable: La mediana es 10, el valor máximo posible, el rango intercuartílico (
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Conclusiones">5. Conclusiones<a class="anchor-link" href="#5.-Conclusiones">¶</a></h2><ul>
-<li>Los <strong>alojamientos completos son los más caros y céntricos</strong>, con alta variabilidad de precios</li>
-<li>Ser <strong>Superhost no determina un precio mayor</strong>, pero sí refleja consistencia en la experiencia</li>
-<li>Las <strong>habitaciones compartidas son las más económicas y alejadas del centro</strong></li>
-<li>La <strong>limpieza y satisfacción del huésped no muestran relación fuerte con el precio</strong></li>
-<li>Existen claramente <strong>dos segmentos de mercado</strong>: turismo premium (alojamientos completos céntricos) y turismo económico (habitaciones privadas/compartidas más alejadas)</li>
+<h2 id="5.-Conclusions">5. Conclusions<a class="anchor-link" href="#5.-Conclusions">¶</a></h2><ul>
+<li><strong>Entire homes are the most expensive and most central</strong>, with high price variability and extreme outliers (up to 6,943€)</li>
+<li><strong>Being a Superhost does not determine a higher price</strong>, but reflects consistency in the guest experience</li>
+<li><strong>Shared rooms are the most affordable and furthest from the center</strong>, oriented toward budget tourism</li>
+<li><strong>Cleanliness and guest satisfaction do not show a strong relationship with price or distance</strong></li>
+<li>There are clearly <strong>two market segments</strong>: premium tourism (central entire homes) and budget tourism (more distant private/shared rooms)</li>
 </ul>
 <hr/>
-<p><em>Análisis realizado por Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
+<p><em>Analysis by Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
 </div>
 </div>
 </div>
