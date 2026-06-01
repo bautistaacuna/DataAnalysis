@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15e3bd81">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b81af8aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7815,7 +7815,7 @@ over the last 16 years. The goal is to answer the following questions:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3584a675">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=70b817af">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7833,7 +7833,7 @@ over the last 16 years. The goal is to answer the following questions:</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> <span class="c1"># linear algebra</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> <span class="c1"># linear algebra</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> <span class="c1"># data processing, CSV file I/O (e.g. pd.read_csv)</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span> <span class="c1"># for visualization</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.offline</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">py</span>
@@ -7864,7 +7864,7 @@ The first rows are displayed below to understand its structure.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"spotify_data clean.csv"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7879,13 +7879,11 @@ The first rows are displayed below to understand its structure.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># A. Selección del dataframe</span>
-<span class="c1"># Se selecciona el dataframe de kaggle con el nombre "spotify_data clean.csv" (https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025) el cual cuenta con datos de artistas y canciones modernas mas escuchadas en este</span>
-<span class="c1"># ultimo tiempo ( principalmente año 2025).</span>
-
-<span class="c1"># A.1. Se importa el dataframe</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A. DataFrame selection</span>
+<span class="c1"># The Kaggle dataset 'spotify_data clean.csv' is selected (https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025)</span>
+<span class="c1"># It contains data on artists and songs most listened to recently (mainly pop, hip-hop, r&amp;b, etc.)</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"spotify_data clean.csv"</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'spotify_data clean.csv'</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8051,7 +8049,7 @@ The first rows are displayed below to understand its structure.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Conocer el tipo de atributos que el dataframe contiene</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check the data types of each attribute in the dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
@@ -8104,7 +8102,7 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># La cantidad de registros y atributos que el dataframe contiene</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check the number of records and attributes in the dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -8148,12 +8146,12 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># A. 2. Limpieza y orden al dataset</span>
-<span class="c1"># A.2.2. Se convierte el atributo album_release_date a tipo datetime</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A.2. Data cleaning and ordering</span>
+<span class="c1"># A.2.2. Convert album_release_date attribute to datetime type</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'album_release_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'album_release_date'</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'coerce'</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'album_release_date'</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
 
-<span class="c1"># A.2.3. Revisar los valores faltantes</span>
+<span class="c1"># A.2.3. Check for missing values</span>
 <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8196,9 +8194,12 @@ dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Se observa que el atributo 'artis_genres' tiene mas de un valor, separados por una coma. Se decide crear una nueva columna 'main_genre' con el primer elemento de la columna</span>
-<span class="c1"># 'artist_genre'. Posteriormente a los valores NaN se los cambia por 'Unknown.</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'artist_genres'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'Unknown'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The 'artist_genres' attribute has more than one value, separated by a comma.</span>
+<span class="c1"># A new column 'main_genre' is created with the first element of the 'artist_genres' column.</span>
+<span class="c1"># NaN values are replaced with 'Unknown'.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'artist_genres'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'Unknown'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'Unknown'</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8256,7 +8257,7 @@ The <code>main_genre</code> column was successfully created from <code>artist_ge
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># # A.2.4. Revisar y eliminar duplicados</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A.2.4. Check and remove duplicates</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8283,19 +8284,19 @@ The <strong>30 genres with the highest presence</strong> are shown, excluding un
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># C. Creación de figuras</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># C. Chart creation</span>
 
-<span class="c1"># C.1. Grafico de barras</span>
-<span class="c1"># Se utilizará la categoria 'main_genre' para contar la cantidad de canciones por genero</span>
+<span class="c1"># C.1. Bar chart</span>
+<span class="c1"># The 'main_genre' category will be used to count the number of songs per genre</span>
 
-<span class="c1"># Cuenta por main_genre</span>
+<span class="c1"># Count by main_genre</span>
 <span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'main_genre'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span>
-<span class="c1">#Se ordena de mayor a menor</span>
+<span class="c1"># Sort from highest to lowest</span>
 <span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1">#Se Grafica</span>
+<span class="c1"># Plot</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_count_main</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"generos_todos.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'generos_todos.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8343,24 +8344,20 @@ followed by hip-hop and r&amp;b.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Se observa que el genero unknown esta dominando la figura, por lo que se decide no tenerla en cuenta en cuenta y enfocarnos en los 30 génermos mas importantes.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The 'Unknown' genre is dominating the chart, so it is excluded.</span>
+<span class="c1"># Focus on the top 30 most important genres.</span>
 
-<span class="c1"># Cuenta por main_genre sin 'Unknown'</span>
-<span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="p">[</span><span class="n">df_count_main</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">!=</span><span class="s1">'Unknown'</span><span class="p">]</span>
-<span class="c1">#Se ordena de mayor a menor y se toman los primeros 30</span>
-<span class="n">df_top30</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="c1">#Se Grafica</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-    <span class="n">df_top30</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Los 30 géneros musicales con mas canciones'</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Género musical'</span><span class="p">,</span> <span class="s1">'album_type'</span><span class="p">:</span> <span class="s1">'Tipo de álbum'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Cantidad de canciones'</span><span class="p">},</span>
-    <span class="p">)</span>
+<span class="c1"># Count by main_genre without 'Unknown'</span>
+<span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="p">[</span><span class="n">df_count_main</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Unknown'</span><span class="p">]</span>
+<span class="c1"># Sort and select top 30</span>
+<span class="n">df_top30</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="c1"># Plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_top30</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">'Top 30 Music Genres by Song Count'</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Genre'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Number of Songs'</span><span class="p">},</span>
+             <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"generos_top30.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'generos_top30.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8406,7 +8403,7 @@ within the 30 most represented genres.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Otra opción para el grafico de barras seria agrupar por cantidad de canciones identificadas como 'explicitas' por género musical.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Another option for the bar chart: group by number of songs identified as 'explicit' per music genre.</span>
 
 <span class="n">top30_genres</span> <span class="o">=</span> <span class="n">df_top30</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span>
 <span class="n">df_explicit</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top30_genres</span><span class="p">)]</span>
@@ -8417,31 +8414,12 @@ within the 30 most represented genres.</p>
     <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">df_grouped</span><span class="p">[</span><span class="s1">'explicit'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_grouped</span><span class="p">[</span><span class="s1">'explicit'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s1">'Sí'</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">'No'</span><span class="p">})</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-    <span class="n">df_grouped</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">'explicit'</span><span class="p">,</span>
-    <span class="n">barmode</span><span class="o">=</span><span class="s1">'group'</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Cantidad de canciones por género (agrupado por contenido explícito)'</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Género musical'</span><span class="p">,</span>
-        <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Cantidad de canciones'</span><span class="p">,</span>
-        <span class="s1">'explicit'</span><span class="p">:</span> <span class="s1">'Contenido explícito'</span>
-    <span class="p">},</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">600</span>
-<span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_tickangle</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
-    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">"Explícito"</span>
-<span class="p">)</span>
-
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_grouped</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'explicit'</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">'Explicit vs Non-Explicit Songs by Genre (Top 30)'</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Genre'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Number of Songs'</span><span class="p">,</span> <span class="s1">'explicit'</span><span class="p">:</span> <span class="s1">'Explicit'</span><span class="p">},</span>
+             <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"generos_explicito.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'generos_explicito.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8500,26 +8478,18 @@ of explicit content, while pop and indie show lower levels.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># C.2. Series de tiempo</span>
-<span class="c1"># Se realizará una serie temporal de la evolución en la creación de nuevas canciones a lo largo del tiempo</span>
-<span class="c1"># Se utilizará la variable 'year' creada anteriormente.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># C.2. Time series</span>
+<span class="c1"># A time series of the evolution in new song creation over time will be created.</span>
+<span class="c1"># The 'year' variable created earlier will be used.</span>
 
-<span class="c1"># Contar canciones por año</span>
+<span class="c1"># Count songs per year</span>
 <span class="n">df_year_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'year'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
-    <span class="n">df_year_count</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Cantidad de canciones lanzadas por año'</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'year'</span><span class="p">:</span><span class="s1">'Año'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span><span class="s1">'Cantidad de canciones'</span><span class="p">},</span>
-    <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_dark'</span>
-<span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">df_year_count</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">'Song Releases on Spotify Over Time'</span><span class="p">,</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'year'</span><span class="p">:</span> <span class="s1">'Year'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Number of Songs'</span><span class="p">})</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"canciones_por_ano.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'canciones_por_ano.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8564,35 +8534,23 @@ of explicit content, while pop and indie show lower levels.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Podría mejorarse la grafica temporal y agrupar los lanzamientos en categorias para ver la evolución de las canciones explícitas vs las no explícitas.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The time chart can be improved by grouping releases into categories</span>
+<span class="c1"># to see the evolution of explicit vs non-explicit songs.</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">'explicit_label'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'explicit'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s1">'Sí'</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">'No'</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'explicit_label'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'explicit'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s1">'Yes'</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">'No'</span><span class="p">})</span>
 
-<span class="c1"># Cantidad de canciones por año según explicit</span>
+<span class="c1"># Count songs per year by explicit label</span>
 <span class="n">df_year_explicit</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'year'</span><span class="p">,</span> <span class="s1">'explicit_label'</span><span class="p">])</span>
     <span class="o">.</span><span class="n">size</span><span class="p">()</span>
     <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
-    <span class="n">df_year_explicit</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">'explicit_label'</span><span class="p">,</span>
-    <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Lanzamientos por año según contenido explícito'</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">'year'</span><span class="p">:</span> <span class="s1">'Año'</span><span class="p">,</span>
-        <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Cantidad de canciones'</span><span class="p">,</span>
-        <span class="s1">'explicit_label'</span><span class="p">:</span> <span class="s1">'Explícito'</span>
-    <span class="p">},</span>
-    <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_dark'</span>
-<span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">df_year_explicit</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'explicit_label'</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">'Explicit vs Non-Explicit Song Releases Over Time'</span><span class="p">,</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'year'</span><span class="p">:</span> <span class="s1">'Year'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Number of Songs'</span><span class="p">,</span> <span class="s1">'explicit_label'</span><span class="p">:</span> <span class="s1">'Explicit'</span><span class="p">})</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"explicito_por_ano.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'explicito_por_ano.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8640,44 +8598,27 @@ reflecting a cultural shift in the platform's dominant genres.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Una segunda opción a la gráfica temporal sería agrupar los lanzamientos en categorias para ver la evolución de las canciones de acuerdo al género musical.</span>
-<span class="c1"># 1. Conteo total por género</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A second option for the time chart: group releases by music genre</span>
+<span class="c1"># to see each genre's evolution over time.</span>
+
+<span class="c1"># 1. Total count per genre</span>
 <span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'main_genre'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span>
-<span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="p">[</span><span class="n">df_count_main</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">!=</span><span class="s1">'Unknown'</span><span class="p">]</span>
+<span class="n">df_count_main</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="p">[</span><span class="n">df_count_main</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Unknown'</span><span class="p">]</span>
+<span class="n">top5_genres</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">)[</span><span class="s1">'main_genre'</span><span class="p">]</span>
 
-<span class="c1"># 2. Seleccionar top 5 géneros</span>
-<span class="n">top5_genres</span> <span class="o">=</span> <span class="n">df_count_main</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)[</span><span class="s1">'main_genre'</span><span class="p">]</span>
-
-<span class="c1"># 3. Filtrar dataset solo con estos géneros</span>
-<span class="n">df_top5</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top5_genres</span><span class="p">)]</span>
-
-<span class="c1"># 4. Contar canciones por año y género</span>
+<span class="c1"># 2. Filter for top 5 genres</span>
 <span class="n">df_year_genre</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df_top5</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'year'</span><span class="p">,</span> <span class="s1">'main_genre'</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top5_genres</span><span class="p">)]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'year'</span><span class="p">,</span> <span class="s1">'main_genre'</span><span class="p">])</span>
     <span class="o">.</span><span class="n">size</span><span class="p">()</span>
     <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="c1"># 5. Gráfico temporal</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
-    <span class="n">df_year_genre</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
-    <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Evolución de la cantidad de canciones lanzadas por año según género (Top 5)'</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">'year'</span><span class="p">:</span> <span class="s1">'Año'</span><span class="p">,</span>
-        <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Cantidad de canciones'</span><span class="p">,</span>
-        <span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Género musical'</span>
-    <span class="p">},</span>
-    <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_dark'</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">600</span>
-<span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">df_year_genre</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">'Top 5 Genres Evolution Over Time'</span><span class="p">,</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'year'</span><span class="p">:</span> <span class="s1">'Year'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Number of Songs'</span><span class="p">,</span> <span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Genre'</span><span class="p">})</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"generos_top5.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'generos_top5.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8713,23 +8654,21 @@ evolution is analyzed year by year.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Se ve que es confuso para visualizar, se opta por crear una pequeña gráfica para cada genero usando el parametro 'facet_col'.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The chart is confusing to visualize, so a small chart for each genre</span>
+<span class="c1"># is created using the 'facet_col' parameter.</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
     <span class="n">df_year_genre</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
     <span class="n">facet_col</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
-    <span class="n">facet_col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># cantidad de columnas (ajústalo a gusto)</span>
-    <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Evolución de la cantidad de canciones por año según género (Top 5 con facet)'</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'year'</span><span class="p">:</span><span class="s1">'Año'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span><span class="s1">'Cantidad de canciones'</span><span class="p">,</span> <span class="s1">'main_genre'</span><span class="p">:</span><span class="s1">'Género'</span><span class="p">},</span>
-    <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_dark'</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">700</span>
+    <span class="n">facet_col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Top 5 Genres Evolution (Facet View)'</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'year'</span><span class="p">:</span> <span class="s1">'Year'</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="s1">'Songs'</span><span class="p">,</span> <span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Genre'</span><span class="p">},</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span>
 <span class="p">)</span>
-
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"generos_top_5_facet.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'generos_top_5_facet.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8800,80 +8739,33 @@ evolution is analyzed year by year.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># C.3. Avanzada</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># C.3. Advanced chart</span>
 
-<span class="c1"># En cuanto a la gráfica avanzada, se elige hacer un scatter plot de los 20 artistas mas populares de Spotify, donde:</span>
-<span class="c1"># Eje X: Cantidad de seguidores del artista en Spotify</span>
-<span class="c1"># Eje Y: Popularidad del artista medido principalmente a partir de la cantidad y frecuencia de reproducciones recientes,</span>
-<span class="c1">#         la popularidad de las canciones principales del artista y métricas de engagement del usuario (guardados, saltos,</span>
-<span class="c1">#         repeticiones, inclusión en playlists).</span>
-<span class="c1"># size: Cada punto representa a un artista dentro de los 20 mas populares y el tamaño de la burbuja, representa la cantidad de</span>
-<span class="c1">#       canciones escuchadas que tiene el artista en la plataforma al momento del dataset.</span>
-<span class="c1"># Labels: Género muscial de los artistas</span>
+<span class="c1"># For the advanced chart, a scatter plot of the Top 20 most popular artists on Spotify is created:</span>
+<span class="c1"># X Axis: Number of followers on Spotify</span>
+<span class="c1"># Y Axis: Artist popularity measured mainly by play count and frequency</span>
+<span class="c1"># Bubble size: Number of songs in the dataset</span>
+<span class="c1"># Color: Main music genre</span>
 
+<span class="n">top20</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">'artist_name'</span><span class="p">)</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">'artist_popularity'</span><span class="p">)</span>
 
-<span class="c1"># Seleccionar los 20 artistas con mayor popularidad</span>
-<span class="n">artist_pop</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'artist_name'</span><span class="p">,</span> <span class="s1">'artist_popularity'</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-
-<span class="n">top20_popular_artists</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">artist_pop</span>
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'artist_popularity'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)[</span><span class="s1">'artist_name'</span><span class="p">]</span>
-<span class="p">)</span>
-
-<span class="c1"># Filtrar el dataset para quedarnos solo con esos artistas</span>
-<span class="n">df_top20</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'artist_name'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top20_popular_artists</span><span class="p">)]</span>
-
-<span class="c1"># Calcular cuántas canciones tiene cada uno (para usarlo como size)</span>
-<span class="n">song_count</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df_top20</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'artist_name'</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">size</span><span class="p">()</span>
-            <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'song_count'</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="c1"># Unir la columna song_count al df_top20</span>
-<span class="n">df_top20</span> <span class="o">=</span> <span class="n">df_top20</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">song_count</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'artist_name'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
-
-<span class="c1"># Agregar main_genre</span>
-<span class="n">df_top20</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_top20</span><span class="p">[</span><span class="s1">'artist_genres'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'Unknown'</span><span class="p">)</span>
-<span class="n">df_top20</span> <span class="o">=</span> <span class="n">df_top20</span><span class="p">[</span><span class="n">df_top20</span><span class="p">[</span><span class="s1">'main_genre'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Unknown'</span><span class="p">]</span>
-
-<span class="c1"># Crear el Scatter Plot con size=cantidad de canciones</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="n">df_top20</span><span class="p">,</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">top20</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">'artist_followers'</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">'artist_popularity'</span><span class="p">,</span>
-    <span class="n">size</span><span class="o">=</span><span class="s1">'song_count'</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">'artist_followers'</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">'main_genre'</span><span class="p">,</span>
     <span class="n">hover_name</span><span class="o">=</span><span class="s1">'artist_name'</span><span class="p">,</span>
-    <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">'song_count'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'track_name'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'track_popularity'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'artist_followers'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'artist_popularity'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'main_genre'</span><span class="p">:</span> <span class="kc">True</span>
-    <span class="p">},</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">'Top 20 artistas más populares: seguidores vs popularidad (tamaño = cantidad de canciones)'</span><span class="p">,</span>
+    <span class="n">log_x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Top 20 Artists: Followers vs Popularity'</span><span class="p">,</span>
     <span class="n">labels</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">'artist_followers'</span><span class="p">:</span> <span class="s1">'Seguidores del artista'</span><span class="p">,</span>
-        <span class="s1">'artist_popularity'</span><span class="p">:</span> <span class="s1">'Popularidad del artista (0: poco popular, 100: muy popular)'</span><span class="p">,</span>
-        <span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Género musical'</span><span class="p">,</span>
-        <span class="s1">'song_count'</span><span class="p">:</span> <span class="s1">'Cantidad de canciones'</span>
+        <span class="s1">'artist_followers'</span><span class="p">:</span> <span class="s1">'Number of Followers (log scale)'</span><span class="p">,</span>
+        <span class="s1">'artist_popularity'</span><span class="p">:</span> <span class="s1">'Artist Popularity (0-100)'</span><span class="p">,</span>
+        <span class="s1">'main_genre'</span><span class="p">:</span> <span class="s1">'Main Genre'</span>
     <span class="p">},</span>
-    <span class="n">size_max</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
-    <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_dark'</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">750</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span>
 <span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s1">'Género musical'</span><span class="p">,</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">)</span>
-<span class="p">)</span>
-
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"artistas_top20.png"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s1">'artistas_top20.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8889,7 +8781,7 @@ evolution is analyzed year by year.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0cd0b2bf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a656f97a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8900,7 +8792,7 @@ evolution is analyzed year by year.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1e8588b4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9aeb0b86">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
