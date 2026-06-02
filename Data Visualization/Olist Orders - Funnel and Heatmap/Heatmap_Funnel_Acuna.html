@@ -7796,127 +7796,84 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d00311d5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eb7f1ae4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Olist-Orders-%E2%80%94-Heatmap-y-Funnel-Chart-del-Proceso-Log%C3%ADstico">Olist Orders — Heatmap y Funnel Chart del Proceso Logístico<a class="anchor-link" href="#Olist-Orders-%E2%80%94-Heatmap-y-Funnel-Chart-del-Proceso-Log%C3%ADstico">¶</a></h1><h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>Este análisis explora el dataset de pedidos de <strong>Olist</strong>, la mayor plataforma
-de e-commerce de Brasil. A través de visualizaciones interactivas se busca
-responder las siguientes preguntas:</p>
+<h1 id="Olist-Orders-%E2%80%94-Heatmap-and-Funnel-Chart-of-the-Logistics-Process">Olist Orders — Heatmap and Funnel Chart of the Logistics Process<a class="anchor-link" href="#Olist-Orders-%E2%80%94-Heatmap-and-Funnel-Chart-of-the-Logistics-Process">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>This analysis explores the orders dataset of <strong>Olist</strong>, the largest e-commerce platform in Brazil. Through interactive visualizations the following questions are answered:</p>
 <ul>
-<li>¿En qué días de la semana se concentran más pedidos según su estado?</li>
-<li>¿Cuántos pedidos completan cada etapa del proceso logístico?</li>
-<li>¿En qué etapa se producen las mayores pérdidas del proceso?</li>
+<li>On which days of the week are orders most concentrated by status?</li>
+<li>How many orders complete each stage of the logistics process?</li>
+<li>At which stage do the greatest losses occur?</li>
 </ul>
-<p><strong>Herramientas utilizadas:</strong> Python · Pandas · Plotly<br/>
+<p><strong>Tools used:</strong> Python · Pandas · Plotly<br/>
 <strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">Brazilian E-Commerce Public Dataset — Kaggle</a></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=779708b3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a6b55c3e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Preparaci%C3%B3n-de-datos">1. Preparación de datos<a class="anchor-link" href="#1.-Preparaci%C3%B3n-de-datos">¶</a></h2><p>1.1 Selección del Conjunto de Datos</p>
-<p>Para el desarrollo de esta practica se utilizó el conjunto de datos <strong>Brazilian E-Commerce Public Dataset by Olist</strong>, disponible en la plataforma Kaggle. Este dataset contiene información real sobre transacciones de comercio electrónico en Brasil y describe el ciclo completo de vida de los pedidos realizados en la plataforma Olist.</p>
-<p>Con el objetivo de mantener el análisis enfocado y alineado con los requisitos de la práctica, se seleccionó exclusivamente el archivo <strong>olist_orders_dataset.csv</strong>, el cual concentra la información necesaria para representar procesos secuenciales y temporales. Este único conjunto de datos se emplea para la construcción tanto del Heatmap como del Funnel Chart, evitando la necesidad de realizar uniones entre múltiples tablas y simplificando el preprocesamiento.</p>
-<p>La elección de este dataset se justifica porque permite modelar de forma clara y realista un proceso de negocio por etapas, condición fundamental para la correcta construcción de un gráfico de tipo funnel, asi como para el analisis de patrones temporales mediante mapas de calor.</p>
+<h2 id="1.-Data-Preparation">1. Data Preparation<a class="anchor-link" href="#1.-Data-Preparation">¶</a></h2><h3 id="1.1-Dataset-Selection">1.1 Dataset Selection<a class="anchor-link" href="#1.1-Dataset-Selection">¶</a></h3><p>The <strong>Brazilian E-Commerce Public Dataset by Olist</strong> was used, available on Kaggle: <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce</a></p>
+<p>The file <code>olist_orders_dataset.csv</code> contains order information including purchase date, approval date, delivery dates and order status.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85ff9922">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4d7c032">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>1.2 Carga y Exploración Inicial de los Datos</p>
-<p>El archivo <strong>olist_orders_dataset.csv</strong> fue cargado en el notebook de Python utilizando la librería pandas. Una vez cargados los datos, se realizó una exploración inicial para verificar su estructura, dimensiones y variables disponibles.</p>
-<p>El conjunto de datos contiene una fila por pedido y las siguientes variables relevantes:</p>
-<p>order_approved_at: fecha y hora de aprobación del pago.</p>
-<p>order_delivered_carrier_date: fecha en que el pedido fue entregado al operador logístico.</p>
-<p>order_delivered_customer_date: fecha de entrega efectiva al cliente.</p>
-<p>order_estimated_delivery_date: fecha estimada de entrega informada al cliente.</p>
-<ul>
-<li><strong>order_id</strong>: identificador único del pedido.</li>
-<li><strong>customer_id</strong>: identificador del cliente asociado al pedido.</li>
-<li><strong>order_status</strong>: estado del pedido (por ejemplo: delivered, shipped, canceled).</li>
-<li><strong>order_purchase_timestamp</strong>: fecha y hora en que se realizó la compra.</li>
-<li><strong>order_approved_at</strong>: fecha y hora de aprobación del pago.</li>
-<li><strong>order_delivered_carrier_date</strong>: fecha en que el pedido fue entregado al operador logístico.</li>
-<li><strong>order_delivered_customer_date</strong>: fecha de entrega efectiva al cliente.</li>
-<li><strong>order_estimated_delivery_date</strong>: fecha estimada de entrega informada al cliente.</li>
-</ul>
-<p>Desde el punto de vista del tipo de variables, se identifican las siguientes categorías:</p>
-<p>Variables categóricas:</p>
-<ul>
-<li>order_status</li>
-</ul>
-<p>Variables temporales (tratadas como fechas):</p>
-<ul>
-<li>order_purchase_timestamp</li>
-<li>order_approved_at</li>
-<li>order_delivered_carrier_date</li>
-<li>order_delivered_customer_date</li>
-<li>order_estimated_delivery_date</li>
-</ul>
-<p>Variables identificadoras:</p>
-<ul>
-<li>order_id</li>
-<li>customer_id</li>
-</ul>
-<p>Este conjunto de variables resulta adecuado para analizar tanto la evolución temporal de los pedidos como su progresión a través de distintas etapas del proceso logístico.</p>
+<h3 id="1.2-Initial-Data-Loading-and-Exploration">1.2 Initial Data Loading and Exploration<a class="anchor-link" href="#1.2-Initial-Data-Loading-and-Exploration">¶</a></h3><p>The file <strong>olist_orders_dataset.csv</strong> was loaded into the Python notebook using the pandas library. Once loaded, an initial exploration was performed to understand the structure, dimensions and data types of the dataset.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e380282">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3a0e10b2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>1.3 Preprocesamiento de los Datos</p>
-<p>Con el fin de preparar los datos para su posterior visualización, se aplicaron una serie de pasos básicos de preprocesamiento.</p>
-<p>En primer lugar, las columnas de fecha fueron convertidas al formato datetime, lo que permite realizar agregaciones temporales y comparaciones de manera correcta. Posteriormente, se filtraron aquellos registros que presentaban valores nulos en las variables clave asociadas a las etapas del proceso, ya que estos distorsionan la interpretación de los gráficos.</p>
-<p>Para mejorar la claridad de las visualizaciones, se consideraron solo los estados de pedido relevantes para el análisis del flujo principal del proceso (por ejemplo, pedidos creados, enviados y entregados), excluyendo estados poco frecuentes o no representativos para el objetivo del ejercicio.</p>
-<p>No se realizó un tratamiento de valores atípicos numéricos, dado que el análisis se centra principalmente en conteos y patrones temporales, y no en magnitudes continuas como precios o cantidades. Este nivel de preprocesamiento se considera suficiente para garantizar la calidad de los datos sin introducir transformaciones innecesarias que compliquen la interpretación visual.</p>
-<p>Tras estos pasos, el conjunto de datos quedó correctamente preparado para la construcción de las visualizaciones dinámicas requeridas, asegurando coherencia temporal, claridad semántica y alineación con los objetivos de la práctica.</p>
+<h3 id="1.3-Data-Preprocessing">1.3 Data Preprocessing<a class="anchor-link" href="#1.3-Data-Preprocessing">¶</a></h3><p>To prepare the data for visualization, a series of basic preprocessing steps were applied.</p>
+<p>First, the date/time columns were converted to datetime format to enable time-based operations. Then, the day of the week was extracted from the purchase timestamp to enable day-based analysis.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3fde289a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=186fa4e4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=622e3a36">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=00941b63">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"olist_orders_dataset.csv"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"olist_orders_dataset.csv"</span><span class="p">)</span>
 
-<span class="c1"># Convertir columnas de tiempo a datetime</span>
+<span class="c1"># Convert time columns to datetime</span>
 <span class="n">date_cols</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">"order_purchase_timestamp"</span><span class="p">,</span>
     <span class="s2">"order_approved_at"</span><span class="p">,</span>
@@ -7939,7 +7896,7 @@ responder las siguientes preguntas:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8033,30 +7990,29 @@ responder las siguientes preguntas:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=281f6f70">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ed6c50a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Creaci%C3%B3n-de-visualizaciones">2. Creación de visualizaciones<a class="anchor-link" href="#2.-Creaci%C3%B3n-de-visualizaciones">¶</a></h2><p>2.1 HEATMAP con px.density_heatmap</p>
-<p>Heatmap: day_of_week vs order_status (intensidad = cantidad de pedidos)</p>
+<h2 id="2.-Visualizations">2. Visualizations<a class="anchor-link" href="#2.-Visualizations">¶</a></h2><h3 id="2.1-Heatmap-with-px.density_heatmap">2.1 Heatmap with px.density_heatmap<a class="anchor-link" href="#2.1-Heatmap-with-px.density_heatmap">¶</a></h3><p>Heatmap: day_of_week vs order_status (intensity = number of orders)</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d431004a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3e220680">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">df_heat</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"order_purchase_timestamp"</span><span class="p">,</span> <span class="s2">"order_status"</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_heat</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"order_purchase_timestamp"</span><span class="p">,</span> <span class="s2">"order_status"</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">df_heat</span><span class="p">[</span><span class="s2">"day_of_week"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_heat</span><span class="p">[</span><span class="s2">"order_purchase_timestamp"</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
 
-<span class="c1"># Para que quede ordenado (Lunes → Domingo)</span>
+<span class="c1"># Order days Monday to Sunday</span>
 <span class="n">order_days</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Monday"</span><span class="p">,</span><span class="s2">"Tuesday"</span><span class="p">,</span><span class="s2">"Wednesday"</span><span class="p">,</span><span class="s2">"Thursday"</span><span class="p">,</span><span class="s2">"Friday"</span><span class="p">,</span><span class="s2">"Saturday"</span><span class="p">,</span><span class="s2">"Sunday"</span><span class="p">]</span>
 <span class="n">df_heat</span><span class="p">[</span><span class="s2">"day_of_week"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df_heat</span><span class="p">[</span><span class="s2">"day_of_week"</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">order_days</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -8073,10 +8029,10 @@ responder las siguientes preguntas:</p>
     <span class="n">y</span><span class="o">=</span><span class="s2">"order_status"</span><span class="p">,</span>
     <span class="n">z</span><span class="o">=</span><span class="s2">"orders_count"</span><span class="p">,</span>
     <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Heatmap: Cantidad de pedidos por día de la semana y estado del pedido"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Heatmap: Number of Orders by Day of Week and Order Status"</span>
 <span class="p">)</span>
 
-<span class="n">fig_heat</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Día de la semana"</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Estado del pedido"</span><span class="p">)</span>
+<span class="n">fig_heat</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Day of the Week"</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Order Status"</span><span class="p">)</span>
 <span class="n">fig_heat</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig_heat</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"heatmap_pedidos_todos.png"</span><span class="p">)</span>
 </pre></div>
@@ -8094,36 +8050,36 @@ responder las siguientes preguntas:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e78d27e7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87dfa118">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Heatmap todos los estados" src="heatmap_pedidos_todos.png"/></p>
+<p><img alt="Heatmap all statuses" src="heatmap_pedidos_todos.png"/></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cfd54568">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=75812a47">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para mejorar la interpretación visual del heatmap, se filtran los estados de pedido más relevantes dentro del flujo principal del proceso (approved, shipped, delivered y canceled). Esta decisión permite evitar que estados con baja frecuencia o escasa relevancia analítica distorsionen la escala cromática del gráfico. El resultado facilita la comparación entre etapas clave del proceso y permite identificar patrones temporales en la distribución de pedidos a lo largo de la semana.</p>
+<p>To improve the visual interpretation of the heatmap, the most relevant order statuses within the main process flow are filtered (approved, shipped, delivered and canceled). This decision allows focusing on the stages that actually reflect the logistics cycle, reducing visual noise from less representative statuses.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ad12be24">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0fd32c4f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">valid_status</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">valid_status</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">"approved"</span><span class="p">,</span>
     <span class="s2">"shipped"</span><span class="p">,</span>
     <span class="s2">"delivered"</span><span class="p">,</span>
@@ -8134,7 +8090,6 @@ responder las siguientes preguntas:</p>
     <span class="n">heat_data</span><span class="p">[</span><span class="s2">"order_status"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">valid_status</span><span class="p">)</span>
 <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-
 <span class="n">status_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"approved"</span><span class="p">,</span> <span class="s2">"shipped"</span><span class="p">,</span> <span class="s2">"delivered"</span><span class="p">,</span> <span class="s2">"canceled"</span><span class="p">]</span>
 
 <span class="n">heat_data_filtered</span><span class="p">[</span><span class="s2">"order_status"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span>
@@ -8143,19 +8098,18 @@ responder las siguientes preguntas:</p>
     <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 
-
 <span class="n">fig_heat</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">density_heatmap</span><span class="p">(</span>
     <span class="n">heat_data_filtered</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">"day_of_week"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"order_status"</span><span class="p">,</span>
     <span class="n">z</span><span class="o">=</span><span class="s2">"orders_count"</span><span class="p">,</span>
     <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Heatmap: Cantidad de pedidos por día de la semana y estado del pedido"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Heatmap: Number of Orders by Day of Week and Order Status (Filtered)"</span>
 <span class="p">)</span>
 
 <span class="n">fig_heat</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Día de la semana"</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Estado del pedido"</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Day of the Week"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Order Status"</span>
 <span class="p">)</span>
 
 <span class="n">fig_heat</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -8175,55 +8129,53 @@ responder las siguientes preguntas:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=678920a6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8b88176d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Heatmap estados filtrados" src="heatmap_pedidos_filtrado.png"/></p>
+<p><img alt="Heatmap filtered statuses" src="heatmap_pedidos_filtrado.png"/></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ff33d7f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14e59d01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>El predominio del estado delivered refleja que la mayoría de los pedidos completan exitosamente el proceso, mientras que los estados intermedios o de cancelación presentan una frecuencia significativamente menor.</p>
+<p>The predominance of the delivered status reflects that the majority of orders successfully complete the process, while intermediate or cancellation statuses show significantly lower frequency. This pattern is consistent across all days of the week, suggesting a stable and predictable logistics operation.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aceb7567">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=979df691">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>2.2. Funnel Chart (Gráfico de Embudo)</p>
-<p>Vamos a medir cuantos pedidos llegan a cada etapa del proceso:</p>
+<h3 id="2.2-Funnel-Chart">2.2 Funnel Chart<a class="anchor-link" href="#2.2-Funnel-Chart">¶</a></h3><p>The number of orders reaching each stage of the process is measured:</p>
 <ul>
-<li>Purchased (compra creada) con <strong>order_purchase_timestamp</strong></li>
-<li>Approved (pago aprobado) con <strong>order_approved_at</strong></li>
-<li>Handed to Carrier (entregado a logística) con <strong>order_delivered_carrier_date</strong></li>
-<li>Delivered to Customer (entregado al cliente) con <strong>order_delivered_customer_date</strong></li>
+<li>Purchased (order created) with <strong>order_purchase_timestamp</strong></li>
+<li>Approved (payment approved) with <strong>order_approved_at</strong></li>
+<li>Handed to Carrier (shipped to logistics operator) with <strong>order_delivered_carrier_date</strong></li>
+<li>Delivered to Customer with <strong>order_delivered_customer_date</strong></li>
 </ul>
-<p>Esto forma un funnel real: cada etapa depende de la anterior y normalmente va bajando.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=72b3c406">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=661f5a34">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Crea indicadores por etapa</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create stage indicators</span>
 <span class="n">df_fun</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">df_fun</span><span class="p">[</span><span class="s2">"stage_purchased"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_fun</span><span class="p">[</span><span class="s2">"order_purchase_timestamp"</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
@@ -8231,7 +8183,7 @@ responder las siguientes preguntas:</p>
 <span class="n">df_fun</span><span class="p">[</span><span class="s2">"stage_handed_to_carrier"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_fun</span><span class="p">[</span><span class="s2">"order_delivered_carrier_date"</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
 <span class="n">df_fun</span><span class="p">[</span><span class="s2">"stage_delivered"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_fun</span><span class="p">[</span><span class="s2">"order_delivered_customer_date"</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
 
-<span class="c1"># Cuenta pedidos por etapa</span>
+<span class="c1"># Count orders per stage</span>
 <span class="n">funnel_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">"stage"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Purchased"</span><span class="p">,</span> <span class="s2">"Approved"</span><span class="p">,</span> <span class="s2">"Handed to Carrier"</span><span class="p">,</span> <span class="s2">"Delivered to Customer"</span><span class="p">],</span>
     <span class="s2">"orders_count"</span><span class="p">:</span> <span class="p">[</span>
@@ -8242,7 +8194,7 @@ responder las siguientes preguntas:</p>
     <span class="p">]</span>
 <span class="p">})</span>
 
-<span class="c1"># % respecto a inicio y % respecto a etapa anterior</span>
+<span class="c1"># % vs start and % vs previous stage</span>
 <span class="n">funnel_data</span><span class="p">[</span><span class="s2">"conversion_pct_vs_start"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">funnel_data</span><span class="p">[</span><span class="s2">"orders_count"</span><span class="p">]</span> <span class="o">/</span> <span class="n">funnel_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"orders_count"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -8251,7 +8203,7 @@ responder las siguientes preguntas:</p>
     <span class="n">funnel_data</span><span class="p">[</span><span class="s2">"orders_count"</span><span class="p">]</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">funnel_data</span><span class="p">[</span><span class="s2">"orders_count"</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># Etiquetas para mostrar dentro del funnel</span>
+<span class="c1"># Labels to display inside the funnel</span>
 <span class="n">funnel_data</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">funnel_data</span><span class="p">[</span><span class="s2">"orders_count"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="o">+</span> <span class="s2">" ("</span>
@@ -8259,25 +8211,25 @@ responder las siguientes preguntas:</p>
     <span class="o">+</span> <span class="s2">"%)"</span>
 <span class="p">)</span>
 
-<span class="c1"># Crea el grafico con Plotly Express</span>
+<span class="c1"># Create chart with Plotly Express</span>
 <span class="n">fig_funnel</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">funnel</span><span class="p">(</span>
     <span class="n">funnel_data</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">"orders_count"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"stage"</span><span class="p">,</span>
     <span class="n">text</span><span class="o">=</span><span class="s2">"label"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Funnel: Progresión de pedidos por etapas del proceso logístico"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Funnel: Order Progression Through Logistics Process Stages"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">px</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">sequential</span><span class="o">.</span><span class="n">Blues</span>
 <span class="p">)</span>
 
 <span class="n">fig_funnel</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"inside"</span><span class="p">)</span>
 <span class="n">fig_funnel</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Cantidad de pedidos"</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Etapa"</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Number of Orders"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Stage"</span>
 <span class="p">)</span>
 
 <span class="n">fig_funnel</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig_funnel</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"funnel_pedidos.png"</span><span class="p">)</span>
-<span class="c1"># Muestra las tablas</span>
+<span class="c1"># Display the table</span>
 <span class="n">funnel_data</span>
 </pre></div>
 </div>
@@ -8292,7 +8244,7 @@ responder las siguientes preguntas:</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8360,45 +8312,40 @@ responder las siguientes preguntas:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38de33da">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6eed0894">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Funnel pedidos" src="funnel_pedidos.png"/></p>
+<p><img alt="Funnel orders" src="funnel_pedidos.png"/></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4bb55bc8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da24d27d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>El gráfico de embudo muestra la reducción progresiva en la cantidad de pedidos a medida que avanzan por etapas del proceso: compra creada, pago aprobado, entrega al operador logístico y entrega final al cliente.</p>
-<p>La disminución entre etapas refleja pérdidas naturales del proceso (por ejemplo, pedidos que no se aprueban, que se cancelan o que no alcanzan la entrega efectiva).</p>
-<p>El grafico de embudo muestra una disminucion progresiva en la cantidad de pedidos a medida que avanzan por las distintas etapas del proceso logístico.</p>
-<p>Se observa que la mayor parte de los pedidos creados son aprobados exitosamente, lo que indica un bajo nivel de rechazo en la etapa de pago. La principal reduccion se produce entre las etapas de aprobación y entrega al operador logistico, lo que sugiere que las perdidas del proceso se concentran principalmente en fases operativas y logísticas.</p>
-<p>Finalmente, la mayoría de los pedidos que alcanzan la etapa de envio logran completarse con una entrega efectiva al cliente.</p>
-<p>La alta tasa de conversión entre etapas indica un proceso logístico maduro y estable, donde la mayoría de los pedidos completan exitosamente el ciclo de compra y entrega.</p>
+<p>The funnel chart shows the progressive reduction in the number of orders as they advance through the process stages: order created, payment approved, handed to logistics operator and final delivery to customer.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=effd7db9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=014ad66c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Conclusiones">3. Conclusiones<a class="anchor-link" href="#3.-Conclusiones">¶</a></h2><p><strong>Heatmap</strong></p>
-<p>El heatmap muestra que la mayoría de los pedidos se concentran en el estado delivered a lo largo de todos los días de la semana, lo que indica un proceso logístico estable. No se observan variaciones significativas por día, lo que sugiere una distribución temporal homogénea de los pedidos.</p>
-<p>El mapa de calor es adecuado porque permite comparar simultáneamente el estado del pedido y el día de la semana, utilizando la intensidad del color para representar la cantidad de órdenes. Esta codificación visual facilita la identificación rápida de patrones de concentración y estabilidad temporal.</p>
+<h2 id="3.-Conclusions">3. Conclusions<a class="anchor-link" href="#3.-Conclusions">¶</a></h2><p><strong>Heatmap</strong></p>
+<p>The heatmap shows that the majority of orders concentrate in the delivered status throughout all days of the week, indicating a stable logistics process. No significant variations by day are observed, suggesting a homogeneous temporal distribution of orders.</p>
+<p>The heatmap is appropriate because it allows simultaneously comparing order status and day of the week, using color intensity to represent the number of orders. This visual encoding facilitates quick identification of concentration patterns and temporal stability.</p>
 <p><strong>Funnel Chart</strong></p>
-<p>El funnel evidencia una reduccion progresiva de pedidos entre las distintas etapas del proceso logístico, con una alta tasa de conversión entre la compra y la aprobación del pago, y una mayor pérdida en la etapa de envío. La mayoría de los pedidos que son despachados logran completarse con entrega al cliente.</p>
-<p>El funnel chart es efectivo porque representa de forma clara un proceso secuencial de conversion, permitiendo identificar rapidamente en que etapas se producen las principales perdidas y evaluar la eficiencia del flujo logistico.</p>
+<p>The funnel shows a progressive reduction of orders between the different stages of the logistics process, with a high conversion rate between purchase and payment approval, and greater loss at the shipping stage. The majority of orders that are dispatched successfully complete with delivery to the customer.</p>
+<p>The funnel chart is effective because it clearly represents a sequential conversion process, allowing quick identification of which stages produce the main losses and evaluating the efficiency of the logistics flow.</p>
 </div>
 </div>
 </div>
@@ -8410,7 +8357,7 @@ responder las siguientes preguntas:</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<p><em>Análisis realizado por Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
+<p><em>Analysis by Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
 </div>
 </div>
 </div>
