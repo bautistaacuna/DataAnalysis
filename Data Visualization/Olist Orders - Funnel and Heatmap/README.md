@@ -1,18 +1,18 @@
-# Olist Orders — Heatmap y Funnel Chart del Proceso Logístico
+# Olist Orders — Heatmap and Funnel Chart of the Logistics Process
 
-Análisis exploratorio del proceso logístico de **Olist**, la mayor plataforma de e-commerce de Brasil, a través de visualizaciones interactivas que permiten identificar patrones en los estados de los pedidos y las etapas del flujo de entrega.
-
----
-
-## Contexto del problema
-
-¿En qué días de la semana se concentran más pedidos según su estado? ¿Cuántos pedidos completan cada etapa del proceso logístico? ¿En qué etapa se producen las mayores pérdidas?
-
-Este análisis responde esas preguntas a través de un heatmap y un funnel chart construidos con **Plotly**.
+Exploratory analysis of the logistics process of **Olist**, the largest e-commerce platform in Brazil, through interactive visualizations that identify patterns in order statuses and delivery flow stages.
 
 ---
 
-## Estructura del proyecto
+## Problem Context
+
+On which days of the week are orders most concentrated by status? How many orders complete each stage of the logistics process? At which stage do the greatest losses occur?
+
+This analysis answers these questions through a heatmap and a funnel chart built with **Plotly**.
+
+---
+
+## Project Structure
 
 ```
 Olist Orders - Funnel and Heatmap/
@@ -28,80 +28,81 @@ Olist Orders - Funnel and Heatmap/
 
 ## Dataset
 
-- **Fuente:** [Brazilian E-Commerce Public Dataset — Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
-- **Archivo utilizado:** `olist_orders_dataset.csv`
-- **Variables clave:** `order_purchase_timestamp`, `order_approved_at`, `order_delivered_carrier_date`, `order_delivered_customer_date`, `order_status`
+- **Source:** [Brazilian E-Commerce Public Dataset — Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+- **File used:** `olist_orders_dataset.csv`
+- **Key variables:** `order_purchase_timestamp`, `order_approved_at`, `order_delivered_carrier_date`, `order_delivered_customer_date`, `order_status`
 
 ---
 
-## Tecnologías utilizadas
+## Technologies Used
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Wrangling-lightblue?logo=pandas)
-![Plotly](https://img.shields.io/badge/Plotly-Visualización-purple?logo=plotly)
+![Plotly](https://img.shields.io/badge/Plotly-Visualization-purple?logo=plotly)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
 
 ---
 
-## Metodología
+## Methodology
 
-1. **Carga y exploración inicial** — estructura, tipos de datos, primeras filas
-2. **Preprocesamiento:**
-   - Conversión de columnas de tiempo a formato datetime
-   - Extracción del día de la semana desde `order_purchase_timestamp`
-   - Creación de indicadores booleanos por etapa del proceso
-3. **Visualizaciones** — 3 gráficos interactivos con Plotly
-
----
-
-## Análisis y hallazgos
-
-### Heatmap — Todos los estados
-Visualización de la cantidad de pedidos por día de la semana y estado del pedido, mostrando la distribución general del flujo logístico.
-
-### Heatmap — Estados filtrados
-Se filtran los estados más relevantes del flujo principal: `approved`, `shipped`, `delivered` y `canceled`, para una lectura más clara de los patrones.
-
-### Funnel Chart — Etapas del proceso
-Medición de cuántos pedidos alcanzan cada etapa:
-- Purchased — compra creada
-- Approved — pago aprobado
-- Shipped — enviado al transportista
-- Delivered — entregado al cliente
+1. **Initial load and exploration** — structure, data types, first rows
+2. **Preprocessing:**
+   - Converting time columns to datetime format
+   - Extracting day of the week from `order_purchase_timestamp`
+   - Creating boolean stage indicators
+3. **Visualizations** — 3 interactive charts with Plotly
 
 ---
 
-## Conclusiones principales
+## Analysis and Findings
 
-- La mayoría de los pedidos se concentran en el estado **delivered** a lo largo de todos los días de la semana, lo que indica un alto nivel de cumplimiento del proceso logístico
-- Los días de **lunes a miércoles** presentan mayor volumen de pedidos entregados
-- El **funnel chart** muestra una reducción progresiva en cada etapa, con la mayor pérdida entre el envío y la entrega final
-- Los pedidos cancelados representan una proporción menor pero constante a lo largo de la semana
+### Heatmap — All Statuses
+Visualization of the number of orders by day of the week and order status, showing the general distribution of the logistics flow.
+
+### Heatmap — Filtered Statuses
+The most relevant statuses of the main flow are filtered: `approved`, `shipped`, `delivered` and `canceled`, for a clearer reading of patterns.
+
+### Funnel Chart — Process Stages
+Measurement of how many orders reach each stage:
+- Purchased — order created
+- Approved — payment approved
+- Handed to Carrier — shipped to logistics operator
+- Delivered to Customer — final delivery
 
 ---
 
-## Cómo ejecutar el proyecto
+## Main Conclusions
+
+- The majority of orders concentrate in the **delivered** status throughout all days of the week, indicating a high level of logistics process fulfillment
+- **Monday to Wednesday** show higher volumes of delivered orders
+- The **funnel chart** shows a progressive reduction at each stage, with the greatest loss between shipping and final delivery
+- Canceled orders represent a smaller but consistent proportion throughout the week
+
+---
+
+## How to Run the Project
 
 ```bash
-# 1. Clonar el repositorio
+# 1. Clone the repository
 git clone https://github.com/bautistaacuna/DataAnalysis.git
 
-# 2. Crear y activar el entorno virtual
+# 2. Create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
+source venv/bin/activate  # Mac/Linux
 
-# 3. Instalar dependencias
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Abrir el notebook
+# 4. Open the notebook
 jupyter notebook Heatmap_Funnel_Acuna.ipynb
 ```
 
-> El archivo `olist_orders_dataset.csv` debe estar en la misma carpeta que el notebook.
+> The `olist_orders_dataset.csv` file must be in the same folder as the notebook.
 
 ---
 
-## Autor
+## Author
 
 **Juan Bautista Acuña**
 Data Analyst | SQL · Python · Power BI
