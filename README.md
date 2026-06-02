@@ -1,63 +1,63 @@
 # Data Analytics Portfolio — Juan Bautista Acuña
 
-Repositorio de proyectos de análisis de datos enfocados en visualización interactiva, exploración de datasets reales y generación de insights orientados al negocio.
+Repository of data analysis projects focused on interactive visualization, exploration of real-world datasets and generation of business-oriented insights.
 
-**Ver portafolio completo:** [bautistaacuna.github.io/DataAnalysis](https://bautistaacuna.github.io/DataAnalysis/)
+**View full portfolio:** [bautistaacuna.github.io/DataAnalysis](https://bautistaacuna.github.io/DataAnalysis/)
 
 ---
 
-## Tecnologías
+## Technologies
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Wrangling-lightblue?logo=pandas)
-![Plotly](https://img.shields.io/badge/Plotly-Visualización-purple?logo=plotly)
+![Plotly](https://img.shields.io/badge/Plotly-Visualization-purple?logo=plotly)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
 
 ---
 
-## Proyectos
+## Projects
 
 ### Spotify Global Music Analysis
-Análisis de géneros musicales, evolución del contenido explícito y popularidad de artistas en Spotify (2009–2025).
+Analysis of music genres, evolution of explicit content and artist popularity on Spotify (2009–2025).
 
-**Visualizaciones:** Bar charts, scatter plot, series temporales  
-[Ver proyecto](Data%20Visualization/Spotify%20-%20Bar%20Plot/)
-
----
-
-### Airbnb Barcelona — Análisis de Precios
-Exploración del mercado de alojamientos de Airbnb en Barcelona con foco en precio, tipo de alojamiento, ubicación y calidad del servicio.
-
-**Visualizaciones:** Boxplots, scatter plots  
-[Ver proyecto](Data%20Visualization/Airbnb%20in%20Barcelona%20-%20Boxplot/)
+**Visualizations:** Bar charts, scatter plot, time series  
+[View project](Data%20Visualization/Spotify%20-%20Bar%20Plot/)
 
 ---
 
-### Chicago Crimes 2026 — Mapas Geolocalizados
-Visualización geolocalizada de incidentes delictivos en Chicago, analizando tipos de crimen, arrestos y distribución horaria.
+### Airbnb Barcelona — Price Analysis
+Exploration of the Airbnb accommodation market in Barcelona focusing on price, accommodation type, location and service quality.
 
-**Visualizaciones:** Mapas interactivos geolocalizados  
-[Ver proyecto](Data%20Visualization/Chicago%20Crimes%20-%20Maps/)
-
----
-
-### Olist Orders — Heatmap y Funnel
-Análisis del proceso logístico de Olist e-commerce brasileño, identificando patrones en los estados de pedidos y etapas del flujo de entrega.
-
-**Visualizaciones:** Heatmap, Funnel chart  
-[Ver proyecto](Data%20Visualization/Olist%20Orders%20-%20Funnel%20and%20Heatmap/)
+**Visualizations:** Boxplots, scatter plots  
+[View project](Data%20Visualization/Airbnb%20in%20Barcelona%20-%20Boxplot/)
 
 ---
 
-### Screen Time, Productividad y Atención
-Análisis de la relación entre el tiempo de uso de pantallas, la productividad y la capacidad de atención en estudiantes y profesionales.
+### Chicago Crimes 2026 — Geolocalized Maps
+Geolocalized visualization of criminal incidents in Chicago, analyzing crime types, arrests and time-of-day distribution.
 
-**Visualizaciones:** Boxplots, bar charts, heatmap  
-[Ver proyecto](Data%20Visualization/Screen%20Time%20Data%20Productivity%20and%20Attention%20Span/)
+**Visualizations:** Interactive geolocalized maps  
+[View project](Data%20Visualization/Chicago%20Crimes%20-%20Maps/)
 
 ---
 
-## Estructura del repositorio
+### Olist Orders — Heatmap and Funnel
+Analysis of the logistics process of Olist Brazilian e-commerce, identifying patterns in order statuses and delivery flow stages.
+
+**Visualizations:** Heatmap, Funnel chart  
+[View project](Data%20Visualization/Olist%20Orders%20-%20Funnel%20and%20Heatmap/)
+
+---
+
+### Screen Time, Productivity and Attention Span
+Analysis of the relationship between screen time, productivity and attention span across students and professionals.
+
+**Visualizations:** Boxplots, bar charts, heatmap  
+[View project](Data%20Visualization/Screen%20Time%20Data%20Productivity%20and%20Attention%20Span/)
+
+---
+
+## Repository Structure
 
 ```
 DataAnalysis/
@@ -74,25 +74,25 @@ DataAnalysis/
 
 ---
 
-## Cómo ejecutar los proyectos
+## How to Run the Projects
 
 ```bash
-# 1. Clonar el repositorio
+# 1. Clone the repository
 git clone https://github.com/bautistaacuna/DataAnalysis.git
 
-# 2. Crear y activar el entorno virtual
+# 2. Create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
 source venv/bin/activate  # Mac/Linux
 
-# 3. Instalar dependencias
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
 ---
 
-## Autor
+## Author
 
 **Juan Bautista Acuña**  
 Data Analyst | SQL · Python · Power BI  
-[GitHub](https://github.com/bautistaacuna) · [Email](mailto:bautistaacuna@gmail.com) · [Portafolio](https://bautistaacuna.github.io/DataAnalysis/)
+[GitHub](https://github.com/bautistaacuna) · [Email](mailto:bautistaacuna@gmail.com) · [Portfolio](https://bautistaacuna.github.io/DataAnalysis/)
