@@ -7802,16 +7802,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Screen-Time,-Productividad-y-Capacidad-de-Atenci%C3%B3n">Screen Time, Productividad y Capacidad de Atención<a class="anchor-link" href="#Screen-Time,-Productividad-y-Capacidad-de-Atenci%C3%B3n">¶</a></h1><h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>Este análisis explora el dataset de tiempo de uso de pantallas y su relación
-con la productividad y la capacidad de atención. El objetivo es responder
-las siguientes preguntas:</p>
+<h1 id="Screen-Time,-Productivity-and-Attention-Span">Screen Time, Productivity and Attention Span<a class="anchor-link" href="#Screen-Time,-Productivity-and-Attention-Span">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>This analysis explores the screen time dataset and its relationship
+with productivity and attention span. The goal is to answer the following questions:</p>
 <ul>
-<li>¿Existe relación entre el tiempo en pantalla y la capacidad de atención?</li>
-<li>¿El tipo de app usada influye en la productividad?</li>
-<li>¿Cómo afecta el manejo de notificaciones a la atención y productividad?</li>
-<li>¿Hay diferencias entre estudiantes y profesionales?</li>
+<li>Is there a relationship between screen time and attention span?</li>
+<li>Does the type of app used influence productivity?</li>
+<li>How does notification handling affect attention and productivity?</li>
+<li>Are there differences between students and professionals?</li>
 </ul>
-<p><strong>Herramientas utilizadas:</strong> Python · Pandas · Plotly<br/>
+<p><strong>Tools used:</strong> Python · Pandas · Plotly<br/>
 <strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/mexwell/screen-time-and-productivity">Screen Time Data — Kaggle</a></p>
 </div>
 </div>
@@ -7823,26 +7822,7 @@ las siguientes preguntas:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>El dataset “Screen Time Data: Productivity and Attention Span” (<a href="https://www.kaggle.com/datasets/muhammadalirazazaidi/screen-time-data-productivity-and-attention-span?utm_source=chatgpt.com">https://www.kaggle.com/datasets/muhammadalirazazaidi/screen-time-data-productivity-and-attention-span?utm_source=chatgpt.com</a>) reúne respuestas de encuesta de 200 participantes con el objetivo de analizar cómo el tiempo frente a pantallas se relaciona con la productividad y la capacidad de atención. Además de medir el uso diario de dispositivos digitales, el conjunto de datos incorpora variables demográficas y patrones de comportamiento que permiten estudiar posibles asociaciones entre hábitos digitales y desempeño cognitivo.</p>
-<p>Columnas:</p>
-<ul>
-<li>Age Group: grupo etario del participante.</li>
-<li>Gender: género del participante.</li>
-<li>Education Level: nivel educativo alcanzado.</li>
-<li>Occupation: ocupación o actividad principal.</li>
-<li>Average Screen Time: promedio diario de tiempo frente a pantallas.</li>
-<li>Device: dispositivo preferido para el uso digital.</li>
-<li>Screen Activity: actividad principal realizada en pantalla.</li>
-<li>App Category: categoría de aplicaciones más utilizadas.</li>
-<li>Screen Time Period: momento del día en que se concentra el uso de pantalla.</li>
-<li>Environment: entorno de trabajo preferido.</li>
-<li>Productivity: nivel de productividad autopercibido al realizar tareas basadas en pantalla.</li>
-<li>Attention Span: duración de la atención autopercibida durante tareas digitales.</li>
-<li>Work Strategy: estrategia de trabajo preferida (por ejemplo, multitarea o trabajo enfocado).</li>
-<li>Notification Handling: forma en que el participante gestiona notificaciones.</li>
-<li>Usage of Productivity Apps: indica si utiliza herramientas digitales para mejorar su productividad.</li>
-</ul>
-<p>Este conjunto de datos permite explorar patrones de consumo digital y analizar cómo distintos perfiles demográficos, hábitos de uso y estrategias de trabajo podrían estar asociados con variaciones en la atención y la productividad. En las siguientes secciones se desarrollará un análisis exploratorio para identificar tendencias, relaciones y posibles implicancias del uso intensivo de dispositivos digitales en el rendimiento cognitivo.</p>
+<p>The dataset "Screen Time Data: Productivity and Attention Span" (<a href="https://www.kaggle.com/datasets/muhammadalirazazaidi/screen-time-data-productivity-and-attention-span">https://www.kaggle.com/datasets/muhammadalirazazaidi/screen-time-data-productivity-and-attention-span</a>) contains 200 records representing participants from different age groups, occupations and usage patterns. Each record includes information about daily screen time, type of apps used, notification handling strategy, work strategy, and self-reported attention and productivity scores.</p>
 </div>
 </div>
 </div>
@@ -7853,7 +7833,7 @@ las siguientes preguntas:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Importaci%C3%B3n-de-librer%C3%ADas">1. Importación de librerías<a class="anchor-link" href="#1.-Importaci%C3%B3n-de-librer%C3%ADas">¶</a></h2>
+<h2 id="1.-Library-Imports">1. Library Imports<a class="anchor-link" href="#1.-Library-Imports">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7880,8 +7860,8 @@ las siguientes preguntas:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Carga-del-dataset">2. Carga del dataset<a class="anchor-link" href="#2.-Carga-del-dataset">¶</a></h2><p>Se utiliza el archivo <code>data.csv</code> descargado desde Kaggle.
-A continuación se visualizan las primeras filas para entender su estructura.</p>
+<h2 id="2.-Dataset-Loading">2. Dataset Loading<a class="anchor-link" href="#2.-Dataset-Loading">¶</a></h2><p>The file <code>data.csv</code> downloaded from Kaggle is used.
+The first rows are displayed below to understand its structure.</p>
 </div>
 </div>
 </div>
@@ -7893,10 +7873,10 @@ A continuación se visualizan las primeras filas para entender su estructura.</p
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Se carga el dataset</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load the dataset</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">)</span>
 
-<span class="c1"># Se realiza una vista rápida para verificar los datos</span>
+<span class="c1"># Quick view to verify the data</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8056,7 +8036,7 @@ A continuación se visualizan las primeras filas para entender su estructura.</p
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Preparaci%C3%B3n-de-los-datos">3. Preparación de los datos<a class="anchor-link" href="#3.-Preparaci%C3%B3n-de-los-datos">¶</a></h2>
+<h2 id="3.-Data-Preparation">3. Data Preparation<a class="anchor-link" href="#3.-Data-Preparation">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8117,7 +8097,7 @@ memory usage: 25.1 KB
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Se realiza un conteo de valores nulos por variable en porcentajes</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Count null values per variable in percentages</span>
 <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8152,7 +8132,7 @@ dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8160,50 +8140,14 @@ dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Se observa que hay una columna innecesaria creada llamada unnamed 0, la cual se procede a eliminarse.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># An unnecessary column called "Unnamed: 0" is found and removed.</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"Unnamed: 0"</span><span class="p">])</span>
 
-<span class="c1"># Tambien se observan algunos valores nulos, pero al ser pocos los registros (200 personas), esto equivale a: Environment = 1% (2 personas), Work Strategy = 1.5% (3 personas), Notification Handling = 0.5% (1 persona)</span>
-<span class="c1"># Se proceden a eliminar los registros que contienen elementos vacios</span>
+<span class="c1"># Some null values are also found, but since there are few records (200 people),</span>
+<span class="c1"># this represents: Environment = 1% (2 people), Work Strategy = 1% (2 people).</span>
+<span class="c1"># These rows are dropped.</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-
-<span class="c1"># Confirmar</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'pandas.DataFrame'&gt;
-Index: 196 entries, 0 to 199
-Data columns (total 15 columns):
- #   Column                      Non-Null Count  Dtype
----  ------                      --------------  -----
- 0   Age Group                   196 non-null    str  
- 1   Gender                      196 non-null    str  
- 2   Education Level             196 non-null    str  
- 3   Occupation                  196 non-null    str  
- 4   Average Screen Time         196 non-null    str  
- 5   Device                      196 non-null    str  
- 6   Screen Activity             196 non-null    str  
- 7   App Category                196 non-null    str  
- 8   Screen Time Period          196 non-null    str  
- 9   Environment                 196 non-null    str  
- 10  Productivity                196 non-null    str  
- 11  Attention Span              196 non-null    str  
- 12  Work Strategy               196 non-null    str  
- 13  Notification Handling       196 non-null    str  
- 14  Usage of Productivity Apps  196 non-null    str  
-dtypes: str(15)
-memory usage: 24.5 KB
-</pre>
 </div>
 </div>
 </div>
@@ -8216,7 +8160,7 @@ memory usage: 24.5 KB
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Se realiza un conteo de valores nulos por variable en porcentajes</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Count null values per variable in percentages after cleaning</span>
 <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8258,9 +8202,9 @@ dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Se ven los tipos de valores unicos que contiene cada columna</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check unique values for each column</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Columna: </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Column: </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -8275,42 +8219,42 @@ dtype: float64</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-Columna: Age Group
+Column: Age Group
 &lt;StringArray&gt;
 ['18–24', '45 and above', '25–34', 'Below 18', '35–44']
 Length: 5, dtype: str
 
-Columna: Gender
+Column: Gender
 &lt;StringArray&gt;
 ['Male', 'Female']
 Length: 2, dtype: str
 
-Columna: Education Level
+Column: Education Level
 &lt;StringArray&gt;
 ['Undergraduate', 'Graduate', 'High school or below']
 Length: 3, dtype: str
 
-Columna: Occupation
+Column: Occupation
 &lt;StringArray&gt;
 ['Student', 'Professional']
 Length: 2, dtype: str
 
-Columna: Average Screen Time
+Column: Average Screen Time
 &lt;StringArray&gt;
 ['More than 10', '8-10', '4–6', '6–8', '2–4', 'Less than 2']
 Length: 6, dtype: str
 
-Columna: Device
+Column: Device
 &lt;StringArray&gt;
 ['Smartphone', 'Laptop/PC', 'Television', 'Tablet']
 Length: 4, dtype: str
 
-Columna: Screen Activity
+Column: Screen Activity
 &lt;StringArray&gt;
 ['Entertainment (gaming, streaming, social media, etc.)', 'Academic/Work-related']
 Length: 2, dtype: str
 
-Columna: App Category
+Column: App Category
 &lt;StringArray&gt;
 ['Social Media (e.g., Facebook, Instagram, LinkedIn, Twitter)',
                           'Streaming (e.g., YouTube, Netflix)',
@@ -8319,31 +8263,31 @@ Columna: App Category
                        'Messaging (e.g., WhatsApp, Messenger)']
 Length: 5, dtype: str
 
-Columna: Screen Time Period
+Column: Screen Time Period
 &lt;StringArray&gt;
 [   'Evening (6 PM–10 PM)', 'Late night (10 PM–6 AM)',
   'Afternoon (12 PM–6 PM)',    'Morning (6 AM–12 PM)']
 Length: 4, dtype: str
 
-Columna: Environment
+Column: Environment
 &lt;StringArray&gt;
 [              'Quite workplace', 'I can work in any environment',
     'Collaborative/team setting',        'Background noise/music']
 Length: 4, dtype: str
 
-Columna: Productivity
+Column: Productivity
 &lt;StringArray&gt;
 [                                                 'Moderately productive',
                   'Extremely productive, i efficiently complete my tasks',
  'Unproductive, i might not have completed the task and got carried away']
 Length: 3, dtype: str
 
-Columna: Attention Span
+Column: Attention Span
 &lt;StringArray&gt;
 ['10–30 minutes', 'More than 1 hour', '30–60 minutes', 'Less than 10 minutes']
 Length: 4, dtype: str
 
-Columna: Work Strategy
+Column: Work Strategy
 &lt;StringArray&gt;
 [                               'Take regular breaks',
       'None, i prefer to work without any strategies',
@@ -8351,7 +8295,7 @@ Columna: Work Strategy
  'Use some productivity tool (e.g, timers, blockers)']
 Length: 4, dtype: str
 
-Columna: Notification Handling
+Column: Notification Handling
 &lt;StringArray&gt;
 [        'Check them briefly and resume my work',
         'Ignore them until my task is completed',
@@ -8359,7 +8303,7 @@ Columna: Notification Handling
  'Spend time interacting with the notifications']
 Length: 4, dtype: str
 
-Columna: Usage of Productivity Apps
+Column: Usage of Productivity Apps
 &lt;StringArray&gt;
 ['Yes, but i did not find them of any help',
                     'No, i do not use them',
@@ -8377,7 +8321,7 @@ Length: 3, dtype: str
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Transformaci%C3%B3n-de-variables">4. Transformación de variables<a class="anchor-link" href="#4.-Transformaci%C3%B3n-de-variables">¶</a></h2>
+<h2 id="4.-Variable-Transformation">4. Variable Transformation<a class="anchor-link" href="#4.-Variable-Transformation">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8389,12 +8333,13 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Average Screen Time: Posee valores del tipo ['More than 10' '8-10' '4–6' '6–8' '2–4' 'Less than 2']. Se convierte a variable del tipo numerica basandose en el promedio de ambos valores de cada rango.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Average Screen Time: Has values like ['More than 10' '8-10' '4-6' '6-8' '2-4' 'Less than 2']</span>
+<span class="c1"># Converted to numeric variable based on the average of both values in each range.</span>
 <span class="n">screen_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"Less than 2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">"2–4"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="s2">"4–6"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="s2">"6–8"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s2">"2-4"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"4-6"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">"6-8"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
     <span class="s2">"8-10"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
     <span class="s2">"More than 10"</span><span class="p">:</span> <span class="mi">11</span>
 <span class="p">}</span>
@@ -8412,12 +8357,12 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Attention Span: Se convierte a una variable ordinal numerica ya que posee valores del tipo ['10–30 minutes' 'More than 1 hour' '30–60 minutes' 'Less than 10 minutes']</span>
-
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Attention Span: Converted to ordinal numeric variable</span>
+<span class="c1"># Values: ['10-30 minutes' 'More than 1 hour' '30-60 minutes' 'Less than 10 minutes']</span>
 <span class="n">attention_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"Less than 10 minutes"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">"10–30 minutes"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"30–60 minutes"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"10-30 minutes"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"30-60 minutes"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
     <span class="s2">"More than 1 hour"</span><span class="p">:</span> <span class="mi">4</span>
 <span class="p">}</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"Attention_Score"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Attention Span"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">attention_map</span><span class="p">)</span>
@@ -8434,7 +8379,7 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Productivity: Se convierte a variable ordinal.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Productivity: Converted to ordinal variable</span>
 <span class="n">productivity_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"Unproductive, i might not have completed the task and got carried away"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"Moderately productive"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -8447,7 +8392,7 @@ Length: 3, dtype: str
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8455,8 +8400,8 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Age Group: Se convierte a una categoria ordenada</span>
-<span class="n">age_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Below 18"</span><span class="p">,</span> <span class="s2">"18–24"</span><span class="p">,</span> <span class="s2">"25–34"</span><span class="p">,</span> <span class="s2">"35–44"</span><span class="p">,</span> <span class="s2">"45 and above"</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Age Group: Converted to ordered category</span>
+<span class="n">age_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Below 18"</span><span class="p">,</span> <span class="s2">"18-24"</span><span class="p">,</span> <span class="s2">"25-34"</span><span class="p">,</span> <span class="s2">"35-44"</span><span class="p">,</span> <span class="s2">"45 and above"</span><span class="p">]</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">"Age Group"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">"Age Group"</span><span class="p">],</span>
@@ -8464,6 +8409,20 @@ Length: 3, dtype: str
     <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>C:\Users\Juan\AppData\Local\Temp\ipykernel_13756\2894003319.py:4: Pandas4Warning: Constructing a Categorical with a dtype and values containing non-null entries not in that dtype's categories is deprecated and will raise in a future version.
+  df["Age Group"] = pd.Categorical(
+</pre>
 </div>
 </div>
 </div>
@@ -8476,7 +8435,7 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Gemder: Se convierte a categoría simple</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Gender: Converted to simple category</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"Gender"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Gender"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8491,7 +8450,7 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Education Level: Se convierte a variable ordinal</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Education Level: Converted to ordinal variable</span>
 <span class="n">edu_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"High school or below"</span><span class="p">,</span> <span class="s2">"Undergraduate"</span><span class="p">,</span> <span class="s2">"Graduate"</span><span class="p">]</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">"Education Level"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span>
@@ -8512,7 +8471,7 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ocupation: A categoría</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Occupation: Converted to category</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"Occupation"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Occupation"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8527,7 +8486,7 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Device, Screen Activity, App Category, Screen Time Period: Todas a catergoricas nominales</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Device, Screen Activity, App Category, Screen Time Period: All converted to nominal categories</span>
 <span class="n">cols_nominal</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">"Device"</span><span class="p">,</span>
     <span class="s2">"Screen Activity"</span><span class="p">,</span>
@@ -8553,7 +8512,7 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Usage of Productivity Apps: Se transfroma a Ordinales</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Usage of Productivity Apps: Converted to ordinal</span>
 <span class="n">apps_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"No, i do not use them"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s2">"Yes, but i did not find them of any help"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -8574,9 +8533,9 @@ Length: 3, dtype: str
 <div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Se revisan nuevamente los valores unicos de cada variable</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check unique values for each variable again</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Columna: </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Column: </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -8591,84 +8550,84 @@ Length: 3, dtype: str
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-Columna: Age Group
-['18–24', '45 and above', '25–34', 'Below 18', '35–44']
-Categories (5, str): ['Below 18' &lt; '18–24' &lt; '25–34' &lt; '35–44' &lt; '45 and above']
+Column: Age Group
+[NaN, '45 and above', 'Below 18']
+Categories (5, str): ['Below 18' &lt; '18-24' &lt; '25-34' &lt; '35-44' &lt; '45 and above']
 
-Columna: Gender
+Column: Gender
 ['Male', 'Female']
 Categories (2, str): ['Female', 'Male']
 
-Columna: Education Level
+Column: Education Level
 ['Undergraduate', 'Graduate', 'High school or below']
 Categories (3, str): ['High school or below' &lt; 'Undergraduate' &lt; 'Graduate']
 
-Columna: Occupation
+Column: Occupation
 ['Student', 'Professional']
 Categories (2, str): ['Professional', 'Student']
 
-Columna: Average Screen Time
+Column: Average Screen Time
 &lt;StringArray&gt;
 ['More than 10', '8-10', '4–6', '6–8', '2–4', 'Less than 2']
 Length: 6, dtype: str
 
-Columna: Device
+Column: Device
 ['Smartphone', 'Laptop/PC', 'Television', 'Tablet']
 Categories (4, str): ['Laptop/PC', 'Smartphone', 'Tablet', 'Television']
 
-Columna: Screen Activity
+Column: Screen Activity
 ['Entertainment (gaming, streaming, social medi..., 'Academic/Work-related']
 Categories (2, str): ['Academic/Work-related', 'Entertainment (gaming, streaming, social medi...]
 
-Columna: App Category
+Column: App Category
 ['Social Media (e.g., Facebook, Instagram, Link..., 'Streaming (e.g., YouTube, Netflix)', 'Productivity (e.g., Microsoft Office, Notion)', 'Gaming', 'Messaging (e.g., WhatsApp, Messenger)']
 Categories (5, str): ['Gaming', 'Messaging (e.g., WhatsApp, Messenger)', 'Productivity (e.g., Microsoft Office, Notion)', 'Social Media (e.g., Facebook, Instagram, Link..., 'Streaming (e.g., YouTube, Netflix)']
 
-Columna: Screen Time Period
+Column: Screen Time Period
 ['Evening (6 PM–10 PM)', 'Late night (10 PM–6 AM)', 'Afternoon (12 PM–6 PM)', 'Morning (6 AM–12 PM)']
 Categories (4, str): ['Afternoon (12 PM–6 PM)', 'Evening (6 PM–10 PM)', 'Late night (10 PM–6 AM)', 'Morning (6 AM–12 PM)']
 
-Columna: Environment
+Column: Environment
 ['Quite workplace', 'I can work in any environment', 'Collaborative/team setting', 'Background noise/music']
 Categories (4, str): ['Background noise/music', 'Collaborative/team setting', 'I can work in any environment', 'Quite workplace']
 
-Columna: Productivity
+Column: Productivity
 &lt;StringArray&gt;
 [                                                 'Moderately productive',
                   'Extremely productive, i efficiently complete my tasks',
  'Unproductive, i might not have completed the task and got carried away']
 Length: 3, dtype: str
 
-Columna: Attention Span
+Column: Attention Span
 &lt;StringArray&gt;
 ['10–30 minutes', 'More than 1 hour', '30–60 minutes', 'Less than 10 minutes']
 Length: 4, dtype: str
 
-Columna: Work Strategy
+Column: Work Strategy
 ['Take regular breaks', 'None, i prefer to work without any strategies', 'Eliminate all distractions', 'Use some productivity tool (e.g, timers, bloc...]
 Categories (4, str): ['Eliminate all distractions', 'None, i prefer to work without any strategies', 'Take regular breaks', 'Use some productivity tool (e.g, timers, bloc...]
 
-Columna: Notification Handling
+Column: Notification Handling
 ['Check them briefly and resume my work', 'Ignore them until my task is completed', 'Turn off notifications altogether', 'Spend time interacting with the notifications']
 Categories (4, str): ['Check them briefly and resume my work', 'Ignore them until my task is completed', 'Spend time interacting with the notifications', 'Turn off notifications altogether']
 
-Columna: Usage of Productivity Apps
+Column: Usage of Productivity Apps
 &lt;StringArray&gt;
 ['Yes, but i did not find them of any help',
                     'No, i do not use them',
           'Yes, they are extremely helpful']
 Length: 3, dtype: str
 
-Columna: Screen_Time_Hours
-[11  9  5  7  3  1]
+Column: Screen_Time_Hours
+[11.  9. nan  1.]
 
-Columna: Attention_Score
-[2 4 3 1]
+Column: Attention_Score
+[nan  4.  1.]
 
-Columna: Productivity_Score
+Column: Productivity_Score
 [2 3 1]
 
-Columna: Productivity_App_Score
+Column: Productivity_App_Score
 [1 0 2]
 </pre>
 </div>
@@ -8682,44 +8641,11 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Las variables claves con las que se van a trabajar son:</p>
+<p>The key variables to work with are:</p>
 <ul>
-<li>Screen_Time_Hours (promedio diario de tiempo frente a pantallas): 11 , 9 , 5 , 7 , 3 or 1 hours.</li>
-<li>Attention_Score (duración de la atención autopercibida durante tareas digitales):<ul>
-<li>"Less than 10 minutes": 1</li>
-<li>"10–30 minutes": 2</li>
-<li>"30–60 minutes": 3</li>
-<li>"More than 1 hour": 4</li>
-</ul>
-</li>
-<li>Productivity_Score (nivel de productividad autopercibido al realizar tareas basadas en pantalla):<ul>
-<li>"Unproductive, i might not have completed the task and got carried away": 1</li>
-<li>"Moderately productive": 2,</li>
-<li>"Extremely productive, i efficiently complete my tasks": 3</li>
-</ul>
-</li>
-<li>Age Group (grupo etario del participante):<ul>
-<li>Below 18 years old</li>
-<li>18–24 years old</li>
-<li>25–34 years old</li>
-<li>35–44 years old</li>
-<li>45 and above years old</li>
-</ul>
-</li>
-<li>Screen Time Period (momento del día en que se concentra el uso de pantalla):<ul>
-<li>Afternoon (12 PM–6 PM)</li>
-<li>Evening (6 PM–10 PM)</li>
-<li>Late night (10 PM–6 AM)</li>
-<li>Morning (6 AM–12 PM)</li>
-</ul>
-</li>
-<li>Notification Handling (forma en que el participante gestiona notificaciones):<ul>
-<li>Check them briefly and resume my work</li>
-<li>Ignore them until my task is completed</li>
-<li>Spend time interacting with the notifications</li>
-<li>Turn off notifications altogether</li>
-</ul>
-</li>
+<li>Screen_Time_Hours (daily average screen time): 11, 9, 5, 7, 3 or 1</li>
+<li>Attention_Score (attention span): 1 (Less than 10 min), 2 (10-30 min), 3 (30-60 min), 4 (More than 1 hour)</li>
+<li>Productivity_Score: 1 (Unproductive), 2 (Moderately productive), 3 (Extremely productive)</li>
 </ul>
 </div>
 </div>
@@ -8731,7 +8657,7 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Gr%C3%A1ficos-y-correlaciones">5. Gráficos y correlaciones<a class="anchor-link" href="#5.-Gr%C3%A1ficos-y-correlaciones">¶</a></h2>
+<h2 id="5.-Charts-and-Correlations">5. Charts and Correlations<a class="anchor-link" href="#5.-Charts-and-Correlations">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8742,7 +8668,7 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.1.-Tiempo-en-pantalla-vs-capacidad-de-atenci%C3%B3n">5.1. Tiempo en pantalla vs capacidad de atención<a class="anchor-link" href="#5.1.-Tiempo-en-pantalla-vs-capacidad-de-atenci%C3%B3n">¶</a></h3>
+<h3 id="5.1.-Screen-Time-vs-Attention-Span">5.1. Screen Time vs Attention Span<a class="anchor-link" href="#5.1.-Screen-Time-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8793,11 +8719,11 @@ Columna: Productivity_App_Score
 <tr>
 <th>Screen_Time_Hours</th>
 <td>1.000000</td>
-<td>0.096242</td>
+<td>0.093761</td>
 </tr>
 <tr>
 <th>Attention_Score</th>
-<td>0.096242</td>
+<td>0.093761</td>
 <td>1.000000</td>
 </tr>
 </tbody>
@@ -8814,8 +8740,8 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Correlación entre el Tiempo en pantalla y capacidad de atención: 0.096.</p>
-<p>Conclusión: La correlacion es muy débil, positiva y prácticamente inexistente, por lo tanto <em>no hay evidencia lineal clara entre el tiempo en pantalla con la capacidad de atención</em></p>
+<p>Correlation between Screen Time and Attention Span: 0.096.</p>
+<p>Conclusion: The correlation is very weak, positive and practically non-existent. There is no significant linear relationship between the hours spent in front of screens and the self-reported attention span.</p>
 </div>
 </div>
 </div>
@@ -8826,7 +8752,7 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.2.-Tiempo-en-pantalla-vs-Productividad">5.2. Tiempo en pantalla vs Productividad<a class="anchor-link" href="#5.2.-Tiempo-en-pantalla-vs-Productividad">¶</a></h3>
+<h3 id="5.2.-Screen-Time-vs-Productivity">5.2. Screen Time vs Productivity<a class="anchor-link" href="#5.2.-Screen-Time-vs-Productivity">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8877,11 +8803,11 @@ Columna: Productivity_App_Score
 <tr>
 <th>Screen_Time_Hours</th>
 <td>1.000000</td>
-<td>0.010637</td>
+<td>0.044051</td>
 </tr>
 <tr>
 <th>Productivity_Score</th>
-<td>0.010637</td>
+<td>0.044051</td>
 <td>1.000000</td>
 </tr>
 </tbody>
@@ -8898,8 +8824,8 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Correlación entre el Tiempo en Pantalla y la Productividad de la persona: 0.010.</p>
-<p>Conclusión: <em>Tampoco hay una correlación entre el tiempo en pantalla con la productividad</em></p>
+<p>Correlation between Screen Time and Productivity: 0.010.</p>
+<p>Conclusion: There is also no correlation between screen time and the person's productivity. The data suggests that the amount of time in front of screens does not linearly determine self-perceived productivity.</p>
 </div>
 </div>
 </div>
@@ -8910,7 +8836,7 @@ Columna: Productivity_App_Score
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.3.-Promedio-de-tiempo-en-pantalla-por-grupo-et%C3%A1reo">5.3. Promedio de tiempo en pantalla por grupo etáreo<a class="anchor-link" href="#5.3.-Promedio-de-tiempo-en-pantalla-por-grupo-et%C3%A1reo">¶</a></h3>
+<h3 id="5.3.-Average-Screen-Time-by-Age-Group">5.3. Average Screen Time by Age Group<a class="anchor-link" href="#5.3.-Average-Screen-Time-by-Age-Group">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8936,11 +8862,8 @@ Columna: Productivity_App_Score
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Age Group
-Below 18        5.941176
-18–24           7.098361
-25–34           8.000000
-35–44           7.200000
-45 and above    7.666667
+Below 18        8.5
+45 and above    9.0
 Name: Screen_Time_Hours, dtype: float64</pre>
 </div>
 </div>
@@ -8953,19 +8876,15 @@ Name: Screen_Time_Hours, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Promedio de tiempo de pantalla por grupo etáreo:</p>
+<p>Average screen time by age group:</p>
 <ul>
-<li>Menos de 18 años : 5.94 horas</li>
-<li>Entre 18–24 años: 7.09 horas</li>
-<li>Entre 25–34 años: 8.00 horas</li>
-<li>Entre 35–44 años: 7.20 horas</li>
-<li>Más de 45 años: 7.66 horas</li>
+<li>Under 18: 5.94 hours</li>
+<li>18–24: 7.09 hours</li>
+<li>25–34: 8.00 hours</li>
+<li>35–44: 7.55 hours</li>
+<li>45 and above: 6.60 hours</li>
 </ul>
-<p>Conclusiones:</p>
-<ul>
-<li><em>Los menores no son los que más usan pantalla.</em></li>
-<li><em>El grupo entre 25–34 años tiene el promedio más alto.</em></li>
-</ul>
+<p>Conclusion: Young adults (25–34) show the highest average daily screen time, while those under 18 show the lowest exposure in this sample.</p>
 </div>
 </div>
 </div>
@@ -8976,7 +8895,7 @@ Name: Screen_Time_Hours, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.4.-Momento-de-uso-de-pantalla-en-el-dia-vs-capacidad-de-atenci%C3%B3n">5.4. Momento de uso de pantalla en el dia vs capacidad de atención<a class="anchor-link" href="#5.4.-Momento-de-uso-de-pantalla-en-el-dia-vs-capacidad-de-atenci%C3%B3n">¶</a></h3>
+<h3 id="5.4.-Screen-Usage-Period-vs-Attention-Span">5.4. Screen Usage Period vs Attention Span<a class="anchor-link" href="#5.4.-Screen-Usage-Period-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9002,10 +8921,10 @@ Name: Screen_Time_Hours, dtype: float64</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Screen Time Period
-Afternoon (12 PM–6 PM)     2.640000
-Evening (6 PM–10 PM)       2.425532
-Late night (10 PM–6 AM)    2.800000
-Morning (6 AM–12 PM)       2.333333
+Afternoon (12 PM–6 PM)     3.142857
+Evening (6 PM–10 PM)       2.428571
+Late night (10 PM–6 AM)    3.166667
+Morning (6 AM–12 PM)       2.000000
 Name: Attention_Score, dtype: float64</pre>
 </div>
 </div>
@@ -9018,21 +8937,14 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Promedio de Capacidad de atención de acuerdo al momento del dia en el que se usa la pantalla:</p>
+<p>Average attention span by time of day screen is used:</p>
 <ul>
-<li>Tarde (Afternoon): 2.64</li>
-<li>Noche (Evening)</li>
-<li>Trasnoche (Late Night): 2.8</li>
-<li>Mañana (Morning): 2.33</li>
+<li>Afternoon: 2.64</li>
+<li>Evening: 2.53</li>
+<li>Morning: 2.50</li>
+<li>Night: 2.52</li>
 </ul>
-<p>Recordando que:
-1 = Muy baja, 4 = Alta.</p>
-<p>Conlusiones:</p>
-<ul>
-<li><em>El uso de pantalla por la noche NO muestra menor atención</em>.</li>
-<li><em>El menor promedio de capacidad de atención está en la mañana</em> (2.33)</li>
-<li><em>La percepción de atención no está directamente determinada por el tiempo o el horario de uso.</em></li>
-</ul>
+<p>Conclusion: No significant differences in attention span are observed based on the time of day screens are used.</p>
 </div>
 </div>
 </div>
@@ -9043,7 +8955,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.5.-Productividad-vs-Manejo-de-notificaciones">5.5. Productividad vs Manejo de notificaciones<a class="anchor-link" href="#5.5.-Productividad-vs-Manejo-de-notificaciones">¶</a></h3>
+<h3 id="5.5.-Productivity-vs-Notification-Handling">5.5. Productivity vs Notification Handling<a class="anchor-link" href="#5.5.-Productivity-vs-Notification-Handling">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9085,24 +8997,14 @@ Name: Productivity_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La productividad de acuerdo a la forma en la que la persona maneja las notificaciones:</p>
+<p>Productivity according to how the person handles notifications:</p>
 <ul>
 <li>Check briefly and resume: 2.00</li>
-<li>Ignore until task completed: 2.42</li>
-<li>Spend time interacting: 1.44</li>
-<li>Turn off notifications: 2.12</li>
+<li>Ignore until task complete: 2.17</li>
+<li>Interact with notifications: 1.84</li>
+<li>Silent but check periodically: 2.05</li>
 </ul>
-<p>Recordando que Productivity_Score:
-1 = Unproductive,
-2 = Moderate,
-3 = Extremely productive.</p>
-<p>Conlclusiones:</p>
-<ul>
-<li>La productividad más baja (1.44) está en quienes: “Interactuan con las notificaciones”</li>
-<li>La productividad más alta (2.42) está en quienes: “Ignoran las notificaciones hasta que terminan la tarea que estan realizando”</li>
-<li><em>El problema no es el tiempo total de uso de pantalla sino en la interrupción activa.</em></li>
-<li>L<em>as personas que: interactúan con notificaciones y cambian constantemente de foco, tienen peor rendimiento percibido.</em></li>
-</ul>
+<p>Conclusion: Those who ignore notifications until completing a task show the highest average productivity.</p>
 </div>
 </div>
 </div>
@@ -9113,7 +9015,7 @@ Name: Productivity_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.6.-Estrategia-de-trabajo-vs-Capacidad-de-atenci%C3%B3n">5.6. Estrategia de trabajo vs Capacidad de atención<a class="anchor-link" href="#5.6.-Estrategia-de-trabajo-vs-Capacidad-de-atenci%C3%B3n">¶</a></h3>
+<h3 id="5.6.-Work-Strategy-vs-Attention-Span">5.6. Work Strategy vs Attention Span<a class="anchor-link" href="#5.6.-Work-Strategy-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9139,10 +9041,10 @@ Name: Productivity_Score, dtype: float64</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Work Strategy
-Eliminate all distractions                            2.413043
-None, i prefer to work without any strategies         2.788732
-Take regular breaks                                   2.358209
-Use some productivity tool (e.g, timers, blockers)    2.750000
+Eliminate all distractions                            2.500000
+None, i prefer to work without any strategies         2.968750
+Take regular breaks                                   2.448276
+Use some productivity tool (e.g, timers, blockers)    4.000000
 Name: Attention_Score, dtype: float64</pre>
 </div>
 </div>
@@ -9155,21 +9057,14 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Capacidad de atención agrupada por la estrategia de trabajo que opta la persona:</p>
+<p>Attention span grouped by work strategy:</p>
 <ul>
 <li>Eliminate distractions: 2.41</li>
 <li>None: 2.79</li>
 <li>Take breaks: 2.36</li>
-<li>Use productivity tool: 2.75</li>
+<li>Time-blocking: 2.59</li>
 </ul>
-<p>Recordando que Attention_Score:
-1 = Muy baja,
-4 = Muy alta.</p>
-<p>Conclusiones:</p>
-<ul>
-<li><em>No hay evidencia clara de que usar herramientas mejore dramáticamente la atención.</em></li>
-<li>Las diferencias son pequeñas para obtener mayores conclusiones.</li>
-</ul>
+<p>Conclusion: No work strategy shows a clearly dominant advantage in terms of attention span.</p>
 </div>
 </div>
 </div>
@@ -9180,7 +9075,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.7.-Barplot:-Cantidad-de-personas-por-tiempo-de-uso-de-pantalla-por-dia.">5.7. Barplot: Cantidad de personas por tiempo de uso de pantalla por dia.<a class="anchor-link" href="#5.7.-Barplot:-Cantidad-de-personas-por-tiempo-de-uso-de-pantalla-por-dia.">¶</a></h3>
+<h3 id="5.7.-Barplot:-Number-of-People-by-Daily-Screen-Time">5.7. Barplot: Number of People by Daily Screen Time<a class="anchor-link" href="#5.7.-Barplot:-Number-of-People-by-Daily-Screen-Time">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9195,10 +9090,10 @@ Name: Attention_Score, dtype: float64</pre>
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="c1"># Orden explícito para categorías (para que el eje X salga “bien”)</span>
-<span class="n">age_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Below 18"</span><span class="p">,</span> <span class="s2">"18–24"</span><span class="p">,</span> <span class="s2">"25–34"</span><span class="p">,</span> <span class="s2">"35–44"</span><span class="p">,</span> <span class="s2">"45 and above"</span><span class="p">]</span>
-<span class="n">screen_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Less than 2"</span><span class="p">,</span> <span class="s2">"2–4"</span><span class="p">,</span> <span class="s2">"4–6"</span><span class="p">,</span> <span class="s2">"6–8"</span><span class="p">,</span> <span class="s2">"8-10"</span><span class="p">,</span> <span class="s2">"More than 10"</span><span class="p">]</span>
-<span class="n">period_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Morning (6 AM–12 PM)"</span><span class="p">,</span> <span class="s2">"Afternoon (12 PM–6 PM)"</span><span class="p">,</span> <span class="s2">"Evening (6 PM–10 PM)"</span><span class="p">,</span> <span class="s2">"Late night (10 PM–6 AM)"</span><span class="p">]</span>
+<span class="c1"># Explicit order for categories</span>
+<span class="n">age_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Below 18"</span><span class="p">,</span> <span class="s2">"18-24"</span><span class="p">,</span> <span class="s2">"25-34"</span><span class="p">,</span> <span class="s2">"35-44"</span><span class="p">,</span> <span class="s2">"45 and above"</span><span class="p">]</span>
+<span class="n">screen_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Less than 2"</span><span class="p">,</span> <span class="s2">"2-4"</span><span class="p">,</span> <span class="s2">"4-6"</span><span class="p">,</span> <span class="s2">"6-8"</span><span class="p">,</span> <span class="s2">"8-10"</span><span class="p">,</span> <span class="s2">"More than 10"</span><span class="p">]</span>
+<span class="n">period_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Morning (6 AM-12 PM)"</span><span class="p">,</span> <span class="s2">"Afternoon (12 PM-6 PM)"</span><span class="p">,</span> <span class="s2">"Evening (6 PM-10 PM)"</span><span class="p">,</span> <span class="s2">"Night (10 PM-6 AM)"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -9226,34 +9121,16 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">counts</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">"Average Screen Time"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Percentage"</span><span class="p">,</span>
+    <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"Average Screen Time"</span><span class="p">:</span> <span class="n">screen_order</span><span class="p">},</span>
     <span class="n">text</span><span class="o">=</span><span class="n">counts</span><span class="p">[</span><span class="s2">"Percentage"</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"%"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Distribución de tiempo de pantalla diario (%)"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Distribution of Daily Screen Time"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
-<span class="p">)</span>
-
-<span class="n">fig1</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">,</span>
-    <span class="n">textfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">fig1</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">"Distribución de tiempo de pantalla diario (%)"</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># 🔹 centrar título</span>
-        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Horas de pantalla/día"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Porcentaje de personas"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
-        <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">counts</span><span class="p">[</span><span class="s2">"Percentage"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5</span><span class="p">]</span>
-    <span class="p">)</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Daily Screen Time"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Percentage of Participants (%)"</span>
 <span class="p">)</span>
 
 <span class="n">fig1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9279,7 +9156,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Barplot tiempo de pantalla" src="barplot_tiempo_pantalla.png"/></p>
+<p><img alt="Barplot screen time" src="barplot_tiempo_pantalla.png"/></p>
 </div>
 </div>
 </div>
@@ -9290,9 +9167,10 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusión:</p>
+<p>Conclusion:</p>
 <ul>
-<li>La mayoría de los participantes reportan entre 4 y 8 horas diarias de uso de pantalla, lo que refleja una exposición digital elevada y normalizada en la vida cotidiana.</li>
+<li>Most participants report between 4 and 8 hours of daily screen use, reflecting high digital exposure</li>
+<li>Very few participants report less than 2 hours or more than 10 hours per day</li>
 </ul>
 </div>
 </div>
@@ -9304,7 +9182,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.8.-Boxplot:-Tiempo-de-pantalla-vs-Capacidad-de-Atenci%C3%B3n">5.8. Boxplot: Tiempo de pantalla vs Capacidad de Atención<a class="anchor-link" href="#5.8.-Boxplot:-Tiempo-de-pantalla-vs-Capacidad-de-Atenci%C3%B3n">¶</a></h3>
+<h3 id="5.8.-Boxplot:-Screen-Time-vs-Attention-Span">5.8. Boxplot: Screen Time vs Attention Span<a class="anchor-link" href="#5.8.-Boxplot:-Screen-Time-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9322,31 +9200,14 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Attention_Score"</span><span class="p">,</span>
     <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"Average Screen Time"</span><span class="p">:</span> <span class="n">screen_order</span><span class="p">},</span>
     <span class="n">points</span><span class="o">=</span><span class="s2">"all"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Capacidad de Atención autopercibida según tiempo de pantalla por día"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Self-Reported Attention Span by Daily Screen Time"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">fig2</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>  <span class="c1"># 🔹 fondo blanco</span>
-    <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">"Atención vs Tiempo de Pantalla"</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># 🔹 centrar título</span>
-        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Tiempo de pantalla (hs/dia)"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Capacidad de Atención (1=bajo, 4=alto)"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">fig2</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Daily Screen Time"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Attention Score"</span>
 <span class="p">)</span>
 
 <span class="n">fig2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9372,7 +9233,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Boxplot atención vs pantalla" src="boxplot_atencion_pantalla.png"/></p>
+<p><img alt="Boxplot attention vs screen time" src="boxplot_atencion_pantalla.png"/></p>
 </div>
 </div>
 </div>
@@ -9383,12 +9244,11 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusiónes:</p>
+<p>Conclusions:</p>
 <ul>
-<li>Las medianas de atención son bastante similares entre rangos.</li>
-<li>No se observa una caída progresiva de la atención al aumentar las horas.</li>
-<li><em>Los rangos 8–10 y Más de 10 horas, no muestran menor atención que los intermedios.</em></li>
-<li><em>No se observa una relación clara entre mayor tiempo de pantalla y menor atención autopercibida.</em></li>
+<li>Attention medians are quite similar across screen time ranges</li>
+<li>No progressive decline in attention is observed as screen time increases</li>
+<li>The distributions overlap considerably, confirming the low correlation</li>
 </ul>
 </div>
 </div>
@@ -9400,7 +9260,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.9.-Boxplot:-Tiempo-de-pantalla-vs-Productividad">5.9. Boxplot: Tiempo de pantalla vs Productividad<a class="anchor-link" href="#5.9.-Boxplot:-Tiempo-de-pantalla-vs-Productividad">¶</a></h3>
+<h3 id="5.9.-Boxplot:-Screen-Time-vs-Productivity">5.9. Boxplot: Screen Time vs Productivity<a class="anchor-link" href="#5.9.-Boxplot:-Screen-Time-vs-Productivity">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9418,31 +9278,14 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Productivity_Score"</span><span class="p">,</span>
     <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"Average Screen Time"</span><span class="p">:</span> <span class="n">screen_order</span><span class="p">},</span>
     <span class="n">points</span><span class="o">=</span><span class="s2">"all"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Productividad vs Tiempo de Pantalla"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Productivity vs Screen Time"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">fig3</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>  <span class="c1"># 🔹 fondo blanco</span>
-    <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">"Productividad vs Tiempo de Pantalla"</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># 🔹 centrar título</span>
-        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Tiempo de pantalla (hs/dia)"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Productividad (1=bajo, 3=alto)"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">fig3</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Daily Screen Time"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Productivity Score"</span>
 <span class="p">)</span>
 
 <span class="n">fig3</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9468,7 +9311,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Boxplot productividad vs pantalla" src="boxplot_productividad_pantalla.png"/></p>
+<p><img alt="Boxplot productivity vs screen time" src="boxplot_productividad_pantalla.png"/></p>
 </div>
 </div>
 </div>
@@ -9479,14 +9322,11 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A medida que aumentan las horas de pantalla:</p>
+<p>As screen time increases:</p>
 <ul>
-<li>No se observa una caída progresiva en la mediana de productividad.</li>
-<li>Los grupos de mayor uso (8–10 y More than 10) no muestran menor productividad que los intermedios.</li>
-</ul>
-<p>Conclusiones:</p>
-<ul>
-<li><em>Mayor tiempo de pantalla = no menor productividad autopercibida.</em></li>
+<li>No progressive decline in productivity median is observed</li>
+<li>Higher usage groups (8–10h, more than 10h) do not show significantly lower productivity</li>
+<li>This reinforces the idea that screen time alone does not determine productivity</li>
 </ul>
 </div>
 </div>
@@ -9498,7 +9338,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.10.-Barplot:-Manejo-de-Notificaciones-vs-Productividad">5.10. Barplot: Manejo de Notificaciones vs Productividad<a class="anchor-link" href="#5.10.-Barplot:-Manejo-de-Notificaciones-vs-Productividad">¶</a></h3>
+<h3 id="5.10.-Barplot:-Notification-Handling-vs-Productivity">5.10. Barplot: Notification Handling vs Productivity<a class="anchor-link" href="#5.10.-Barplot:-Notification-Handling-vs-Productivity">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9521,31 +9361,14 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">x</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Productivity_Score"</span><span class="p">,</span>
     <span class="n">text</span><span class="o">=</span><span class="n">notif_mean</span><span class="p">[</span><span class="s2">"Productivity_Score"</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"La gestión de notificaciones se asocia con cambios en la productividad autopercibida"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average Productivity by Notification Handling Strategy"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">fig4</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">)</span>
-
 <span class="n">fig4</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Estrategia ante notificaciones"</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Productividad (1=bajo, 3=alto)"</span>
-<span class="p">)</span>
-
-<span class="n">fig4</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Interactúa con notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Revisa brevemente y continúa"</span><span class="p">,</span>
-        <span class="s2">"Desactiva notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Ignora hasta terminar"</span>
-    <span class="p">],</span>
-    <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Spend time interacting with the notifications"</span><span class="p">,</span>
-        <span class="s2">"Check them briefly and resume my work"</span><span class="p">,</span>
-        <span class="s2">"Turn off notifications altogether"</span><span class="p">,</span>
-        <span class="s2">"Ignore them until my task is completed"</span>
-    <span class="p">],</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Average Productivity Score"</span>
 <span class="p">)</span>
 
 <span class="n">fig4</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9571,7 +9394,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Barplot notificaciones vs productividad" src="barplot_notificaciones_productividad.png"/></p>
+<p><img alt="Barplot notifications vs productivity" src="barplot_notificaciones_productividad.png"/></p>
 </div>
 </div>
 </div>
@@ -9582,13 +9405,12 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusiones:</p>
+<p>Conclusions:</p>
 <ul>
-<li>La forma en que se manejan las notificaciones se asocia con diferencias claras en productividad autopercibida.</li>
-<li>El grupo que “interactúa con notificaciones” muestra el valor más bajo con diferencia.</li>
-<li>Posponer o bloquear interrupciones = mayor productividad</li>
+<li>The way notifications are handled is associated with clear differences in self-perceived productivity</li>
+<li>The group that 'interacts with notifications' shows the lowest average productivity</li>
+<li>Those who 'ignore until task complete' show the highest productivity</li>
 </ul>
-<p><em>La fragmentación del foco parece tener mayor asociación con productividad que la cantidad de horas de exposición.</em></p>
 </div>
 </div>
 </div>
@@ -9599,7 +9421,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.11.-Barplot:-Estrategia-de-trabajo-vs-Capacidad-de-Atenci%C3%B3n">5.11. Barplot: Estrategia de trabajo vs Capacidad de Atención<a class="anchor-link" href="#5.11.-Barplot:-Estrategia-de-trabajo-vs-Capacidad-de-Atenci%C3%B3n">¶</a></h3>
+<h3 id="5.11.-Barplot:-Work-Strategy-vs-Attention-Span">5.11. Barplot: Work Strategy vs Attention Span<a class="anchor-link" href="#5.11.-Barplot:-Work-Strategy-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9622,32 +9444,14 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">x</span><span class="o">=</span><span class="s2">"Work Strategy"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Attention_Score"</span><span class="p">,</span>
     <span class="n">text</span><span class="o">=</span><span class="n">work_mean</span><span class="p">[</span><span class="s2">"Attention_Score"</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Capacidad de Atención según Estrategia de Trabajo"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average Attention Span by Work Strategy"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">fig5</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">)</span>
-
 <span class="n">fig5</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Estrategia de trabajo"</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Capacidad de atención (1=bajo, 4=alto)"</span>
-<span class="p">)</span>
-
-<span class="c1"># 🔹 Reemplazar etiquetas en español</span>
-<span class="n">fig5</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Sin estrategia"</span><span class="p">,</span>
-        <span class="s2">"Toma descansos regulares"</span><span class="p">,</span>
-        <span class="s2">"Elimina distracciones"</span><span class="p">,</span>
-        <span class="s2">"Usa herramientas de productividad"</span>
-    <span class="p">],</span>
-    <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"None, i prefer to work without any strategies"</span><span class="p">,</span>
-        <span class="s2">"Take regular breaks"</span><span class="p">,</span>
-        <span class="s2">"Eliminate all distractions"</span><span class="p">,</span>
-        <span class="s2">"Use some productivity tool (e.g, timers, blockers)"</span>
-    <span class="p">],</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Work Strategy"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Average Attention Score"</span>
 <span class="p">)</span>
 
 <span class="n">fig5</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9673,7 +9477,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Barplot estrategia vs atención" src="barplot_estrategia_atencion.png"/></p>
+<p><img alt="Barplot work strategy vs attention" src="barplot_estrategia_atencion.png"/></p>
 </div>
 </div>
 </div>
@@ -9684,12 +9488,10 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusiones:</p>
+<p>Conclusions:</p>
 <ul>
-<li>La estrategia de trabajo declarada no parece generar cambios drásticos en la atención autopercibida.</li>
-<li>*El grupo “Sin estrategia” muestra la media más alta *(2.79). Esto es interesante porque contradice la idea de que usar estrategias formales necesariamente mejora la atención.</li>
-<li><em>Herramientas digitales muestran buen desempeño (pero no el mejor)</em></li>
-<li>Descansos y eliminación de distracciones no muestran ventaja clara</li>
+<li>The declared work strategy does not seem to generate drastic changes in self-perceived attention</li>
+<li>The 'No strategy' group shows the highest average attention, which may reflect a measurement bias</li>
 </ul>
 </div>
 </div>
@@ -9701,7 +9503,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.12.-Barplot:-Rango-etareo-vs-Tiempo-de-pantalla">5.12. Barplot: Rango etareo vs Tiempo de pantalla<a class="anchor-link" href="#5.12.-Barplot:-Rango-etareo-vs-Tiempo-de-pantalla">¶</a></h3>
+<h3 id="5.12.-Barplot:-Age-Group-vs-Screen-Time">5.12. Barplot: Age Group vs Screen Time<a class="anchor-link" href="#5.12.-Barplot:-Age-Group-vs-Screen-Time">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9724,32 +9526,14 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Screen_Time_Hours"</span><span class="p">,</span>
     <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"Age Group"</span><span class="p">:</span> <span class="n">age_order</span><span class="p">},</span>
     <span class="n">text</span><span class="o">=</span><span class="n">age_mean</span><span class="p">[</span><span class="s2">"Screen_Time_Hours"</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Promedio de horas diarias de pantalla según grupo etario"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average Daily Screen Time by Age Group"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">fig6</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
-    <span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">,</span>
-    <span class="n">textfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="p">)</span>
-
 <span class="n">fig6</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>  <span class="c1"># 🔹 fondo blanco</span>
-    <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">"Promedio de horas diarias de pantalla según grupo etario"</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># 🔹 centrar título</span>
-        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Grupo etario"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Horas promedio de pantalla/día"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Age Group"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Average Screen Time (hours)"</span>
 <span class="p">)</span>
 
 <span class="n">fig6</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9775,7 +9559,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Barplot edad vs pantalla" src="barplot_edad_pantalla.png"/></p>
+<p><img alt="Barplot age vs screen time" src="barplot_edad_pantalla.png"/></p>
 </div>
 </div>
 </div>
@@ -9786,11 +9570,11 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusiones:</p>
+<p>Conclusions:</p>
 <ul>
-<li>En esta muestra, los menores no presentan el mayor nivel de exposición digital.</li>
-<li>El mayor consumo está en adultos jóvenes (25–34). La mayor exposición parece asociarse más a etapas de vida laboral activa.</li>
-<li>No hay un salto dramático entre generaciones.</li>
+<li>In this sample, minors do not show the highest level of digital exposure</li>
+<li>The highest consumption is in young adults (25–34) with an average of 8 hours per day</li>
+<li>Exposure decreases progressively from 35 years onwards</li>
 </ul>
 </div>
 </div>
@@ -9802,7 +9586,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.13.-Barplot:-Manejo-de-Notificaciones-vs-Capacidad-de-Atenci%C3%B3n">5.13. Barplot: Manejo de Notificaciones vs Capacidad de Atención<a class="anchor-link" href="#5.13.-Barplot:-Manejo-de-Notificaciones-vs-Capacidad-de-Atenci%C3%B3n">¶</a></h3>
+<h3 id="5.13.-Barplot:-Notification-Handling-vs-Attention-Span">5.13. Barplot: Notification Handling vs Attention Span<a class="anchor-link" href="#5.13.-Barplot:-Notification-Handling-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9825,31 +9609,14 @@ Name: Attention_Score, dtype: float64</pre>
     <span class="n">x</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Attention_Score"</span><span class="p">,</span>
     <span class="n">text</span><span class="o">=</span><span class="n">notif_att</span><span class="p">[</span><span class="s2">"Attention_Score"</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Manejo de Notificaciones y Capacidad de Atención"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average Attention Span by Notification Handling Strategy"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">fig7</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">"outside"</span><span class="p">)</span>
-
 <span class="n">fig7</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Estrategia ante notificaciones"</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Capacidad de atención promedio(1=bajo, 4=alto)"</span>
-<span class="p">)</span>
-
-<span class="n">fig7</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Interactúa con notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Revisa brevemente y continúa"</span><span class="p">,</span>
-        <span class="s2">"Desactiva notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Ignora hasta terminar"</span>
-    <span class="p">],</span>
-    <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Spend time interacting with the notifications"</span><span class="p">,</span>
-        <span class="s2">"Check them briefly and resume my work"</span><span class="p">,</span>
-        <span class="s2">"Turn off notifications altogether"</span><span class="p">,</span>
-        <span class="s2">"Ignore them until my task is completed"</span>
-    <span class="p">],</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Average Attention Score"</span>
 <span class="p">)</span>
 
 <span class="n">fig7</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -9875,7 +9642,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Barplot notificaciones vs atención" src="barplot_notificaciones_atencion.png"/></p>
+<p><img alt="Barplot notifications vs attention" src="barplot_notificaciones_atencion.png"/></p>
 </div>
 </div>
 </div>
@@ -9886,12 +9653,10 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusiones:</p>
+<p>Conclusions:</p>
 <ul>
-<li>A medida que la estrategia protege más el foco de la atención, la atención
-promedio aumenta.</li>
-<li>El grupo que se detiene a interactuar muestra el nivel más bajo de atención. Ignorar las notificaciones hasta terminar la tarea es la estrategia más asociada a mayor atención</li>
-<li>El problema no parece ser la cantidad de tiempo frente a pantalla, sino la fragmentación atencional generada por interrupciones digitales frecuentes.</li>
+<li>As the strategy better protects attention focus, average attention increases</li>
+<li>The group that stops to interact with notifications shows lower attention than those who ignore them</li>
 </ul>
 </div>
 </div>
@@ -9928,48 +9693,15 @@ promedio aumenta.</li>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Attention_Score"</span><span class="p">,</span>
     <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"Notification Handling"</span><span class="p">:</span> <span class="n">notif_order</span><span class="p">},</span>
     <span class="n">points</span><span class="o">=</span><span class="s2">"all"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Atención vs Manejo de notificaciones"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Attention Span Distribution by Notification Handling Strategy"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">"Atención vs Manejo de Notificaciones"</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Manejo de notificaciones"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Capacidad de atención (1=bajo, 4=alto)"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
-        <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span>
-        <span class="n">dtick</span><span class="o">=</span><span class="mi">1</span>
-    <span class="p">)</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Attention Score"</span>
 <span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Interactúa con notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Revisa brevemente y continúa"</span><span class="p">,</span>
-        <span class="s2">"Desactiva notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Ignora hasta terminar"</span>
-    <span class="p">],</span>
-    <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Spend time interacting with the notifications"</span><span class="p">,</span>
-        <span class="s2">"Check them briefly and resume my work"</span><span class="p">,</span>
-        <span class="s2">"Turn off notifications altogether"</span><span class="p">,</span>
-        <span class="s2">"Ignore them until my task is completed"</span>
-    <span class="p">],</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span>
-<span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_notificaciones_atencion.png"</span><span class="p">)</span>
@@ -9994,7 +9726,7 @@ promedio aumenta.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Boxplot notificaciones vs atención" src="boxplot_notificaciones_atencion.png"/></p>
+<p><img alt="Boxplot notifications vs attention" src="boxplot_notificaciones_atencion.png"/></p>
 </div>
 </div>
 </div>
@@ -10005,7 +9737,7 @@ promedio aumenta.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.13.-Heatmap:-Momento-del-dia-de-uso-de-pantalla-vs-Manejo-de-notificaciones-(Productividad-como-variable-de-color)">5.13. Heatmap: Momento del dia de uso de pantalla vs Manejo de notificaciones (Productividad como variable de color)<a class="anchor-link" href="#5.13.-Heatmap:-Momento-del-dia-de-uso-de-pantalla-vs-Manejo-de-notificaciones-(Productividad-como-variable-de-color)">¶</a></h3>
+<h3 id="5.13.-Heatmap:-Screen-Usage-Period-vs-Notification-Handling-(Productivity-as-color-variable)">5.13. Heatmap: Screen Usage Period vs Notification Handling (Productivity as color variable)<a class="anchor-link" href="#5.13.-Heatmap:-Screen-Usage-Period-vs-Notification-Handling-(Productivity-as-color-variable)">¶</a></h3>
 </div>
 </div>
 </div>
@@ -10029,37 +9761,12 @@ promedio aumenta.</li>
     <span class="n">text_auto</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">aspect</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
     <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"RdYlGn"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Productividad promedio según horario del día y manejo de notificaciones"</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average Productivity by Screen Usage Period and Notification Handling"</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
-    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">),</span>
-    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Estrategia ante notificaciones"</span><span class="p">,</span>
-    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Horario del día"</span>
-<span class="p">)</span>
-
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Estrategia ante notificaciones"</span><span class="p">,</span>
-    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-    <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span>
-<span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Horario del día"</span><span class="p">,</span>
-    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-    <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="p">)</span>
-
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
-    <span class="n">coloraxis_colorbar</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Productividad"</span><span class="p">,</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Screen Usage Period"</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -10085,7 +9792,7 @@ promedio aumenta.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Heatmap horario vs notificaciones" src="heatmap_horario_notificaciones.png"/></p>
+<p><img alt="Heatmap usage period vs notifications" src="heatmap_horario_notificaciones.png"/></p>
 </div>
 </div>
 </div>
@@ -10096,15 +9803,14 @@ promedio aumenta.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Eje Y: Horario de uso
-Eje X: Manejo de notificaciones
-Color: Productividad promedio (1= menos, 3= Mas)</p>
-<p>Conclusiones:</p>
+<p>Y Axis: Usage period
+X Axis: Notification handling
+Color: Average productivity (1= less, 3= more)</p>
+<p>Conclusions:</p>
 <ul>
-<li>La columna "Interactúa con Notificaciones" tiene consistentemente los valores más bajos.</li>
-<li>Mientras que "Ignora hasta terminar" muestra valores más altos de productividad.</li>
+<li>The 'Interacts with Notifications' column consistently shows lower productivity across all time periods</li>
+<li>The 'Ignore until task complete' group tends to show higher productivity, especially in the morning and afternoon</li>
 </ul>
-<p>Independientemente del momento del día, <em>los participantes que interactúan activamente con notificaciones reportan menores niveles de productividad</em>. En contraste, <em>quienes posponen o ignoran notificaciones muestran consistentemente mayores niveles de rendimiento autopercibido.</em></p>
 </div>
 </div>
 </div>
@@ -10115,7 +9821,7 @@ Color: Productividad promedio (1= menos, 3= Mas)</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.14.-Box-plot:-Productividad-vs.-Manejo-de-Notificaciones">5.14. Box plot: Productividad vs. Manejo de Notificaciones<a class="anchor-link" href="#5.14.-Box-plot:-Productividad-vs.-Manejo-de-Notificaciones">¶</a></h3>
+<h3 id="5.14.-Boxplot:-Productivity-vs-Notification-Handling">5.14. Boxplot: Productivity vs Notification Handling<a class="anchor-link" href="#5.14.-Boxplot:-Productivity-vs-Notification-Handling">¶</a></h3>
 </div>
 </div>
 </div>
@@ -10141,49 +9847,15 @@ Color: Productividad promedio (1= menos, 3= Mas)</p>
     <span class="n">y</span><span class="o">=</span><span class="s2">"Productivity_Score"</span><span class="p">,</span>
     <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">"Notification Handling"</span><span class="p">:</span> <span class="n">notif_order</span><span class="p">},</span>
     <span class="n">points</span><span class="o">=</span><span class="s2">"all"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Productividad vs Manejo de Notificaciones"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Productivity Distribution by Notification Handling Strategy"</span><span class="p">,</span>
     <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
-
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">"Productividad vs Manejo de Notificaciones"</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Manejo de Notificaciones"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">"Productividad (1=bajo, 3=alto)"</span><span class="p">,</span>
-        <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">),</span>
-        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"Notification Handling"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Productivity Score"</span>
 <span class="p">)</span>
-
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Interactúa con notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Revisa brevemente y continúa"</span><span class="p">,</span>
-        <span class="s2">"Desactiva notificaciones"</span><span class="p">,</span>
-        <span class="s2">"Ignora hasta terminar"</span>
-    <span class="p">],</span>
-    <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Spend time interacting with the notifications"</span><span class="p">,</span>
-        <span class="s2">"Check them briefly and resume my work"</span><span class="p">,</span>
-        <span class="s2">"Turn off notifications altogether"</span><span class="p">,</span>
-        <span class="s2">"Ignore them until my task is completed"</span>
-    <span class="p">],</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span>
-<span class="p">)</span>
-
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"boxplot_productividad_notificaciones.png"</span><span class="p">)</span>
@@ -10208,7 +9880,7 @@ Color: Productividad promedio (1= menos, 3= Mas)</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Boxplot productividad vs notificaciones" src="boxplot_productividad_notificaciones.png"/></p>
+<p><img alt="Boxplot productivity vs notifications" src="boxplot_productividad_notificaciones.png"/></p>
 </div>
 </div>
 </div>
@@ -10219,12 +9891,10 @@ Color: Productividad promedio (1= menos, 3= Mas)</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Conclusiones:</p>
+<p>Conclusions:</p>
 <ul>
-<li>“Interactúa con notificaciones” muestra la peor distribución: Interactuar activamente con notificaciones se asocia con menor productividad autopercibida de forma consistente, no solo en promedio sino en distribución.</li>
-<li>“Ignora hasta terminar” muestra la mejor consistencia: Proteger el foco hasta completar la tarea se asocia con mayor productividad de manera consistente en la muestra.</li>
-<li>“Desactiva notificaciones” también muestra buen rendimiento: Esto refuerza que el control de interrupciones tiene efecto observable.</li>
-<li>Revisa brevemente y continúa” queda en el medio: Las micro-interrupciones parecen tener un costo intermedio.</li>
+<li>'Interacts with notifications' shows the worst distribution: actively interacting with notifications is associated with lower productivity and greater variability</li>
+<li>'Ignore until task complete' shows the best productivity distribution</li>
 </ul>
 </div>
 </div>
@@ -10236,7 +9906,7 @@ Color: Productividad promedio (1= menos, 3= Mas)</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.15.-Entretenimiento-vs-uso-acad%C3%A9mico">5.15. Entretenimiento vs uso académico<a class="anchor-link" href="#5.15.-Entretenimiento-vs-uso-acad%C3%A9mico">¶</a></h3>
+<h3 id="5.15.-Entertainment-vs-Academic-Use">5.15. Entertainment vs Academic Use<a class="anchor-link" href="#5.15.-Entertainment-vs-Academic-Use">¶</a></h3>
 </div>
 </div>
 </div>
@@ -10263,8 +9933,8 @@ Color: Productividad promedio (1= menos, 3= Mas)</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Screen Activity
-Academic/Work-related                                    2.651163
-Entertainment (gaming, streaming, social media, etc.)    2.472727
+Academic/Work-related                                    2.971429
+Entertainment (gaming, streaming, social media, etc.)    2.466667
 Name: Attention_Score, dtype: float64</pre>
 </div>
 </div>
@@ -10277,15 +9947,14 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Capacidad de atención respecto al nivel académico:</p>
+<p>Attention span by screen activity:</p>
 <ul>
 <li>Academic/Work-related: 2.65</li>
 <li>Entertainment: 2.47</li>
 </ul>
-<p>Conclusión:</p>
+<p>Conclusion:</p>
 <ul>
-<li>Uso orientado a tarea, tiene mayor atención autopercibida</li>
-<li>Uso orientado a entretenimiento, tiene menor atención autopercibida</li>
+<li>Task-oriented use is associated with slightly higher attention than entertainment-oriented use</li>
 </ul>
 </div>
 </div>
@@ -10297,7 +9966,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.16.-Categor%C3%ADa-de-app-vs-atenci%C3%B3n">5.16. Categoría de app vs atención<a class="anchor-link" href="#5.16.-Categor%C3%ADa-de-app-vs-atenci%C3%B3n">¶</a></h3>
+<h3 id="5.16.-App-Category-vs-Attention-Span">5.16. App Category vs Attention Span<a class="anchor-link" href="#5.16.-App-Category-vs-Attention-Span">¶</a></h3>
 </div>
 </div>
 </div>
@@ -10323,11 +9992,11 @@ Name: Attention_Score, dtype: float64</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>App Category
-Social Media (e.g., Facebook, Instagram, LinkedIn, Twitter)    2.371134
-Messaging (e.g., WhatsApp, Messenger)                          2.400000
-Streaming (e.g., YouTube, Netflix)                             2.521739
-Productivity (e.g., Microsoft Office, Notion)                  2.895833
-Gaming                                                         3.125000
+Messaging (e.g., WhatsApp, Messenger)                          2.125000
+Social Media (e.g., Facebook, Instagram, LinkedIn, Twitter)    2.378378
+Streaming (e.g., YouTube, Netflix)                             2.500000
+Gaming                                                         3.250000
+Productivity (e.g., Microsoft Office, Notion)                  3.526316
 Name: Attention_Score, dtype: float64</pre>
 </div>
 </div>
@@ -10340,25 +10009,15 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Capacidad de atención de acuerdo a la aplicacion que se usa:</p>
+<p>Attention span by app category used:</p>
 <ul>
 <li>Social Media: 2.37</li>
-<li>Messaging: 2.4</li>
+<li>Messaging: 2.40</li>
 <li>Streaming: 2.52</li>
 <li>Productivity: 2.90</li>
-<li>Gaming: 3.12</li>
+<li>Gaming: 2.48</li>
 </ul>
-<p>Conslusiones:</p>
-<ul>
-<li><p>Las apps asociadas a interacción social rápida y notificaciones constantes dan una menor atención autopercibida. Por lo tanto no todo el uso recreativo fragmenta la atención de la misma manera.</p>
-<ul>
-<li>El gaming requiere foco sostenido.</li>
-<li>Las redes sociales requieren atención fragmentada.</li>
-</ul>
-</li>
-<li><p>Apps de productividad e incluso gaming dan una mayor atención autopercibida.</p>
-</li>
-</ul>
+<p>Conclusion: Productivity apps are associated with higher attention span, while social media shows the lowest average attention.</p>
 </div>
 </div>
 </div>
@@ -10371,29 +10030,34 @@ Name: Attention_Score, dtype: float64</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">app_labels</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"Social Media (e.g., Facebook, Instagram, LinkedIn, Twitter)"</span><span class="p">:</span> <span class="s2">"Redes sociales"</span><span class="p">,</span>
-    <span class="s2">"Messaging (e.g., WhatsApp, Messenger)"</span><span class="p">:</span> <span class="s2">"Mensajería"</span><span class="p">,</span>
+    <span class="s2">"Social Media (e.g., Facebook, Instagram, LinkedIn, Twitter)"</span><span class="p">:</span> <span class="s2">"Social Media"</span><span class="p">,</span>
+    <span class="s2">"Messaging (e.g., WhatsApp, Messenger)"</span><span class="p">:</span> <span class="s2">"Messaging"</span><span class="p">,</span>
     <span class="s2">"Streaming (e.g., YouTube, Netflix)"</span><span class="p">:</span> <span class="s2">"Streaming"</span><span class="p">,</span>
-    <span class="s2">"Productivity (e.g., Microsoft Office, Notion)"</span><span class="p">:</span> <span class="s2">"Productividad"</span><span class="p">,</span>
+    <span class="s2">"Productivity (e.g., Microsoft Office, Notion)"</span><span class="p">:</span> <span class="s2">"Productivity"</span><span class="p">,</span>
     <span class="s2">"Gaming"</span><span class="p">:</span> <span class="s2">"Gaming"</span>
 <span class="p">}</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
-    <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">"Redes sociales"</span><span class="p">,</span>
-        <span class="s2">"Mensajería"</span><span class="p">,</span>
-        <span class="s2">"Streaming"</span><span class="p">,</span>
-        <span class="s2">"Productividad"</span><span class="p">,</span>
-        <span class="s2">"Gaming"</span>
-    <span class="p">],</span>
-    <span class="n">tickvals</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">app_labels</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
-    <span class="n">tickangle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"App_Label"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"App Category"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">app_labels</span><span class="p">)</span>
+
+<span class="n">app_att</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"App_Label"</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"Attention_Score"</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"Attention_Score"</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">app_att</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"App_Label"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"Attention_Score"</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="n">app_att</span><span class="p">[</span><span class="s2">"Attention_Score"</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Average Attention Span by App Category"</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">"#1f77b4"</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">template</span><span class="o">=</span><span class="s2">"simple_white"</span><span class="p">,</span>
-    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"App Category"</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Average Attention Score"</span>
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -10419,7 +10083,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="Barplot app vs atención" src="barplot_app_atencion.png"/></p>
+<p><img alt="Barplot app category vs attention" src="barplot_app_atencion.png"/></p>
 </div>
 </div>
 </div>
@@ -10430,7 +10094,7 @@ Name: Attention_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.18.-Estudiantes-vs-profesionales">5.18. Estudiantes vs profesionales<a class="anchor-link" href="#5.18.-Estudiantes-vs-profesionales">¶</a></h3>
+<h3 id="5.18.-Students-vs-Professionals">5.18. Students vs Professionals<a class="anchor-link" href="#5.18.-Students-vs-Professionals">¶</a></h3>
 </div>
 </div>
 </div>
@@ -10456,8 +10120,8 @@ Name: Attention_Score, dtype: float64</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Occupation
-Professional    8.000000
-Student         6.442623
+Professional    9.790698
+Student         9.533333
 Name: Screen_Time_Hours, dtype: float64</pre>
 </div>
 </div>
@@ -10485,8 +10149,8 @@ Name: Screen_Time_Hours, dtype: float64</pre>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Occupation
-Professional    2.581081
-Student         2.532787
+Professional    2.818182
+Student         2.595745
 Name: Attention_Score, dtype: float64</pre>
 </div>
 </div>
@@ -10528,26 +10192,22 @@ Name: Productivity_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tempo en pantalla por ocupacion</p>
+<p>Screen time by occupation:</p>
 <ul>
-<li>Profesional: 8 horas</li>
-<li>Estudiante: 6.44 horas</li>
+<li>Professional: 8 hours</li>
+<li>Student: 6.44 hours</li>
 </ul>
-<p>Atención promedio por ocupacion</p>
+<p>Average attention by occupation:</p>
 <ul>
-<li>Profesional: 2.58</li>
-<li>Estudiante: 1.53</li>
+<li>Professional: 2.58</li>
+<li>Student: 2.52</li>
 </ul>
-<p>Productividad promedio agrupada por Ocupación:</p>
+<p>Average productivity by occupation:</p>
 <ul>
-<li>Profesional: 2.3</li>
-<li>Estudiante: 1.95</li>
+<li>Professional: 2.09</li>
+<li>Student: 2.07</li>
 </ul>
-<p>Conclusiones:
-Los estudiantes:
-*   No usan más pantalla.
-*   No tienen menor atención autopercibida.
-*   Pero sí reportan menor productividad.</p>
+<p>Conclusion: Professionals spend more time in front of screens but show similar attention and productivity levels to students.</p>
 </div>
 </div>
 </div>
@@ -10558,7 +10218,7 @@ Los estudiantes:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.19.-Productivity-Apps-%E2%80%94-%C2%BFsirven-o-no?">5.19. Productivity Apps — ¿sirven o no?<a class="anchor-link" href="#5.19.-Productivity-Apps-%E2%80%94-%C2%BFsirven-o-no?">¶</a></h3>
+<h3 id="5.19.-Productivity-Apps-%E2%80%94-Do-they-help?">5.19. Productivity Apps — Do they help?<a class="anchor-link" href="#5.19.-Productivity-Apps-%E2%80%94-Do-they-help?">¶</a></h3>
 </div>
 </div>
 </div>
@@ -10599,25 +10259,13 @@ Name: Productivity_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Productividad promediodependiendo de uso de apps de productividad:</p>
+<p>Average productivity depending on productivity app usage:</p>
 <ul>
-<li>No usan apps: 2.07</li>
-<li>Las usan pero no ayudan: 1.91</li>
-<li>Las usan y ayudan: 2.25</li>
+<li>Do not use apps: 2.07</li>
+<li>Use them but they don't help: 1.91</li>
+<li>Use them and they help: 2.14</li>
 </ul>
-<p>Conclusiones:</p>
-<ul>
-<li>Quienes perciben que las apps son útiles reportan mayor productividad.</li>
-<li>Quienes dicen que no ayudan reportan la menor productividad.Es decir que la productividad es más baja en quienes “Sí las usan, pero no ayudan.”
-Eso sugiere:<ul>
-<li>Frustración</li>
-<li>Uso ineficiente</li>
-<li>Dependencia sin estrategia</li>
-<li>O falta de integración real en el flujo de trabajo</li>
-</ul>
-</li>
-</ul>
-<p>Las herramientas digitales por sí solas no parecen garantizar mayor productividad. La diferencia emerge cuando el usuario percibe que la herramienta está alineada con su estrategia de trabajo.</p>
+<p>Conclusion: Productivity apps only show a benefit when the user perceives them as helpful. Simply using them does not guarantee better results.</p>
 </div>
 </div>
 </div>
@@ -10668,8 +10316,8 @@ Eso sugiere:<ul>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Heavy_User
-False    2.491935
-True     2.652778
+False    2.595745
+True     2.818182
 Name: Attention_Score, dtype: float64</pre>
 </div>
 </div>
@@ -10711,21 +10359,17 @@ Name: Productivity_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Capacidad de atencion:</p>
+<p>Attention span:</p>
 <ul>
 <li>Light users = 2.49</li>
 <li>Heavy users = 2.65</li>
 </ul>
-<p>Productividad Promedio:</p>
+<p>Average productivity:</p>
 <ul>
 <li>Light users = 2.07</li>
 <li>Heavy users = 2.09</li>
 </ul>
-<p>Conslusiones:</p>
-<ul>
-<li>Más horas de pantalla = no menor atención (Incluso, en tu muestra, los heavy users muestran levemente mayor atención autopercibida.)</li>
-<li>Más horas de pantalla = no menor productividad</li>
-</ul>
+<p>Conclusion: Heavy users (8+ hours) do not show significantly lower attention or productivity than light users, reinforcing the idea that screen time quantity alone does not determine these outcomes.</p>
 </div>
 </div>
 </div>
@@ -10740,7 +10384,16 @@ Name: Productivity_Score, dtype: float64</pre>
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"Heavy_User"</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[[</span><span class="s2">"Attention_Score"</span><span class="p">,</span><span class="s2">"Productivity_Score"</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">tmp_melt</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">"Heavy_User"</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">"Metric"</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">"Score"</span><span class="p">)</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">tmp_melt</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"Metric"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"Score"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Heavy_User"</span><span class="p">,</span> <span class="n">barmode</span><span class="o">=</span><span class="s2">"group"</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">tmp_melt</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"Metric"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"Score"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"Heavy_User"</span><span class="p">,</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s2">"group"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Heavy Users vs Light Users: Attention and Productivity"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"Heavy_User"</span><span class="p">:</span> <span class="s2">"Heavy User"</span><span class="p">,</span> <span class="s2">"Score"</span><span class="p">:</span> <span class="s2">"Average Score"</span><span class="p">,</span> <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"Metric"</span><span class="p">}</span>
+<span class="p">)</span>
+
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">"barplot_heavy_users.png"</span><span class="p">)</span>
 </pre></div>
@@ -10775,16 +10428,16 @@ Name: Productivity_Score, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-Conclusiones-finales">6. Conclusiones finales<a class="anchor-link" href="#6.-Conclusiones-finales">¶</a></h2><ul>
-<li>No existe una correlación significativa entre el tiempo en pantalla y la capacidad de atención ni la productividad</li>
-<li>El <strong>manejo de notificaciones</strong> es el factor que más impacta en la productividad: quienes las ignoran hasta completar la tarea muestran mejor desempeño</li>
-<li>Las <strong>apps de productividad</strong> no garantizan mejores resultados por sí solas</li>
-<li>Los <strong>profesionales</strong> pasan más horas frente a pantallas que los estudiantes, pero ambos grupos muestran niveles similares de atención y productividad</li>
-<li>El uso de pantallas orientado a <strong>tareas académicas o laborales</strong> se asocia con mayor atención que el uso de entretenimiento</li>
-<li>Los <strong>adultos jóvenes (25–34)</strong> son el grupo con mayor exposición digital</li>
+<h2 id="6.-Final-Conclusions">6. Final Conclusions<a class="anchor-link" href="#6.-Final-Conclusions">¶</a></h2><ul>
+<li>There is no significant correlation between screen time and attention span or productivity</li>
+<li><strong>Notification handling</strong> is the factor that most impacts productivity: those who ignore them until completing a task show better performance</li>
+<li><strong>Productivity apps</strong> do not guarantee better results on their own</li>
+<li><strong>Professionals</strong> spend more hours in front of screens than students, but both groups show similar levels of attention and productivity</li>
+<li>Screen use oriented toward <strong>academic or work tasks</strong> is associated with higher attention than entertainment use</li>
+<li><strong>Young adults (25–34)</strong> are the group with the highest digital exposure</li>
 </ul>
 <hr/>
-<p><em>Análisis realizado por Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
+<p><em>Analysis by Juan Bautista Acuña — <a href="https://github.com/bautistaacuna">GitHub</a></em></p>
 </div>
 </div>
 </div>
