@@ -12,14 +12,19 @@ Covers ETL pipeline, SQL business analysis, machine learning, and dashboards.
 - **Visualization**: Power BI, Tableau
 
 ## Project Structure
-AdventureWorks/
 
+```
+AdventureWorks/
 ├── etl_pipeline.py       # ETL pipeline: CSV → PostgreSQL
 ├── sql/
 │   └── queries.sql       # Business analysis queries
 ├── notebooks/
 │   ├── sales_forecast.ipynb      # Sales forecasting model
 │   └── reseller_risk.ipynb       # Churn detection model
+├── adventureworks_dashboard.pbix # Power BI dashboard
+├── adventureworks_tableau.twbx   # Tableau dashboard
+└── README.md
+```
 
 ## Stages
 
