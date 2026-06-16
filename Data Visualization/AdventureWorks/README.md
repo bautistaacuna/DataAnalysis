@@ -46,6 +46,9 @@ Python pipeline that extracts pipe-separated CSVs, transforms and loads them int
 - **Power BI** — Interactive dashboard with KPIs, year filter and sales analysis
 - **Tableau** — Published dashboard on Tableau Public
 
+## Power BI Dashboard
+![Power BI Dashboard](images/powerbi_dashboard.png)
+
 ## Tableau Dashboard
 [View on Tableau Public](https://public.tableau.com/app/profile/juan.bautista.acuna/viz/adventureworks_tableau/AdventureWorksDashboard)
 
