@@ -5,3 +5,5 @@ __pycache__/
 .env
 Data Visualization/AdventureWorks/data/
 Data Visualization/AdventureWorks/venv/
+Data Visualization/AdventureWorks/output.txt
+Data Visualization/AdventureWorks/*.twbr
