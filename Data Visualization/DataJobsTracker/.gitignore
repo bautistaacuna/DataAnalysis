@@ -18,8 +18,9 @@ __pycache__/
 *.egg-info/
 .eggs/
 
-# Variables de entorno (credenciales de DB)
+# Variables de entorno (credenciales de DB y APIs)
 .env
+*.env
 
 # IDEs
 .vscode/
