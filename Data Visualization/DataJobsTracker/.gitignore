@@ -1,0 +1,31 @@
+# Entorno virtual
+venv/
+.venv/
+env/
+
+# Datos crudos scrapeados (no subir a GitHub)
+data/raw/
+data/processed/
+
+# Sí subir la carpeta data pero vacía (con .gitkeep)
+!data/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# Variables de entorno (credenciales de DB)
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
