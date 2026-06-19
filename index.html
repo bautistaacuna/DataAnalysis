@@ -22,6 +22,8 @@
         .tag { background: #f1f8ff; color: #0969da; border: 1px solid #c8e1ff; border-radius: 20px; padding: 2px 10px; font-size: 0.8em; }
         .btn { display: inline-block; background: #0969da; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; }
         .btn:hover { background: #0550ae; }
+        .btn-secondary { display: inline-block; background: white; color: #0969da; border: 1px solid #0969da; padding: 7px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; margin-left: 8px; }
+        .btn-secondary:hover { background: #f1f8ff; }
         footer { text-align: center; padding: 30px; color: #57606a; font-size: 0.9em; border-top: 1px solid #e1e4e8; }
     </style>
 </head>
@@ -39,6 +41,32 @@
 <div class="container">
     <h2>Data Analytics Projects</h2>
     <div class="grid">
+
+        <div class="card">
+            <h3>Data Jobs Market Tracker — API Pipeline</h3>
+            <p>End-to-end pipeline tracking the global data jobs market via the Adzuna API across 7 countries — cleaning, PostgreSQL, SQL analysis (CTEs, Window Functions) and interactive salary/seniority dashboards.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Plotly</span>
+                <span class="tag">REST API</span>
+            </div>
+            <a class="btn" href="Data Visualization/DataJobsTracker-API/dashboard.html">View analysis</a>
+            <a class="btn-secondary" href="https://github.com/bautistaacuna/DataAnalysis/tree/main/Data%20Visualization/DataJobsTracker-API">Code</a>
+        </div>
+
+        <div class="card">
+            <h3>Data Jobs Market Tracker — Web Scraper</h3>
+            <p>Web scraper collecting remote data-job listings from We Work Remotely via RSS/XML parsing — handles rate limiting, blocked endpoints and keyword-based filtering to avoid false positives.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">BeautifulSoup</span>
+                <span class="tag">Web Scraping</span>
+                <span class="tag">RSS/XML</span>
+            </div>
+            <a class="btn-secondary" href="https://github.com/bautistaacuna/DataAnalysis/tree/main/Data%20Visualization/DataJobsTracker-Scraper">Code</a>
+        </div>
 
         <div class="card">
             <h3>Spotify Global Music Analysis</h3>
